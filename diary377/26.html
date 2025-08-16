@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>熱と光の花が咲く | 第26更新 | 作戦番号377 霊山珠緒</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=Shippori+Mincho+B1:wght@600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'BIZ UDPGothic', sans-serif;
+        }
+
+        html, body {
+            background: #021825;
+            height: 100%;
+            line-height: 1.4;
+            font-size: 15px;
+        }
+
+        main {
+            max-width: 1000px;
+            padding: 20px 0;
+            margin: 0 auto;
+            min-height: 100%;
+            background: #2a3146;
+            box-shadow: 0 0 15px inset rgba(36, 38, 44, 0.801), 0 0 10px rgba(0, 0, 0, 0.2);
+            color: #ebeae5;
+        }
+
+        b {
+            font-weight: bold;
+            color: rgb(247, 175, 41);
+        }
+
+        .larger {
+            font-size: min(120%, 3rem);
+        }
+
+        .smaller {
+            font-size: max(90%, 0.3rem);
+        }
+
+        .strike {
+            text-decoration: line-through;
+        }
+
+        .underline {
+            text-decoration: underline;
+        }
+
+        .italic {
+            font-style: italic;
+        }
+
+        .bold {
+            font-weight: bold;
+        }
+
+        .message-hr {
+            margin: 20px 0;
+            border: none;
+            border-top: 1px dotted rgb(188, 187, 194);
+        }
+
+        .dice {
+            font-weight: bold;
+            color: #f3a16a;
+        }
+
+        .dice.d100:before {
+            content: '';
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            position: relative;
+            top: 1px;
+            background: url('./images/d100.png');
+            background-size: cover;
+            margin: 0 1px;
+        }
+
+        .dice.d6:before {
+            content: '';
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            position: relative;
+            top: 1px;
+            background: url('./images/d6.png');
+            background-size: cover;
+            margin: 0 1px;
+        }
+
+        .cutin {
+            display: block;
+            margin: 0 auto;
+            max-height: 150px;
+            max-width: min(350px, 100%);
+        }
+
+        .cutin.cutin-left {
+            margin: 0 auto 0 0;
+        }
+
+        .cutin.cutin-right {
+            margin: 0 0 0 auto;
+        }
+
+        .full-image {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+        }
+
+        .full-image.full-image-left {
+            margin: 0 auto 0 0;
+        }
+
+        .full-image.full-image-right {
+            margin: 0 0 0 auto;
+        }
+
+        .message {
+            display: flex;
+            width: fit-content;
+            background: #0004;
+            padding: 6px 10px 6px 10px;
+            border-radius: 4px;
+            align-items: center;
+            margin: 10px 0;
+        }
+
+        .message-icon-wrapper {
+            flex: none;
+            width: 60px;
+            height: 60px;
+            margin-right: 10px;
+        }
+
+        .message-icon {
+            width: 60px;
+            height: 60px;
+        }
+
+        .message-icon-noimage {
+            width: 60px;
+            height: 60px;
+            border-radius: 4px;
+            box-shadow: 0 0 2px rgba(0, 0, 0, 0.562);
+            background: no-repeat center/80% url('./images/kikyo.svg'),
+            linear-gradient(239deg, rgb(43, 58, 71), rgb(37, 49, 57));
+        }
+
+        .message-content {
+            flex: 1;
+        }
+
+        .message-name {
+            font-weight: bold;
+        }
+
+        .message-body {
+            color: rgb(235, 230, 223);
+        }
+
+        h1 {
+            margin: 0 0 20px 0;
+            display: flex;
+            align-items: center;
+            padding: 8px 20px 8px 20px;
+
+            color: rgb(38, 38, 78);
+            background: rgb(243, 236, 236);
+            font-family: 'Shippori Mincho B1', serif;
+            font-weight: 600;
+            font-size: 22px;
+            letter-spacing: -1px;
+            box-shadow: 0 0 10px rgb(8, 11, 24);
+        }
+
+        .diary-link {
+            margin-bottom: 5px;
+            display: block;
+            padding: 10px;
+            font-size: 0.9em;
+            color: rgb(241, 240, 234);
+            background-image: linear-gradient(rgb(35, 33, 51), rgb(50, 47, 70));
+            box-shadow: 0 0 15px rgba(6, 6, 17, 0.533) inset, 0 0 5px rgba(0, 0, 0, 0.2666666667);
+            border: 1px solid rgb(75, 71, 99);
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .columns {
+            display: flex;
+            margin: 20px;
+        }
+
+        .sub-column {
+            width: min(20%, 200px);
+            margin-right: 10px;
+            flex: none;
+        }
+
+        .main-column {
+            flex: 1;
+        }
+
+        .diary {
+            padding: 20px;
+            background: rgba(76, 65, 100, 0.2470588235);
+            border: 1px solid #5e5d66;
+            box-shadow: 0 0 20px #1c1e2e inset;
+        }
+
+        @media screen and (max-width: 650px) {          
+            .diary-link {
+                margin-bottom: 0;
+            }
+
+            .columns {
+                display: block;
+                margin: 10px;
+            }
+
+            .sub-column {
+                width: 100%;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2px;
+                margin: 10px 0;
+            }
+        }
+
+        @media screen and (max-width: 400px) {
+            .sub-column {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media screen and (max-width: 300px) {
+            .sub-column {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>第26更新 熱と光の花が咲く</h1>
+        <div class="columns">
+            <section class="sub-column">
+                
+                <a href="./1.html" class="diary-link">第1更新</a>
+                
+                <a href="./3.html" class="diary-link">第3更新</a>
+                
+                <a href="./4.html" class="diary-link">第4更新</a>
+                
+                <a href="./5.html" class="diary-link">第5更新</a>
+                
+                <a href="./6.html" class="diary-link">第6更新</a>
+                
+                <a href="./7.html" class="diary-link">第7更新</a>
+                
+                <a href="./8.html" class="diary-link">第8更新</a>
+                
+                <a href="./9.html" class="diary-link">第9更新</a>
+                
+                <a href="./10.html" class="diary-link">第10更新</a>
+                
+                <a href="./11.html" class="diary-link">第11更新</a>
+                
+                <a href="./12.html" class="diary-link">第12更新</a>
+                
+                <a href="./13.html" class="diary-link">第13更新</a>
+                
+                <a href="./14.html" class="diary-link">第14更新</a>
+                
+                <a href="./15.html" class="diary-link">第15更新</a>
+                
+                <a href="./16.html" class="diary-link">第16更新</a>
+                
+                <a href="./17.html" class="diary-link">第17更新</a>
+                
+                <a href="./18.html" class="diary-link">第18更新</a>
+                
+                <a href="./19.html" class="diary-link">第19更新</a>
+                
+                <a href="./20.html" class="diary-link">第20更新</a>
+                
+                <a href="./21.html" class="diary-link">第21更新</a>
+                
+                <a href="./22.html" class="diary-link">第22更新</a>
+                
+                <a href="./23.html" class="diary-link">第23更新</a>
+                
+                <a href="./24.html" class="diary-link">第24更新</a>
+                
+                <a href="./25.html" class="diary-link">第25更新</a>
+                
+                <a href="./26.html" class="diary-link">第26更新</a>
+                
+                <a href="./27.html" class="diary-link">第27更新</a>
+                
+                <a href="./28.html" class="diary-link">第28更新</a>
+                
+                <a href="./29.html" class="diary-link">第29更新</a>
+                
+            </section>
+            <section class="main-column">
+                <div class="diary">
+                    　榮花の刀『火樹銀花』は、形なきものにも傷を創り傷口に熱を持たせる呪具である。<br>　それは、怪異や封印の呪術とて例外ではない。<br>　仰け反るように倒れた珠緒の内から、怨敵たる狐の怪異が咆哮を上げて煙のように月夜に昇った。傷を負った狐が彼方此方をのたうち回るが、囲った『夜花』の檻は獣を逃がさない。<br><br>　封が斬られたのだ。珠緒には、封印の呪術が施されていた。8年前のあの日に突如消えたものが珠緒の魂に封じられていた。<br>　月を仰いだまま、利き手の指を折り曲げ拳銃の形を作る。指鉄砲を天に向ける。<br>　榮花の剣技の一つ、『<ruby>引撫子<rp>(</rp><rt>ひきなでしこ</rt><rp>)</rp></ruby>』は刀身の物理的な干渉を消失させる。形あるものに切創を齎さぬために、局所的な集中と呪力の媒介を要する奥義である。<br>　珠緒の肉体に負傷は無い。榮花の妙技は、封印と中の狐だけを焼き斬った。<br><br>　8年越しの技。榮花に取っては、もしかするとつい最近の記憶と変わらない技。<br>　憧れた男の、今も生き続ける技。<br>　珠緒を見事生かしてみせた技。<br>　珠緒は、技を決めてくれた榮花が最高に誇らしくて堪らない。<br>　指先に呪力の奔流を向かわせ、彩焔の火球を膨らませる。蓄積させた特大級の呪力が破裂する前に、照準を合わせた。<br>　彩焔の火術──『<ruby>天撫子<rp>(</rp><rt>あまなでしこ</rt><rp>)</rp></ruby>』を、狐目掛けて発射する。<br><br>「咲き乱れろ！」<br><br>　星の弾けるような音が轟く。夜空に、熱と光の花が咲き誇った。<br><br><hr class="message-hr"><br><br><br>「じゃあ、答え合わせを始めようか」<br><br>　琰は珠緒の夢にて、そのように切り出し語り始めた。<br>　どれだけの答えを求めるかを最初に問われ、珠緒は「全部」と希望したら、躊躇いの無い欲を張った返事に琰はまた笑い声を返した。<br><br>「では。まずは、改めて自己紹介を。私は君達に流れる炎の血筋、その化身と言って良い。血が流れている限り私が私である証は絶えず、血が流れている上でなら私はどこにでも現れる。けれど。私と話せる者は限られる」<br><br>　神様みたいだ、と珠緒が言うと琰はあー、とか、うー、とか曖昧に唸る。どうやら謙遜をしているらしい。<br><br>「昔、人の沢山死んだ時代。ある男が祈りを込めて花火を上げたのさ。どうかこの村の犠牲者を慰めてはくれないかと。この先、厄災や悪疫が降りかかることなかれと。悪いものを追い払うために祈りを捧げたわけだ。今のように華々しいものではなかったけれど、原初の私はそこに打ち上げられたとされている。元は名も無き光だった」<br><br>　やっぱり神様の生い立ちみたいだ。それを伝えると琰はまた唸る。<br>　人間めいた反応に、珠緒は少し楽しくなった。<br><br>「男の祈りは届いた。炎にね、まじないが宿ったんだ。それを君達は呪力と呼ぶ。それが私の始まり。不作の続いた地には生命が戻り、その地には風に運ばれた撫子の花が咲いた」<br><br>　霊山の家紋は、撫子と花火を合わせた紋だ。紋の由来となる逸話と琰の話はよく似ていた。<br>　紋が出来た時期はこの話の出来事より後だろうが、珠緒やその兄妹も上の世代からこの逸話を教えられている。<br><br>「珠緒が彩焔と呼ぶ、この炎は祈りの形。悪しきものを焼き尽くす炎に、様々な願いが寄り合わさって極彩色を与えた」<br><br>　彩焔が揺れる。祈りの煌めきは、水面に綺麗な反照を漂わせていた。<br><br>「本来なら、現に出づることなどない夢の産物。君がそれを手にすることができたのは……神様の気まぐれとでも呼ぶのがいい」<br><br>　琰は神様ではないのかと珠緒は聞いたが、やはり否定が返る。定義の問題ではなく、本人の拘りによって。<br>　曰く、「任意に力を与えたり、意図して奇跡を起こすことはできないから」らしい。<br>　珠緒からすればこの夢で話せるだけで十分神と言えそうなものだが。<br><br>「私は君達の炎の血を抱く者なら、誰でも会える可能性はある。けれど、それは稀な話で、多くは記憶に残らない。故に名も必要としていない」<br><br>　霊山の血は、己の存在であり証明だと彼女は語る。<br>　珠緒は、霊山家と共に在る彼女が誰にも覚えられていないことを少し寂しく思った。<br>　人の道を歩めるように、彼女自身が会う人々を近付け過ぎないようにしていることも。<br><br>「琰とは、<ruby>玉<rp>(</rp><rt>ぎょく</rt><rp>)</rp></ruby>の名だ。私は君の──珠緒の夢に現れたから、私は琰と名乗った。その緒に結ばれた<ruby>玉<rp>(</rp><rt>ぎょく</rt><rp>)</rp></ruby>の一つとして」<br><br>　自分の名に合わせてくれたのだ、と珠緒は気づく。字は、琰が念のようなもので教えてくれた。<br><br>「さて、ここからが珠緒の知りたい最近の話。炎だけであれば、これは指向性の伴わない力の塊だ。これが物の怪を前にして拒絶の焔となったのは、珠緒の願い」<br><br>　彩焔の軌道は生き物のように時に自由に、奔放に動き、変化する。<br>　制御が狂う前は、珠緒の意思に応じて軌道も思い通りに描かれたものだった。この極彩色が人の心と深く通じている故に、反映されていたのだろう。<br><br>「君の焔はあの物の怪の身を焦がしたが、滅ぼすには至らなかった。余程力ある物の怪なのか……しぶといものだね」<br><br>　狐の怪異が祓えていなかったことを、珠緒は此処で知る。<br>　兄を奪い、自分や家族を苦しめた仇がまだ生きている。看過できない話だ。<br><br>「残された君の<ruby>兄君<rp>(</rp><rt>あにぎみ</rt><rp>)</rp></ruby>もまた、最期を告げる刃を向けるには焔の中で血を流し過ぎていた」<br><br>　緊張が走る。狐の爪にに切り付けられ、血を流していた兄の姿が鮮明に思い出された。<br>　琰は、珠緒が落ち着くまで待ってくれた。夢の中なのに気づけば体に力が入っている。<br>　だが、逃げたくない。<br><br>「私が彼に会ったのは、その時。白昼夢、今際の際の幻、陽炎……彼に取ってどのように表現するのが正しいだろうね？　ともかく、私と彼は会った訳だよ」<br><br>　自分の限界を超えて溢れ続けた異能が引き合わせたのではないかと琰は推察する。<br>　強い想いと共に広がった焔が、榮花の抱く血と混ざり合った結果ではないかと。<br><br>「彼は、言った。私が誰でも構わない。自分は長くないだろうから、あれを打ち倒してくれと。彼に私の素性を吟味する余裕は無かったね」<br><br>　切なる願いに胸が締め付けられる。榮花は、約束通りに狐を“何とかする”つもりでいたのだ。<br><br>「私は、言った。あれを灰に変えることは難しい。封じることくらいなら叶うだろうと。君の兄君は願い、私は叶えた。但し、私は直接手を出すことはできないから……封じる作法だけを教え、彼自身が大量にあった拒絶の焔を用いて、物の怪とその領域を封じた。君の中に」<br>「え？　……俺？」<br><br>　当時の省察もそこそこに、素っ頓狂な声が珠緒から上がった。<br><br>「そう。君の、中にある。君の魂という、物質的な領域を離れた位相に。君の焔で包んだからね。還る先もそのようになった」<br>「そんなこと、あるんですか」<br>「あってしまったね。異なる魂、どころか異界がまるごと魂の中に入るなんて私も驚いたけれど。君が力の強い子だから、かな」<br><br>　琰は湖に相応しい声で涼しげに笑っている。笑い事ではないのだが。<br>　珠緒の魂に、あの狐とその異界が封じられていたらしい。天樹から異界の反応が突然消えたことは聞いていたが、それが自分の中に隠されたとは思いも寄らない。<br><br>「しかし、だ。人を呪わば穴二つという言葉、わかるかな。呪いとは失敗すれば返って来る。狐の物の怪は、悪足掻きをした。封じられる前に君の兄君を呪い、道連れにしたんだ」<br>「俺の魂広くないですか？」<br>「広かったんだねえ」<br><br>　榮花も入っていたらしい。<br>　琰は湖に似つかわしく呑気な声で言う。先程から真面目な話をしているのは違いないのだが、縁側で茶でも啜っているかのような落ち着きだ。<br>　対して珠緒の中はウィークリーマンションでも経営したら儲かりそうな盛況ぶりだ。庭に山が付いてお得。<br><br>「兄君は取り込まれた代わりに、その存在を君の中で留めた。しかし、時をも超えたその在り方は<ruby>現世<rp>(</rp><rt>うつしよ</rt><rp>)</rp></ruby>の常軌を逸してしまった。そして彼は、狐に他言無用の呪いを受け、封印に関する記憶を奪われた」<br>「奪われた？」<br><br>　榮花は、あの異界での顛末を憶えていない。封印の話も琰に聞くまで一切上がらなかった。<br>　うん、と琰は短く肯定して続ける。<br><br>「封じられた獣が兄君にできる手出しも限られてはいたのだろう。直接手を下すことはできなかったが、檻の錠を破壊させるために小細工をした」<br>「その、小細工っていうのは」<br>「兄君は、錠の役割を担っている。それを理解して、獣は外の者が錠を壊すように仕向けた」<br><br>　榮花を殺すと、狐が蘇る。珠緒は榮花を祓おうとしている天樹が脳裏に過ぎった。<br><br>「君の隣へ出て来たのは封印が緩んだ証だろう。あと少し……彼が息絶えれば、獣は今に解き放たれ君の魂を喰い破るだろうね」<br>「……エーカ兄が、生き続けたら？」<br>「少しは延びるだろうが、既に緩み始めている封印だ。君の心を蝕んだ獣が、不意を衝いて出てくるだろう。不慣れな即席の封で8年ならば、よく保っている方だよ」<br><br>　珠緒の中の疑問が答とそれぞれ紐付けられ、繋がった。<br>　信用に欠ける榮花も。狐の再来を思い起こすような悪夢も。疑念を育み、榮花を討たせ、珠緒を内から喰らうための下拵えだった。<br><br>「……さて。これで一通り話した。珠緒。君は、どうする？」<br><br>　すべてを聞き終えても、珠緒には特に変わった変化は起きなかった。目覚めた時や夢を思い出した時、将来的に祟りを受ける懸念はある。琰に頼めば忘れる方法も見繕ってくれるかもしれない。<br>　だが、引き返すという手は珠緒には無かった。<br><br>「俺は、この夢を持ち帰る！　彩焔は、よくないものから守ってくれる祈りの焔だから」<br><br>　良い話を聞けた。　珠緒は確信して宣言した。<br><br>「そう。……私は、君の無事を祈っているよ」<br>「大丈夫。琰は何も悪い事してない。俺は、ちょっと夢を見ただけだからさ」<br><br>　これは、良い夢だ。そう思えば、彼女を悪者にしないことぐらいは叶う気がした。<br><br>「俺、帰ってエーカ兄の呪いを解くよ。そんで、今度こそ狐を祓う。だから、えーっと……」<br><br>　格好つけようとして、思考の間がふわりと空く。<br><br>「他言無用には他言無用！　『ナイショ』の儀式で奪られた記憶の解呪をする！」<br><br><hr class="message-hr"><br><br><br>　空に夜の静寂が戻った頃、水でできた心臓が草原に落ちて来た。落下しても衝撃で割れることなく形を保っている。これが核なのだろう。<br>　結界の守りにより再生の兆しは無さそうだ。核を破壊すれば怪異は消滅する。<br><br>「これで、合ってたか？」<br><br>　刀を収めた榮花が月光を遮り珠緒の顔を覗き込む。<br><br>「合ってたよ」<br><br>　榮花に欠けたものを珠緒が秘して渡す。これを以て、奪われた記憶の解呪とする。<br>　他言無用の『ナイショ』の大作戦は確と榮花に繋がり、取り戻した記憶は成すべきことを悟らせた。<br>　上手くいった。珠緒は緊張の糸が切れて脱力していた。天樹の前で榮花が珠緒に斬り掛かっていたら、その場で即処分も有り得ただろう。<br><br>「珠緒、よく気づいたな」<br>「うーん、神様のお告げってやつ？」<br>「何それ、そんなのあったの？」<br>「良い夢を見れるおまじないがあるんだよお。エーカ兄も今度体験してみなよ」<br><br>　起き上がりながら笑う。<br>　夢屋に行けば彼本人が記憶を取り戻すような夢を見せる相談も出来たのだろう。巧妙に隠された他言無用の呪いが再び忘却させたかもしれないが。<br><br>「さて。この核……このまま斬りたいトコだけど、全部知ってんのはこいつだけなんだよなあ。こいつにゃたっぷり俺の疑いを弁明してもらわなきゃならないし……どうしたもんかな」<br>「人間やめるからだよお〜」<br>「やめてねえし。歳取るの遅れただけだっつの。つかそれもこいつの所為だからね！？」<br><br>　珠緒は笑ってしまった。普通、人間は歳を取るのが遅れることはない。<br>　狐の核を感慨深く見遣る。<br><br>「桔梗院と……あとテン兄と喜楽里ちゃんに相談しよっかあ」<br>「天樹はこういうの得意そうだからわかるけど。喜楽里もできるようになったんだ？」<br>「喜楽里ちゃん、お母さんに稽古つけられたらしいから……」<br>「あっ。そういう感じになったんだ？」<br><br>　霊山家の母、霊山<ruby>雅<rp>(</rp><rt>みやび</rt><rp>)</rp></ruby>は蠱惑術使いの退魔師である。<br>　得手とする術が支配や魅了による行動阻害、その他感情操作であることから、噂好きな田舎の片端ではよく人柄や馴れ初めについてあらぬ誤解を受ける。実際には天然気味で純朴な人間だし、父の秋水とは見合いですらなく純愛による結婚らしい。「ハートが燃え上がった」とは本人の弁だ。<br>　さておき。喜楽里も多少、母と同じ術の類を扱えるようになったということである。<br><br>「想像つかないなあ。俺の脳内では小三で止まってるんだけど」<br>「めちゃくちゃ可愛いから心臓発作起こさないよう覚悟した方がいい」<br>「マジで？」<br><br>　これからのことを考える。<br>　まずは戻って天樹に思い切り叱られて、今日のことを弁解して、ヒイワシ君に謝って、喜楽里に狐を躾てもらって、桔梗院に報告して、狐の管理を手伝ってもらって、両親に連絡を取って──すぐ浮かぶだけでも、こんなにやる事がある。<br>　それで、この話がうまく収まったのなら。次に向くべきは未だ解決していないこの街の大異変だ。未曾有の脅威、陽桜異界は今も表世界の侵蝕を続けている。<br><br>　自分や叔父や兄妹みんなが、肩を並べて立ち向かう。<br>　そんな、いつか夢見た未来を珠緒は想像した。<br>　そしてそれはきっと、すぐそこにある。
+                </div>
+            </section>
+        </div>
+    </main>
+</body>
+</html>

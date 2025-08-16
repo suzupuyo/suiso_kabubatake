@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>柊鬼商店街より、あいを込めて | 第15更新 | 作戦番号377 霊山珠緒</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=Shippori+Mincho+B1:wght@600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'BIZ UDPGothic', sans-serif;
+        }
+
+        html, body {
+            background: #021825;
+            height: 100%;
+            line-height: 1.4;
+            font-size: 15px;
+        }
+
+        main {
+            max-width: 1000px;
+            padding: 20px 0;
+            margin: 0 auto;
+            min-height: 100%;
+            background: #2a3146;
+            box-shadow: 0 0 15px inset rgba(36, 38, 44, 0.801), 0 0 10px rgba(0, 0, 0, 0.2);
+            color: #ebeae5;
+        }
+
+        b {
+            font-weight: bold;
+            color: rgb(247, 175, 41);
+        }
+
+        .larger {
+            font-size: min(120%, 3rem);
+        }
+
+        .smaller {
+            font-size: max(90%, 0.3rem);
+        }
+
+        .strike {
+            text-decoration: line-through;
+        }
+
+        .underline {
+            text-decoration: underline;
+        }
+
+        .italic {
+            font-style: italic;
+        }
+
+        .bold {
+            font-weight: bold;
+        }
+
+        .message-hr {
+            margin: 20px 0;
+            border: none;
+            border-top: 1px dotted rgb(188, 187, 194);
+        }
+
+        .dice {
+            font-weight: bold;
+            color: #f3a16a;
+        }
+
+        .dice.d100:before {
+            content: '';
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            position: relative;
+            top: 1px;
+            background: url('./images/d100.png');
+            background-size: cover;
+            margin: 0 1px;
+        }
+
+        .dice.d6:before {
+            content: '';
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            position: relative;
+            top: 1px;
+            background: url('./images/d6.png');
+            background-size: cover;
+            margin: 0 1px;
+        }
+
+        .cutin {
+            display: block;
+            margin: 0 auto;
+            max-height: 150px;
+            max-width: min(350px, 100%);
+        }
+
+        .cutin.cutin-left {
+            margin: 0 auto 0 0;
+        }
+
+        .cutin.cutin-right {
+            margin: 0 0 0 auto;
+        }
+
+        .full-image {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+        }
+
+        .full-image.full-image-left {
+            margin: 0 auto 0 0;
+        }
+
+        .full-image.full-image-right {
+            margin: 0 0 0 auto;
+        }
+
+        .message {
+            display: flex;
+            width: fit-content;
+            background: #0004;
+            padding: 6px 10px 6px 10px;
+            border-radius: 4px;
+            align-items: center;
+            margin: 10px 0;
+        }
+
+        .message-icon-wrapper {
+            flex: none;
+            width: 60px;
+            height: 60px;
+            margin-right: 10px;
+        }
+
+        .message-icon {
+            width: 60px;
+            height: 60px;
+        }
+
+        .message-icon-noimage {
+            width: 60px;
+            height: 60px;
+            border-radius: 4px;
+            box-shadow: 0 0 2px rgba(0, 0, 0, 0.562);
+            background: no-repeat center/80% url('./images/kikyo.svg'),
+            linear-gradient(239deg, rgb(43, 58, 71), rgb(37, 49, 57));
+        }
+
+        .message-content {
+            flex: 1;
+        }
+
+        .message-name {
+            font-weight: bold;
+        }
+
+        .message-body {
+            color: rgb(235, 230, 223);
+        }
+
+        h1 {
+            margin: 0 0 20px 0;
+            display: flex;
+            align-items: center;
+            padding: 8px 20px 8px 20px;
+
+            color: rgb(38, 38, 78);
+            background: rgb(243, 236, 236);
+            font-family: 'Shippori Mincho B1', serif;
+            font-weight: 600;
+            font-size: 22px;
+            letter-spacing: -1px;
+            box-shadow: 0 0 10px rgb(8, 11, 24);
+        }
+
+        .diary-link {
+            margin-bottom: 5px;
+            display: block;
+            padding: 10px;
+            font-size: 0.9em;
+            color: rgb(241, 240, 234);
+            background-image: linear-gradient(rgb(35, 33, 51), rgb(50, 47, 70));
+            box-shadow: 0 0 15px rgba(6, 6, 17, 0.533) inset, 0 0 5px rgba(0, 0, 0, 0.2666666667);
+            border: 1px solid rgb(75, 71, 99);
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .columns {
+            display: flex;
+            margin: 20px;
+        }
+
+        .sub-column {
+            width: min(20%, 200px);
+            margin-right: 10px;
+            flex: none;
+        }
+
+        .main-column {
+            flex: 1;
+        }
+
+        .diary {
+            padding: 20px;
+            background: rgba(76, 65, 100, 0.2470588235);
+            border: 1px solid #5e5d66;
+            box-shadow: 0 0 20px #1c1e2e inset;
+        }
+
+        @media screen and (max-width: 650px) {          
+            .diary-link {
+                margin-bottom: 0;
+            }
+
+            .columns {
+                display: block;
+                margin: 10px;
+            }
+
+            .sub-column {
+                width: 100%;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2px;
+                margin: 10px 0;
+            }
+        }
+
+        @media screen and (max-width: 400px) {
+            .sub-column {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media screen and (max-width: 300px) {
+            .sub-column {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>第15更新 柊鬼商店街より、あいを込めて</h1>
+        <div class="columns">
+            <section class="sub-column">
+                
+                <a href="./1.html" class="diary-link">第1更新</a>
+                
+                <a href="./3.html" class="diary-link">第3更新</a>
+                
+                <a href="./4.html" class="diary-link">第4更新</a>
+                
+                <a href="./5.html" class="diary-link">第5更新</a>
+                
+                <a href="./6.html" class="diary-link">第6更新</a>
+                
+                <a href="./7.html" class="diary-link">第7更新</a>
+                
+                <a href="./8.html" class="diary-link">第8更新</a>
+                
+                <a href="./9.html" class="diary-link">第9更新</a>
+                
+                <a href="./10.html" class="diary-link">第10更新</a>
+                
+                <a href="./11.html" class="diary-link">第11更新</a>
+                
+                <a href="./12.html" class="diary-link">第12更新</a>
+                
+                <a href="./13.html" class="diary-link">第13更新</a>
+                
+                <a href="./14.html" class="diary-link">第14更新</a>
+                
+                <a href="./15.html" class="diary-link">第15更新</a>
+                
+                <a href="./16.html" class="diary-link">第16更新</a>
+                
+                <a href="./17.html" class="diary-link">第17更新</a>
+                
+                <a href="./18.html" class="diary-link">第18更新</a>
+                
+                <a href="./19.html" class="diary-link">第19更新</a>
+                
+                <a href="./20.html" class="diary-link">第20更新</a>
+                
+                <a href="./21.html" class="diary-link">第21更新</a>
+                
+                <a href="./22.html" class="diary-link">第22更新</a>
+                
+                <a href="./23.html" class="diary-link">第23更新</a>
+                
+                <a href="./24.html" class="diary-link">第24更新</a>
+                
+                <a href="./25.html" class="diary-link">第25更新</a>
+                
+                <a href="./26.html" class="diary-link">第26更新</a>
+                
+                <a href="./27.html" class="diary-link">第27更新</a>
+                
+                <a href="./28.html" class="diary-link">第28更新</a>
+                
+                <a href="./29.html" class="diary-link">第29更新</a>
+                
+            </section>
+            <section class="main-column">
+                <div class="diary">
+                    　珠緒は学校を移さず、暫くは陽桜市にホームステイの形を取った。職人を目指すにあたり、叔父の勤務先である蝋燭屋に通うこととなる。<br><br>　叔父の経営する蝋燭専門店『CANDLE RYOZEN』が位置する柊鬼商店街は、退魔師や友好的な怪異が店を連ねる寂れた商店街だ。閉まったシャッターが目立ち、相応に人の気配もそれほど無い。<br>　ただ、一般人向けの認識阻害の術が働いているらしく、時折人ならざる特徴を持つ者が普通に買い物をしている様子も見えた。<br><br>　珠緒は、前を行く叔父の袖を子どものように握る。<br>　自分に危害を加える怪異ではない、自分の経歴を知る退魔師はいない──頭で理解していても、すぐに克服するのは難しい。<br>　怖かった。怪異も、退魔師も。<br>　叔父は珠緒の手を取って引く。<br>　来年には高校生になるというのに、手を握られる自分は珍妙に映るかもしれない。それでもその手が有り難かった。<br>　<br>　初めて踏み入れた叔父の店で行われたのは、店の案内が中心だった。<br>　CANDLE RYOZENの表向きの姿は和蝋燭を主に売る蝋燭屋である。呪具である『夜花』もまた、和蝋燭をベースに作られている。<br>　つまるところ、叔父のような呪具職人になるには和蝋燭作りを練習することが必要だった。<br>　数々の蝋燭の並ぶ、オレンジがかった薄暗い店内の奥。蝋燭作りの工房で、珠緒は教えを受けることになる。<br><br>「上手くできた練習作は店頭に飾ろう」<br><br>　叔父はそんなことを言った。店舗スペースの入口側には、丁度外から見える窓がある。<br>　下手なものを展示していいのかと聞いたが、元々客の入りが多い方ではないから構わないらしい。<br>　売り物にはできないだろうし、和蝋燭という商品の具合がわかりそうならサンプルとして使わせてほしいとのことだった。<br><br>「気長にね。売り物になるものを作れるようになるまで3年は掛かるから」<br><br>　叔父曰く、呪具でない和蝋燭で3年だ。できるだけ3年よりも早く、売れるものを作りたいと思った。<br>　珠緒はまずは展示品の完成を目指して通い続けたが、この通うという行為自体も当時の珠緒には簡単ではない。<br>　あまり人目に付きたくなかったから、遠回りになってもできるだけ工房に近い裏口から店に出入りしていた。<br>　とは言え、このままはまずい。この世界で生きるなら人の相手ぐらいは慣れなくてはならないという危機感は珠緒も持ち合わせている。<br>　叔父は無理に表に出ることは無いと言ってくれたが、時々店の手伝いもした。<br><br>　さて、 練習を初めた蝋燭作りだが当然ながら一朝一夕で上達はしない。<br>　芯作りで巻く和紙や藺草は叔父のように綺麗にならないし、芯に蝋を掛けて太くしていく過程ではどうも蝋が均一にならず不格好だ。何より、いくらかまともと言える出来になっても時間が掛かる。<br>　これを叔父は慣れた手つきで正確に何本も作り上げるのだから凄い。<br>　本当に叔父のように作れる日は来るのだろうか。珠緒には、それが途方も無い道程に思えた。<br><br>　いつものように上手くいかない日のことだ。世間は夏に差し掛かり、日が延びつつある。<br>　珠緒は、叔父が商店街の用事で不在の間に、何処へとも決めず外へ出た。<br>　榮花が居なくなってから時間だけが過ぎて行く。沢山の厚意を受けながら何も成せぬ自分に嫌気が差したのだ。<br>　商店街の近くにある河川敷から橋を渡り、当てもなく歩き続けた。<br>　どこまで遠くへ行っても意味は無い。<br>　この辺りの人が自分のことを知らなくたって、自分や家族は自分のしたことを知っている。<br>　もしかしたら桔梗院だって知っているかもしれない。<br><br>　逃げてきたけど逃げ場が無いな。<br>　いっそ、自分が食べられてしまえば良かったのに。<br>　こんな考えはあの日の兄達の想いをすべて無碍にしている。それをそうと知りながら、自責の声はいつまでも止まない。<br>　歩き続ける内に日が傾いていた。<br>　そろそろ魑魅魍魎の蠢く逢魔ヶ刻。戻らなければ、叔父が心配する。<br>　消えてしまいたいな、なんて。よくない考えが拭えなかったからだろうか。<br>　珠緒の前に、自分の倍はあろうムササビが降り立った。<br><br>「いっ……」　<br>「おやあ！！　蝋燭屋のとこの坊やじゃありませんか！！　どうもお世話になっておりますう！！」<br><br>　叫びそうになった声が、威勢のいい声に掻き消された。えらく快活にしゃべる怪異だ。<br><br>「以前はヒトに擬態してたからわかりませんかね！　わはは！　俺、野衾のノブって言います！　俺、あすこの蝋燭すっげえ好きなんすよ！　あの蝋燭の火がね、すんごい美味しくて……」<br><br>　ノブはニコニコと目を細めてマシンガントークを続けた。このムササビ、人間以上に愛想が良い。<br>　どうやらCANDLE RYOZENの太い客と見える。自分は彼を見ていなかったけれど、彼は自分を見ていたらしい。<br><br>「これからお帰りで？　俺、雨水の旦那のとこ行くとこなんで送っていきますよ！　暗いですし！」<br>「いや、あの」<br>「よーっし！　これくらいの距離なら片腕で行けらあ！」<br><br>　返事が挟まれる余地はなく、珠緒は毛に覆われた太い腕にがっしり抱え込まれる。そして、身体が宙に浮いた。<br><br>「ふぅあああああああああ！！！！」<br><br>　常識破りの怪異の移動は、物理法則を無視してあっという間に加速する。<br>　ふたりはジェットコースターにでも乗ったみたいに風を切ってぐんぐん進み、ものの数秒で商店街の裏路地に降り立った。<br> 　珠緒は通りに二、三歩進み、へろへろになって膝から崩れ落ちる。<br><br>「珠緒君！」<br><br>　蝋燭屋の方から叔父が駆けてきた。顔には焦燥の色が見える。<br><br>「雨水の旦那！　蝋燭の補充ついで坊ちゃんお送りに参りました！」<br>「ノブさん。ありがとうね。でも、あんまり目立ちそうなことしちゃ駄目だよ」<br>「あっ、そうでした！　すみません！　でも坊ちゃんと風になってたんで多分見えません大丈夫！」<br><br>　ノブはブイサインをしている。どうも調子のいい怪異らしい。<br><br>「じゃ、自分はこれで！　また蝋燭買いに来ますね！」<br>「待ってノブさん、まだ買ってないから」<br><br>　ノブは慌ただしく買い物を済ませ、帰りは人の姿を取って立ち去った。<br>　店内に珠緒と叔父が二人、残される。<br><br>「ちょっと、休憩して帰ろうか」<br><br>　叔父は店の営業札を閉店表示にひっくり返し、中のテーブルの椅子を引いた。<br><br>「見つかってよかった。心配したよ」<br>「……すみません」<br><br>　叔父はお茶を淹れながら、珠緒に駄菓子を勧める。いつまで経っても怒ったり理由を尋ねることはしなかった。<br>　夏だと言うのに、お茶がどこまでも温かい。<br><br>「叔父さんは」<br><br>　切り出したのは珠緒の方だった。<br><br>「どうして優しくしてくれるんですか。知ってるんでしょ。俺が、……俺が、全部燃やしたこと」<br><br>　珠緒は、叔父は同情してくれているのだろうと思っている。<br>　でも、ただそればかりでは無いに決まっていた。<br>　故意でないとしても過失は過失だ。人の生死を左右するほどの。<br>　そこに対する評価は叔父にも存在する筈だから。<br>　お茶に一度口を付けて、叔父は口をく開く。<br><br>「僕に取っては、何かあっても珠緒君は可愛い甥っ子だからねぇ。例えば、仲のいい旧知の友人が居たとするよ。そういう間柄なら常に包丁を持って横に立っていたとしても」<br>「怖いよ」<br>「例えが悪かったねぇ」<br><br>　つい遮ってしまったが、叔父は無理をしているに違いない。爆弾を抱えているようなものだ。<br>　珠緒は、突き放すなら早めに言ってほしかった。<br><br>「でも、そうだな。身内贔屓もあるけれど……信用かな。僕は君のことを信じているんだと思う。きっと大丈夫って」<br><br>　叔父は優しいからそう言ってくれる。けれど珠緒は、自分で自分が信用できない。期待を裏切る気しかしなかった。<br><br>「……この世界に居るとね。どうしても、誰かが傷ついたり、居なくなったり、助けられないってことは起こる」<br><br>　そう続ける叔父は、口こそ笑顔を保っていたが、湯呑みに視線を落としていた。<br>　釣られるようにお茶に視線を落とす。幸薄そうな顔の少年が写り込んでいる。<br><br>「自分の弱さと向き合うことは、辛くて苦しいことだ。簡単なことじゃない。でも、大丈夫だよ。昔の友達も、同僚も、弟も、かみさんも、子どもも。みんな居なくなって、打ちひしがれて蝋燭作って生きてる退魔師もいるから」<br><br>　思わず珠緒が視線を上げた時、叔父は普段と変わらぬ様子でお茶を啜っていた。<br><br>「叔父さん、なんで退魔師続けてるの」<br><br>　珠緒の口から出た問いは、皮肉でも賞賛でもなく、純粋な疑問だった。<br>　叔父は穏やかに茶飲み休憩を続けている。いつもの姿そのものだ。<br><br>「どうしようもない失敗を沢山したよ。でも、誰か居なくなったら、悲しいじゃない」<br><br>　それだけ答えて、叔父は茶を飲み終えるまで何かを言うことはしなかった。<br>　珠緒は、黙ることしか出来ずにいた。<br>　やがて湯呑みが空になる。茶器を片し、叔父と並んで帰路に着く。<br><br>　薄ぼんやりとした暑さだった。<br>　道中、珠緒の目にジャンク屋で作業をしている男性の老人が目に入る。随分遅くまで作業するのだなと見ていると、一度チカリと閃光が瞬く。そして刹那の内に彼は爆炎に包まれた。<br><br>「えっ」<br><br>　珠緒は思わず足を止めた。今、何が？<br><br>「お、叔父さん、今あそこでおじいちゃんが、ば、爆発して」<br>「ああ、善海さんだね」<br><br>　何でもないことのように叔父は笑った。いや名前を訊きたい訳では無い。<br>　もう一度爆心地の方を見ると先程派手に爆発に巻き込まれた老人が何事も無かったかのように歩いている。どういう訳か無傷だ。<br><br>「怪異ではないと思うよ」<br><br>　嘘だろ。珠緒は信じられない思いで食い入るように老人を見た。<br><br>「よく作業中に爆発しちゃうんだ。人には見えないようにしてるし、周囲に支障無い範囲でしかやらないから安心していいよ」<br><br>　果たして安心できるものだろうか。<br>　この商店街には、様々な人や怪異が集う。知ってはいたが日常的に毎回爆発するような人はそうそう存在しないと珠緒は思う。<br>　叔父はこんな世界で生きてきたのか？<br>　珠緒は少しだけ、叔父の信用の意味がわかった気がした。<br><br>　翌日以降、珠緒は店に訪れる客のことを以前より見るようになった。<br>　この商店街には、本当に様々な人や怪異が集う。<br>　この商店街“そのもの”であるらしい怪異もそうだし、わざわざ人間の作る蝋燭を求めるノブもそうだし、快く売る叔父もそう。<br>　蝋燭屋の隣にある骨董屋は一家で中国から遥々来ているらしい。<br>　他にも時々しか姿を見ない店主、いつ見ても見た目が変わらない人、桔梗院に所属しない退魔師達、人と同じ食事や嗜好品を求めたり提供する怪異。<br><br>　その多様性には、人だとか怪異だとか関係無い。なんだっていい。どうあってもいい。<br>　だから珠緒は、柊鬼商店街で生きたいと願った。
+                </div>
+            </section>
+        </div>
+    </main>
+</body>
+</html>

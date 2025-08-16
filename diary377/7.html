@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>黄金の才能 | 第7更新 | 作戦番号377 霊山珠緒</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=Shippori+Mincho+B1:wght@600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'BIZ UDPGothic', sans-serif;
+        }
+
+        html, body {
+            background: #021825;
+            height: 100%;
+            line-height: 1.4;
+            font-size: 15px;
+        }
+
+        main {
+            max-width: 1000px;
+            padding: 20px 0;
+            margin: 0 auto;
+            min-height: 100%;
+            background: #2a3146;
+            box-shadow: 0 0 15px inset rgba(36, 38, 44, 0.801), 0 0 10px rgba(0, 0, 0, 0.2);
+            color: #ebeae5;
+        }
+
+        b {
+            font-weight: bold;
+            color: rgb(247, 175, 41);
+        }
+
+        .larger {
+            font-size: min(120%, 3rem);
+        }
+
+        .smaller {
+            font-size: max(90%, 0.3rem);
+        }
+
+        .strike {
+            text-decoration: line-through;
+        }
+
+        .underline {
+            text-decoration: underline;
+        }
+
+        .italic {
+            font-style: italic;
+        }
+
+        .bold {
+            font-weight: bold;
+        }
+
+        .message-hr {
+            margin: 20px 0;
+            border: none;
+            border-top: 1px dotted rgb(188, 187, 194);
+        }
+
+        .dice {
+            font-weight: bold;
+            color: #f3a16a;
+        }
+
+        .dice.d100:before {
+            content: '';
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            position: relative;
+            top: 1px;
+            background: url('./images/d100.png');
+            background-size: cover;
+            margin: 0 1px;
+        }
+
+        .dice.d6:before {
+            content: '';
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            position: relative;
+            top: 1px;
+            background: url('./images/d6.png');
+            background-size: cover;
+            margin: 0 1px;
+        }
+
+        .cutin {
+            display: block;
+            margin: 0 auto;
+            max-height: 150px;
+            max-width: min(350px, 100%);
+        }
+
+        .cutin.cutin-left {
+            margin: 0 auto 0 0;
+        }
+
+        .cutin.cutin-right {
+            margin: 0 0 0 auto;
+        }
+
+        .full-image {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+        }
+
+        .full-image.full-image-left {
+            margin: 0 auto 0 0;
+        }
+
+        .full-image.full-image-right {
+            margin: 0 0 0 auto;
+        }
+
+        .message {
+            display: flex;
+            width: fit-content;
+            background: #0004;
+            padding: 6px 10px 6px 10px;
+            border-radius: 4px;
+            align-items: center;
+            margin: 10px 0;
+        }
+
+        .message-icon-wrapper {
+            flex: none;
+            width: 60px;
+            height: 60px;
+            margin-right: 10px;
+        }
+
+        .message-icon {
+            width: 60px;
+            height: 60px;
+        }
+
+        .message-icon-noimage {
+            width: 60px;
+            height: 60px;
+            border-radius: 4px;
+            box-shadow: 0 0 2px rgba(0, 0, 0, 0.562);
+            background: no-repeat center/80% url('./images/kikyo.svg'),
+            linear-gradient(239deg, rgb(43, 58, 71), rgb(37, 49, 57));
+        }
+
+        .message-content {
+            flex: 1;
+        }
+
+        .message-name {
+            font-weight: bold;
+        }
+
+        .message-body {
+            color: rgb(235, 230, 223);
+        }
+
+        h1 {
+            margin: 0 0 20px 0;
+            display: flex;
+            align-items: center;
+            padding: 8px 20px 8px 20px;
+
+            color: rgb(38, 38, 78);
+            background: rgb(243, 236, 236);
+            font-family: 'Shippori Mincho B1', serif;
+            font-weight: 600;
+            font-size: 22px;
+            letter-spacing: -1px;
+            box-shadow: 0 0 10px rgb(8, 11, 24);
+        }
+
+        .diary-link {
+            margin-bottom: 5px;
+            display: block;
+            padding: 10px;
+            font-size: 0.9em;
+            color: rgb(241, 240, 234);
+            background-image: linear-gradient(rgb(35, 33, 51), rgb(50, 47, 70));
+            box-shadow: 0 0 15px rgba(6, 6, 17, 0.533) inset, 0 0 5px rgba(0, 0, 0, 0.2666666667);
+            border: 1px solid rgb(75, 71, 99);
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .columns {
+            display: flex;
+            margin: 20px;
+        }
+
+        .sub-column {
+            width: min(20%, 200px);
+            margin-right: 10px;
+            flex: none;
+        }
+
+        .main-column {
+            flex: 1;
+        }
+
+        .diary {
+            padding: 20px;
+            background: rgba(76, 65, 100, 0.2470588235);
+            border: 1px solid #5e5d66;
+            box-shadow: 0 0 20px #1c1e2e inset;
+        }
+
+        @media screen and (max-width: 650px) {          
+            .diary-link {
+                margin-bottom: 0;
+            }
+
+            .columns {
+                display: block;
+                margin: 10px;
+            }
+
+            .sub-column {
+                width: 100%;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2px;
+                margin: 10px 0;
+            }
+        }
+
+        @media screen and (max-width: 400px) {
+            .sub-column {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media screen and (max-width: 300px) {
+            .sub-column {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>第7更新 黄金の才能</h1>
+        <div class="columns">
+            <section class="sub-column">
+                
+                <a href="./1.html" class="diary-link">第1更新</a>
+                
+                <a href="./3.html" class="diary-link">第3更新</a>
+                
+                <a href="./4.html" class="diary-link">第4更新</a>
+                
+                <a href="./5.html" class="diary-link">第5更新</a>
+                
+                <a href="./6.html" class="diary-link">第6更新</a>
+                
+                <a href="./7.html" class="diary-link">第7更新</a>
+                
+                <a href="./8.html" class="diary-link">第8更新</a>
+                
+                <a href="./9.html" class="diary-link">第9更新</a>
+                
+                <a href="./10.html" class="diary-link">第10更新</a>
+                
+                <a href="./11.html" class="diary-link">第11更新</a>
+                
+                <a href="./12.html" class="diary-link">第12更新</a>
+                
+                <a href="./13.html" class="diary-link">第13更新</a>
+                
+                <a href="./14.html" class="diary-link">第14更新</a>
+                
+                <a href="./15.html" class="diary-link">第15更新</a>
+                
+                <a href="./16.html" class="diary-link">第16更新</a>
+                
+                <a href="./17.html" class="diary-link">第17更新</a>
+                
+                <a href="./18.html" class="diary-link">第18更新</a>
+                
+                <a href="./19.html" class="diary-link">第19更新</a>
+                
+                <a href="./20.html" class="diary-link">第20更新</a>
+                
+                <a href="./21.html" class="diary-link">第21更新</a>
+                
+                <a href="./22.html" class="diary-link">第22更新</a>
+                
+                <a href="./23.html" class="diary-link">第23更新</a>
+                
+                <a href="./24.html" class="diary-link">第24更新</a>
+                
+                <a href="./25.html" class="diary-link">第25更新</a>
+                
+                <a href="./26.html" class="diary-link">第26更新</a>
+                
+                <a href="./27.html" class="diary-link">第27更新</a>
+                
+                <a href="./28.html" class="diary-link">第28更新</a>
+                
+                <a href="./29.html" class="diary-link">第29更新</a>
+                
+            </section>
+            <section class="main-column">
+                <div class="diary">
+                    　霊山珠緒が陽桜市に来たのは高校入学の時だ。<br><br>「叔父さんのところに、行かせてください」<br><br>　珠緒は涙ながらに、叔父の元で呪具の制作を学びたいと親に懇願した。中学三年生のことである。<br>　自分に酷く失望していた。この先、人生を通して怪異と戦える自信が全く無かったのだ。<br><br>　怪異との遭遇を思うだけで手が震える。足が竦む。あれらは常軌を逸した恐ろしい災害と同等だ。<br>　親からは記憶を消して退魔の世界に関わらず生きる道も提示されていた。きっとそれが一番、心が安らぐ人生であろうことも理解した。<br>　だとしても、家族が命を懸けている世界を忘れる選択が、珠緒にはどうしても、どうしてもできなかった。<br>　自分が忘れたとして周りは覚えている。自分が忘れれば、周りは自分を忘れた人間と認知する。珠緒は自分だけが無知な人間になることをも忌避した。怪異に向き合うより恐ろしいとさえ思えた。<br><br>　叔父が差し伸べてくれた手を縋るように取り、珠緒は退魔の世界に繋がりを保ったまま家を出ることになる。<br>　支援者。退魔の世界に関わりながら、比較的生命の保証がされる道。珠緒は退魔ではなく支援の道に進むことについて、『逃げ』であるという後ろめたさを抱えながら家を出た。<br>　叔父だって呪具を作っているし、その仕事ぶりは立派だと思っている。しかし自身と叔父は比ぶべくもない。<br>　叔父は本職に比べれば活躍が少ないかもしれないが、呪具作りの傍ら時々怪異を祓いに行っている。二足の草鞋を上手に履いている努力家だ。比較するなど烏滸がましい。<br>　なにより珠緒には、後ろめたくなるだけの才能があった。<br><br>　霊山家は炎熱に纏わる呪術を代々受け継いでいる。怨念や穢れといったものを焼き払ったり、炎で囲った怪異を浄化したり、熱を付与した刀身で焼き切ったりと言ったものだ。<br>　珠緒は霊山家に伝わるそれら呪術との相性が良く、宿す力も取り分け強かった。<br>　どんな術も労せず体得し、器用に過不足無く出力を調整する。最高の形で効力を引き出すことができたのである。<br>　思念を火炎に変える術、火で結界を形成する術、体温や地熱を上下させる術、周囲の火を操り鎮火させる術……どれも珠緒は、呪具の使用をせずとも簡単にやってのけた。<br><br>　中でも特別だったのは、生き物のように自律して動く炎を生み出せたことだ。<br>　その七色の彩り豊かな炎は相伝書に記述が無く、【彩焔】の名を付けられ両親や兄弟からも素直に評価された。<br>　才能故に退魔師としての初陣も一族の中では早く、13歳にして親や兄弟と怪異の討伐をする生活が始まる。<br>　兄達が着いての仕事ではあるが、早くから活躍出来る事実は誇らしかった。これが自分の特技なのだから。そう信じて疑うことが無かった。自分はこの力で家を支えるのだと、期待に胸を膨らませた。<br>　家督を継ぐつもりも無かったために次期当主の兄に下克上なんて考えも一切無く、珠緒は健全に退魔の技を磨いた。<br>　自分を誇れて、家族にも誇ってもらえる。頼られる。自分の出来ることが分かる。それだけで心地が良かった。<br><br>　それが家を出るなど。甚だおかしな事だ。おかしな事だったのだ。<br>　今となっては、珠緒にあるものは心に欠けた技───暴れ狂う彩焔と身に余る呪力のみ。<br>　どれもこれも、昔の話だ。
+                </div>
+            </section>
+        </div>
+    </main>
+</body>
+</html>

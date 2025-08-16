@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>喜楽里のきらきら☆だいありー【令和版】／退魔師・梅影禄郎の後難 | 第28更新 | 作戦番号377 霊山珠緒</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=Shippori+Mincho+B1:wght@600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'BIZ UDPGothic', sans-serif;
+        }
+
+        html, body {
+            background: #021825;
+            height: 100%;
+            line-height: 1.4;
+            font-size: 15px;
+        }
+
+        main {
+            max-width: 1000px;
+            padding: 20px 0;
+            margin: 0 auto;
+            min-height: 100%;
+            background: #2a3146;
+            box-shadow: 0 0 15px inset rgba(36, 38, 44, 0.801), 0 0 10px rgba(0, 0, 0, 0.2);
+            color: #ebeae5;
+        }
+
+        b {
+            font-weight: bold;
+            color: rgb(247, 175, 41);
+        }
+
+        .larger {
+            font-size: min(120%, 3rem);
+        }
+
+        .smaller {
+            font-size: max(90%, 0.3rem);
+        }
+
+        .strike {
+            text-decoration: line-through;
+        }
+
+        .underline {
+            text-decoration: underline;
+        }
+
+        .italic {
+            font-style: italic;
+        }
+
+        .bold {
+            font-weight: bold;
+        }
+
+        .message-hr {
+            margin: 20px 0;
+            border: none;
+            border-top: 1px dotted rgb(188, 187, 194);
+        }
+
+        .dice {
+            font-weight: bold;
+            color: #f3a16a;
+        }
+
+        .dice.d100:before {
+            content: '';
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            position: relative;
+            top: 1px;
+            background: url('./images/d100.png');
+            background-size: cover;
+            margin: 0 1px;
+        }
+
+        .dice.d6:before {
+            content: '';
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            position: relative;
+            top: 1px;
+            background: url('./images/d6.png');
+            background-size: cover;
+            margin: 0 1px;
+        }
+
+        .cutin {
+            display: block;
+            margin: 0 auto;
+            max-height: 150px;
+            max-width: min(350px, 100%);
+        }
+
+        .cutin.cutin-left {
+            margin: 0 auto 0 0;
+        }
+
+        .cutin.cutin-right {
+            margin: 0 0 0 auto;
+        }
+
+        .full-image {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+        }
+
+        .full-image.full-image-left {
+            margin: 0 auto 0 0;
+        }
+
+        .full-image.full-image-right {
+            margin: 0 0 0 auto;
+        }
+
+        .message {
+            display: flex;
+            width: fit-content;
+            background: #0004;
+            padding: 6px 10px 6px 10px;
+            border-radius: 4px;
+            align-items: center;
+            margin: 10px 0;
+        }
+
+        .message-icon-wrapper {
+            flex: none;
+            width: 60px;
+            height: 60px;
+            margin-right: 10px;
+        }
+
+        .message-icon {
+            width: 60px;
+            height: 60px;
+        }
+
+        .message-icon-noimage {
+            width: 60px;
+            height: 60px;
+            border-radius: 4px;
+            box-shadow: 0 0 2px rgba(0, 0, 0, 0.562);
+            background: no-repeat center/80% url('./images/kikyo.svg'),
+            linear-gradient(239deg, rgb(43, 58, 71), rgb(37, 49, 57));
+        }
+
+        .message-content {
+            flex: 1;
+        }
+
+        .message-name {
+            font-weight: bold;
+        }
+
+        .message-body {
+            color: rgb(235, 230, 223);
+        }
+
+        h1 {
+            margin: 0 0 20px 0;
+            display: flex;
+            align-items: center;
+            padding: 8px 20px 8px 20px;
+
+            color: rgb(38, 38, 78);
+            background: rgb(243, 236, 236);
+            font-family: 'Shippori Mincho B1', serif;
+            font-weight: 600;
+            font-size: 22px;
+            letter-spacing: -1px;
+            box-shadow: 0 0 10px rgb(8, 11, 24);
+        }
+
+        .diary-link {
+            margin-bottom: 5px;
+            display: block;
+            padding: 10px;
+            font-size: 0.9em;
+            color: rgb(241, 240, 234);
+            background-image: linear-gradient(rgb(35, 33, 51), rgb(50, 47, 70));
+            box-shadow: 0 0 15px rgba(6, 6, 17, 0.533) inset, 0 0 5px rgba(0, 0, 0, 0.2666666667);
+            border: 1px solid rgb(75, 71, 99);
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .columns {
+            display: flex;
+            margin: 20px;
+        }
+
+        .sub-column {
+            width: min(20%, 200px);
+            margin-right: 10px;
+            flex: none;
+        }
+
+        .main-column {
+            flex: 1;
+        }
+
+        .diary {
+            padding: 20px;
+            background: rgba(76, 65, 100, 0.2470588235);
+            border: 1px solid #5e5d66;
+            box-shadow: 0 0 20px #1c1e2e inset;
+        }
+
+        @media screen and (max-width: 650px) {          
+            .diary-link {
+                margin-bottom: 0;
+            }
+
+            .columns {
+                display: block;
+                margin: 10px;
+            }
+
+            .sub-column {
+                width: 100%;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2px;
+                margin: 10px 0;
+            }
+        }
+
+        @media screen and (max-width: 400px) {
+            .sub-column {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media screen and (max-width: 300px) {
+            .sub-column {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>第28更新 喜楽里のきらきら☆だいありー【令和版】／退魔師・梅影禄郎の後難</h1>
+        <div class="columns">
+            <section class="sub-column">
+                
+                <a href="./1.html" class="diary-link">第1更新</a>
+                
+                <a href="./3.html" class="diary-link">第3更新</a>
+                
+                <a href="./4.html" class="diary-link">第4更新</a>
+                
+                <a href="./5.html" class="diary-link">第5更新</a>
+                
+                <a href="./6.html" class="diary-link">第6更新</a>
+                
+                <a href="./7.html" class="diary-link">第7更新</a>
+                
+                <a href="./8.html" class="diary-link">第8更新</a>
+                
+                <a href="./9.html" class="diary-link">第9更新</a>
+                
+                <a href="./10.html" class="diary-link">第10更新</a>
+                
+                <a href="./11.html" class="diary-link">第11更新</a>
+                
+                <a href="./12.html" class="diary-link">第12更新</a>
+                
+                <a href="./13.html" class="diary-link">第13更新</a>
+                
+                <a href="./14.html" class="diary-link">第14更新</a>
+                
+                <a href="./15.html" class="diary-link">第15更新</a>
+                
+                <a href="./16.html" class="diary-link">第16更新</a>
+                
+                <a href="./17.html" class="diary-link">第17更新</a>
+                
+                <a href="./18.html" class="diary-link">第18更新</a>
+                
+                <a href="./19.html" class="diary-link">第19更新</a>
+                
+                <a href="./20.html" class="diary-link">第20更新</a>
+                
+                <a href="./21.html" class="diary-link">第21更新</a>
+                
+                <a href="./22.html" class="diary-link">第22更新</a>
+                
+                <a href="./23.html" class="diary-link">第23更新</a>
+                
+                <a href="./24.html" class="diary-link">第24更新</a>
+                
+                <a href="./25.html" class="diary-link">第25更新</a>
+                
+                <a href="./26.html" class="diary-link">第26更新</a>
+                
+                <a href="./27.html" class="diary-link">第27更新</a>
+                
+                <a href="./28.html" class="diary-link">第28更新</a>
+                
+                <a href="./29.html" class="diary-link">第29更新</a>
+                
+            </section>
+            <section class="main-column">
+                <div class="diary">
+                    <span class="larger">5月x日　晴れ！</span><br><br><br><br>　ずっと消息不明だったお兄ちゃんが帰ってきました。<br>　数日経って、一緒にバイトすることになりました。<br><br><section class="message"><div class="message-icon-wrapper"><img class="message-icon" src="./images/377/84779097-003e-48ea-ba96-c145d3fe5b6e.png"></div><div class="message-content"><div class="message-name">霊山榮花</div><div class="message-body">「……今日はお客さん来ないなあ」</div></div></section><section class="message"><div class="message-icon-wrapper"><img class="message-icon" src="./images/377/c24232dd-eb6d-45c7-ba8b-e301329473bc.png"></div><div class="message-content"><div class="message-name">霊山喜楽里</div><div class="message-body"><span class="bold">（……なんで！？）</span></div></div></section><br><br>　喜楽里は陽桜市に来てから休日の午前中、お小遣い稼ぎのために叔父さんの店のお手伝いをしています。<br>　今日はなんと！　その行方も消息もなんもかんも無かったエーカ兄と二人でお店を回すことになりました！<br><br>　いや、なんと！　じゃないんだよ。色々と急な話過ぎるんだよ。<br>　テン兄もタマ兄も叔父さんも全然そういう話してなかったじゃん…！<br><br><br><section class="message"><div class="message-icon-wrapper"><img class="message-icon" src="./images/377/11769bed-3543-4dbe-8890-4ac22c7ff0aa.png"></div><div class="message-content"><div class="message-name">霊山喜楽里</div><div class="message-body">（喜楽里、小学校低学年以来のお兄ちゃんと何話せばいいかわからないよお！！）</div></div></section><br><br>　でも隣にいると嬉しさより緊張が勝っちゃいます。不思議だね。<br>　驚き過ぎてそれどころじゃないって感じ。大惨事。<br><br>　エーカ兄こと霊山榮花は喜楽里の１１コ上↑　のお兄ちゃん！<br>　１１ってすごいね。両手で足りない。<br><br>　なのに今日初めて会ったエーカ兄は喜楽里と生き別れになった時（小学校低学年の頃！）の記憶そのまんまで、ヘンな気持ち。<br>　本当なら27～28？歳のアラサーなのにさ。２～３コ上くらいにしか見えない。<br><br>　8年ぶりの感動の再会というやつだけど、いざ会ってみると戸惑いが強い！<br>　あんまりにも記憶そのままのエーカ兄だし、喜楽里だけが変わってて、でもエーカ兄の知ってる喜楽里は小学生だし、もうちょいピュアな少女の心を忘れぬ喜楽里ちゃんを推して行った方がいいかなとか悩んだりして……。<br><br><br><section class="message"><div class="message-icon-wrapper"><img class="message-icon" src="./images/377/f4892666-ec1c-4c7f-89cb-dc5dc2cf79e5.png"></div><div class="message-content"><div class="message-name">霊山榮花</div><div class="message-body">「喜楽里、大きくなったよねー。高校生かあ。今の高校生って何流行ってんの？」</div></div></section><section class="message"><div class="message-icon-wrapper"><img class="message-icon" src="./images/377/c24232dd-eb6d-45c7-ba8b-e301329473bc.png"></div><div class="message-content"><div class="message-name">霊山喜楽里</div><div class="message-body">「う、うん。動画撮影……トカ……？」</div></div></section><section class="message"><div class="message-icon-wrapper"><img class="message-icon" src="./images/377/84779097-003e-48ea-ba96-c145d3fe5b6e.png"></div><div class="message-content"><div class="message-name">霊山榮花</div><div class="message-body">「撮る側！？　見る方でなく！？」</div></div></section><section class="message"><div class="message-icon-wrapper"><img class="message-icon" src="./images/377/11769bed-3543-4dbe-8890-4ac22c7ff0aa.png"></div><div class="message-content"><div class="message-name">霊山喜楽里</div><div class="message-body">「で、でも喜楽里の周りでの話だから……！　見る方が好きな人も居るよ……！」</div></div></section><br><br>　ぎこちない会話をしてしまいました。喜楽里にあるまじきトークスキルの消滅！<br><br><br><section class="message"><div class="message-icon-wrapper"><img class="message-icon" src="./images/377/553ff788-0ffd-4d42-9032-4967b64a21a0.png"></div><div class="message-content"><div class="message-name">霊山榮花</div><div class="message-body">「確かに動画撮って投稿したり配信する人は居るけど。<br>　そんなポピュラーな感じになったの……？」</div></div></section><section class="message"><div class="message-icon-wrapper"><img class="message-icon" src="./images/377/043ee91a-62d9-4629-a90e-c2dd852c08aa.png"></div><div class="message-content"><div class="message-name">霊山喜楽里</div><div class="message-body">「う、うん。割と……SNSに上げられるしアプリも色々あるし……」</div></div></section><section class="message"><div class="message-icon-wrapper"><img class="message-icon" src="./images/377/d534912d-5377-4c38-a7f8-d10fbd610ddd.png"></div><div class="message-content"><div class="message-name">霊山榮花</div><div class="message-body">「……顔出し……？」</div></div></section><section class="message"><div class="message-icon-wrapper"><img class="message-icon" src="./images/377/e3fa805d-d745-4bab-8789-ecc041031d17.png"></div><div class="message-content"><div class="message-name">霊山喜楽里</div><div class="message-body">「喜楽里はそういうのは友達にしか見えないところで上げてる……」</div></div></section><section class="message"><div class="message-icon-wrapper"><img class="message-icon" src="./images/377/a69d88fd-6b42-4f26-8e6c-dcf05a1382f7.png"></div><div class="message-content"><div class="message-name">霊山榮花</div><div class="message-body">「ほっ……」</div></div></section><section class="message"><div class="message-icon-wrapper"><img class="message-icon" src="./images/377/d0bbbc46-a663-4581-a4e8-edb5919203dc.png"></div><div class="message-content"><div class="message-name">霊山喜楽里</div><div class="message-body">「テン兄がそのあたりうるさいから……」</div></div></section><section class="message"><div class="message-icon-wrapper"><img class="message-icon" src="./images/377/a225b02c-8813-4c0d-8a4b-d8207d8cd1a4.png"></div><div class="message-content"><div class="message-name">霊山榮花</div><div class="message-body">「天樹が！？　ふふっ……」</div></div></section><br><br>　喜楽里、エーカ兄の中で女子高生の代表になってしまったかもしれん。<br>　でもエーカ兄、ちょっとおじいちゃんみたいで可愛かったな。<br><br>　エーカ兄は居なかった間の現世の話がわからないんだって。<br>　そしたら浦島太郎だよね。<br>　喜楽里は小学校も中学校も卒業したし、タマ兄もテン兄もお酒飲めるようになったし。<br><br>　みんなは、本当はもっと前にエーカ兄のこと見つけてたみたい。<br><br>　どうやら喜楽里の知らないところで『ナイショ』の作戦会議してたと見えます。<br>　むむむ。仲間外れ…。怒っちゃうもんね。<br><br>　でも、「本物かどうかわからないから」とかで喜楽里には教えてくれなかったんだって。<br>　心配してくれたのはわかるけどちょっと悔しいです。ぷんぷん。<br><br>　エーカ兄はタマ兄が助けたと聞きました。タマ兄はやっぱり格好いい！<br>　エーカ兄はやっぱり悪い狐の怪異にさらわれていたのです。<br><br>　喜楽里がかっこよくエーカ兄を助けるハズだったのにな。<br>　もっとつよつよ退魔師になりたいな。<br><br>　なんて書いてみたけど、生きてただけで嬉しかったりして。<br><br>　よかったなー。<br><br>　その狐ちゃんは核に制御系の呪術を掛けてテン兄や喜楽里も管理することになったんだけど……。<br>　喜楽里でいいのかな？　責任重大！<br><br>　大事なところは流石にまだ喜楽里には早いけど、手伝えることはあるからテン兄が経験積めってさ。<br>　きっと強い怪異だよね。みんなに酷いことした奴だし手は抜きたくないな。<br><br>　でも、狐ちゃんどこで見るんだろ。実家？　それともCANDLE RYOZENの看板狐に？<br>　そしたらエーカ兄やタマ兄と火花を散らす日々が……！？<br><br>　エーカ兄は今、叔父さんの店の二階に住んでるんだって。<br>　そんな近くに居たの！？<br><br>　やっぱり怒っちゃお。ぷんぷん。<br>　喜楽里は侘びマカロン買って貰ってもいいよね？<br><br>　エーカ兄もずっと閉じ込められてた（猟奇的事件……！）みたいだからエーカ兄の分も買わせちゃお。<br>　エーカ兄は甘いのもイケるもんね。<br><br>　あ！　ケーキも買おう！　今までのエーカ兄の誕生日のお祝いケーキ！<br><br>　ハッピバースデーはいっぱいお祝いしたいもんね。<br><br><hr class="message-hr"><br><br><br><br>退魔師・梅影禄郎の後難<br><br><br><br>　それは霊山天樹が飲みに誘った時のことである。<br><br>「御守り、返します」<br><br>　彼は梅影を桔梗院の息が掛かった居酒屋に呼び出して、いつか渡した錦守を返還した。<br><br>「以前、手伝っていただいた一件が解決しましたので。原因の怪異を無力化し、霊山榮花の正体や真相の解明が一気に進んだんです。御守りのご加護あってのことかもしれませんね」<br><br>　霊山天樹からそれを聞いた梅影は、胸のつかえが取れた心地がした。<br>　霊山榮花に尋問して以降、彼らと接触はなかったものの頭からは離れずにいた案件だった。丸く収まったのなら何よりだ。<br><br>「梅影さんにはご迷惑をお掛けしました。今日は自分の奢りとさせてください。お世話になりました」<br><br>　そう謝辞を述べる霊山天樹は、梅影に初めて穏やかな表情を見せていた。<br>　この家族には随分振り回されたが、彼の吉報は梅影も素直に喜ばしく思う。<br>　家族絡みの話だ。きっと、大きな問題が解決したのだろう。悪い方に転がらずに済んで、彼の凝りも解れたようだし、自分の首も繋がりそうだ。<br>　それならと返された錦守を受け取り、祝福を贈って乾杯する。<br><br>　梅影は此度の酒の席で、想像より可愛げある霊山天樹の顔を知った。無愛想だと思っていた彼は健啖家でよく食べるし、20代の若者らしい文句や願望を零すような人間だった。<br>　この世界で何かを抱え、変わる人間は少なくない。<br><br>　梅影は密かに彼らの今後の安寧を祈り、霊山家の騒動との別れを告げた。<br><br><br>　のだが。<br><br><br><br>「すみません。なんで僕、ご家族の中に一人混ざっているんでしょう」<br><br>　霊山天樹と祝杯を飲み交わした翌週のことである。<br>　梅影禄郎は、陽桜異界の探索班を組んだ霊山4兄妹に招集を受けていた。<br><br>　異界探索は本部の円滑なナビゲーションや報告処理などタスクやリソース管理などの都合を加味して一班に5人前後の構成を推奨されている。つまるところ、5人で行くなら梅影一人残して残りが全て霊山の人間である。<br>　怪異の疑いを受けていた霊山榮花までもが作戦に参加しているのには驚いた。<br><br>「異界における兄の挙動の監察と報告の必要がありまして。梅影さんなら信用に足る人物としてお願いさせていただきました。身内外の人間の方が、信用を得られますので」<br>「天樹君」<br>「はい」<br>「いい性格してますね」<br>「お褒めに与り光栄です」<br>「褒めてないんだよなあ」<br><br>　霊山天樹は、頭の堅そうな第一印象に反して割とちゃっかりしている。梅影はなんだかんだ彼に乗せられてしまうのだが、恐らく乗せることが出来る人間を見て選んでいるのだろうと感じていた。<br><br>「兄の監察と並行になりますが、今回の探索ポイントは俊敏に疾走するマグロの怪異の群れが報告に上がっています。気を引き締めて行きましょう」<br>「待ってそれ僕初耳なんですが」<br><br>　向かった先の住宅地で、本当にマグロが大量発生していたから梅影は愕然とした。頭を抱えたい思いだ。<br>　百鬼夜行など起きようものならこれが世に溢れ出るのだろうか。末恐ろしい話である。<br><br>　自身の刀や呪術とマグロの逞しい巨躯がぶつかり合う剣戟の中、梅影は霊山天樹の兄弟に視線を巡らせた。<br><br>　霊山喜楽里。末の女子高生。主に行動阻害や言霊による能力補助など援護系の術を使用する。三男に対し甘い。<br>　霊山珠緒。小心者で呪力が強い三男。数ヶ月前に見た時に比べると呪力を制御して術を行使出来るようになっている。時々爆発しているが、その火力はやはり頼もしい。<br>　そして、霊山榮花。過去から来た霊山家の長男。聞いた話によると、時空を超えた訳ではなく肉体の時が停止したまま月日を越していたらしい。<br><br>　梅影は霊山榮花の正体を探る都合の上で、無抵抗の彼を傷つけた経歴がある。まともに顔向けする気にはなれず、霊山榮花からは距離を取っていた。<br><br>　しかし霊山榮花はと言えば、入り乱れるマグロの中で迷いなく梅影に背中を預けた。<br>　天樹の指示とは言え、己に刃を向けた相手に簡単に背を見せるのは人が良いのか抜けているのか困惑するところではある。<br>　だが、その思い切りの良さが梅影の躊躇いを拭い去った。<br>　此処は戦場。奇しくも呪具の刀を持ち、前線を守る者同士。<br>　防衛線を後ろへ退かせぬよう、ただ役割に徹した刃であれば良い。<br><br>　影が湧き立ち、剣舞が行き交い、花火のような炎が各所で弾け飛ぶ。後方から末妹の(主に三男に対しての)黄色い声援が元気よく飛ぶので、珍妙な景色はまるで祭りを彷彿とさせた。<br>　案外賑やかなこの家族が嫌いじゃない自分に気づいて、可笑しなことを考えているなと自嘲する。<br><br>　活け造りとマグロステーキが一通り核を砕かれ消滅した頃、へとへとになった梅影が顔を上げると、霊山兄妹は黙して並んでいた。<br>　彼らは揃って、忍び手で拍手と礼をする。神道の作法だろう。<br>　彼らの家は神社ではなかったと記憶しているが、穢れを祓い清めるような教えは受けているのかもしれない。<br><br>　以前同行した時は気づかなかったが、もしかすると余裕のある時はああして祓った怪異を見送っているのだろうか。<br><br>　四者四様の背が並んでいる姿は、梅影が話し掛けて崩すのを躊躇ってしまうような、粛然たる佇まいをしていた。<br>
+                </div>
+            </section>
+        </div>
+    </main>
+</body>
+</html>

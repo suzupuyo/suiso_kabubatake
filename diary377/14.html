@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>喜楽里のきらきら☆だいありー | 第14更新 | 作戦番号377 霊山珠緒</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=Shippori+Mincho+B1:wght@600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'BIZ UDPGothic', sans-serif;
+        }
+
+        html, body {
+            background: #021825;
+            height: 100%;
+            line-height: 1.4;
+            font-size: 15px;
+        }
+
+        main {
+            max-width: 1000px;
+            padding: 20px 0;
+            margin: 0 auto;
+            min-height: 100%;
+            background: #2a3146;
+            box-shadow: 0 0 15px inset rgba(36, 38, 44, 0.801), 0 0 10px rgba(0, 0, 0, 0.2);
+            color: #ebeae5;
+        }
+
+        b {
+            font-weight: bold;
+            color: rgb(247, 175, 41);
+        }
+
+        .larger {
+            font-size: min(120%, 3rem);
+        }
+
+        .smaller {
+            font-size: max(90%, 0.3rem);
+        }
+
+        .strike {
+            text-decoration: line-through;
+        }
+
+        .underline {
+            text-decoration: underline;
+        }
+
+        .italic {
+            font-style: italic;
+        }
+
+        .bold {
+            font-weight: bold;
+        }
+
+        .message-hr {
+            margin: 20px 0;
+            border: none;
+            border-top: 1px dotted rgb(188, 187, 194);
+        }
+
+        .dice {
+            font-weight: bold;
+            color: #f3a16a;
+        }
+
+        .dice.d100:before {
+            content: '';
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            position: relative;
+            top: 1px;
+            background: url('./images/d100.png');
+            background-size: cover;
+            margin: 0 1px;
+        }
+
+        .dice.d6:before {
+            content: '';
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            position: relative;
+            top: 1px;
+            background: url('./images/d6.png');
+            background-size: cover;
+            margin: 0 1px;
+        }
+
+        .cutin {
+            display: block;
+            margin: 0 auto;
+            max-height: 150px;
+            max-width: min(350px, 100%);
+        }
+
+        .cutin.cutin-left {
+            margin: 0 auto 0 0;
+        }
+
+        .cutin.cutin-right {
+            margin: 0 0 0 auto;
+        }
+
+        .full-image {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+        }
+
+        .full-image.full-image-left {
+            margin: 0 auto 0 0;
+        }
+
+        .full-image.full-image-right {
+            margin: 0 0 0 auto;
+        }
+
+        .message {
+            display: flex;
+            width: fit-content;
+            background: #0004;
+            padding: 6px 10px 6px 10px;
+            border-radius: 4px;
+            align-items: center;
+            margin: 10px 0;
+        }
+
+        .message-icon-wrapper {
+            flex: none;
+            width: 60px;
+            height: 60px;
+            margin-right: 10px;
+        }
+
+        .message-icon {
+            width: 60px;
+            height: 60px;
+        }
+
+        .message-icon-noimage {
+            width: 60px;
+            height: 60px;
+            border-radius: 4px;
+            box-shadow: 0 0 2px rgba(0, 0, 0, 0.562);
+            background: no-repeat center/80% url('./images/kikyo.svg'),
+            linear-gradient(239deg, rgb(43, 58, 71), rgb(37, 49, 57));
+        }
+
+        .message-content {
+            flex: 1;
+        }
+
+        .message-name {
+            font-weight: bold;
+        }
+
+        .message-body {
+            color: rgb(235, 230, 223);
+        }
+
+        h1 {
+            margin: 0 0 20px 0;
+            display: flex;
+            align-items: center;
+            padding: 8px 20px 8px 20px;
+
+            color: rgb(38, 38, 78);
+            background: rgb(243, 236, 236);
+            font-family: 'Shippori Mincho B1', serif;
+            font-weight: 600;
+            font-size: 22px;
+            letter-spacing: -1px;
+            box-shadow: 0 0 10px rgb(8, 11, 24);
+        }
+
+        .diary-link {
+            margin-bottom: 5px;
+            display: block;
+            padding: 10px;
+            font-size: 0.9em;
+            color: rgb(241, 240, 234);
+            background-image: linear-gradient(rgb(35, 33, 51), rgb(50, 47, 70));
+            box-shadow: 0 0 15px rgba(6, 6, 17, 0.533) inset, 0 0 5px rgba(0, 0, 0, 0.2666666667);
+            border: 1px solid rgb(75, 71, 99);
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .columns {
+            display: flex;
+            margin: 20px;
+        }
+
+        .sub-column {
+            width: min(20%, 200px);
+            margin-right: 10px;
+            flex: none;
+        }
+
+        .main-column {
+            flex: 1;
+        }
+
+        .diary {
+            padding: 20px;
+            background: rgba(76, 65, 100, 0.2470588235);
+            border: 1px solid #5e5d66;
+            box-shadow: 0 0 20px #1c1e2e inset;
+        }
+
+        @media screen and (max-width: 650px) {          
+            .diary-link {
+                margin-bottom: 0;
+            }
+
+            .columns {
+                display: block;
+                margin: 10px;
+            }
+
+            .sub-column {
+                width: 100%;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2px;
+                margin: 10px 0;
+            }
+        }
+
+        @media screen and (max-width: 400px) {
+            .sub-column {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media screen and (max-width: 300px) {
+            .sub-column {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>第14更新 喜楽里のきらきら☆だいありー</h1>
+        <div class="columns">
+            <section class="sub-column">
+                
+                <a href="./1.html" class="diary-link">第1更新</a>
+                
+                <a href="./3.html" class="diary-link">第3更新</a>
+                
+                <a href="./4.html" class="diary-link">第4更新</a>
+                
+                <a href="./5.html" class="diary-link">第5更新</a>
+                
+                <a href="./6.html" class="diary-link">第6更新</a>
+                
+                <a href="./7.html" class="diary-link">第7更新</a>
+                
+                <a href="./8.html" class="diary-link">第8更新</a>
+                
+                <a href="./9.html" class="diary-link">第9更新</a>
+                
+                <a href="./10.html" class="diary-link">第10更新</a>
+                
+                <a href="./11.html" class="diary-link">第11更新</a>
+                
+                <a href="./12.html" class="diary-link">第12更新</a>
+                
+                <a href="./13.html" class="diary-link">第13更新</a>
+                
+                <a href="./14.html" class="diary-link">第14更新</a>
+                
+                <a href="./15.html" class="diary-link">第15更新</a>
+                
+                <a href="./16.html" class="diary-link">第16更新</a>
+                
+                <a href="./17.html" class="diary-link">第17更新</a>
+                
+                <a href="./18.html" class="diary-link">第18更新</a>
+                
+                <a href="./19.html" class="diary-link">第19更新</a>
+                
+                <a href="./20.html" class="diary-link">第20更新</a>
+                
+                <a href="./21.html" class="diary-link">第21更新</a>
+                
+                <a href="./22.html" class="diary-link">第22更新</a>
+                
+                <a href="./23.html" class="diary-link">第23更新</a>
+                
+                <a href="./24.html" class="diary-link">第24更新</a>
+                
+                <a href="./25.html" class="diary-link">第25更新</a>
+                
+                <a href="./26.html" class="diary-link">第26更新</a>
+                
+                <a href="./27.html" class="diary-link">第27更新</a>
+                
+                <a href="./28.html" class="diary-link">第28更新</a>
+                
+                <a href="./29.html" class="diary-link">第29更新</a>
+                
+            </section>
+            <section class="main-column">
+                <div class="diary">
+                    『今日は、三番目のお兄ちゃんが、ねつを出しました。一番上のお兄ちゃんはまだかえってきません。とてもかなしいです。』<br><br>　生活ノート。それは児童が日々を健全に過ごせているかを知る宿題の一つだ。<br>　学校側で家庭や学校生活に問題を抱えていないか知る手掛かりでもある。<br><br>「喜楽里。これを書くのは……やめようか」<br><br>　二番目の兄の天樹は、横から覗いていた文面を見て喜楽里を制した。見張っていたのだ。こういう事があるから。<br><br>　喜楽里には、三人の兄が居た。<br>　上から11も上の榮花(やさしい！)。<br>　10離れた天樹(いじわる！)。<br>　6つ上の珠緒(おもしろい！)。<br><br>　内二人は、書いた文章の通りだ。<br>　天樹は抑揚無く、真面目な顔で喜楽里の記録を止めている。<br>　なんとなく、いつもの消しカスをやたら飛ばしてくるような悪戯とは違う気がした。<br><br>「これも、ナイショの話？」<br>「……そう」<br><br>　喜楽里は、不服だった。<br>　学校ではなんでも書いてねと言われる。家では、『ナイショの話』は書くなと言われる。どっちが偉いのだろう。<br>　喜楽里は、口をへの字に曲げてノートの字を消した。<br>　結局、天樹が見ていない内に同じ内容を書いて提出したのだが、先生から返ってきたノートのコメントは頓珍漢なものだった。<br><br>　────テン兄が何かしたんだ。<br><br>　どうして家族のことも書いちゃいけないのだろう。遊んだとか、喧嘩したとかは書いていいのに。自分はこんなにさみしいのに。<br>　喜楽里は、長男の榮花が帰ってこないことは聞かされていた。そこについては、嘘偽り無く伝えられていた。とても悲しいことだ。<br>　どうしたってしょんぼりしたし、もしかしたら帰ってこないのかもしれない、もう会えないと思うと涙も出る。<br>　けれど、正直を言えばそのことよりも大人達の顔の方が怖かった。<br>　子どもだって、暗くて、よくないことが起きていることくらいはすぐわかる。<br>　でも、喜楽里にはその詳細が分からない。聞いたってまともに説明してくれない。<br><br>　そんな、納得のできない暗い気持ちを幾許か抱えて学校に通い続ける。<br>　いつも通り友達がいて、授業が始まって、給食を食べて、掃除をして、さようなら。そんな日々を繰り返す。<br>　兄が居なくなった実感は湧かない。学校に兄は居ないから、当たり前だが。<br>　そういう『ナイショの話』は学校の誰かに話そうとしても、喜楽里は秘匿のまじないが掛けられていたから、肝心なことは伝えられなかった。<br><br>「ねえ、菊星」<br><br>　喜楽里は下校中、宙に向けて呼び掛けた。<br><br>「菊星ってば！」<br>「お嬢様、人前で話してはなりませぬ」<br><br>　ゆらりと式神の鬼火が姿を見せる。<br><br>「私と話すことは『ナイショの話』なのですよ」<br>「だれもいないじゃん」<br><br>　集団下校の輪から離れ、家はすぐそこ。聞いて困る人なんか居ないと喜楽里は主張する。<br><br>「なんでみんなナイショにしたがるの？」<br>「お嬢様。これはお家のお仕事のご都合なのです」<br>「しごとなんかしたくないもん」<br>「お家の方々は、皆々様の平和を守るために働いておられます。このナイショの話を破ると……お嬢様のお友達も危ないことに遭ってしまうやもしれませぬ。だから、家以外の者にはナイショなのです」<br>「花火でへーわ、守れるのかなあ」<br><br>　霊山家は花火師の家だ。表立った仕事と言えばそちらが浮かぶ。どうにも納得できない。<br>　けれど、友達が危ない目に遭うのはいやだ。<br><br>「お嬢様。アレです。日曜の朝にやっている番組、わかりますか」<br><br>　喜楽里は頷いた。<br>　正義のヒーロー、正義のヒロイン。そういう人々が変身して世界の平和を脅かす敵と戦って平和を守るアレとかソレ。<br>　小学校に入ったら観るのも卒業しなくちゃならないのだろうか？　そんな心配していたのだが、なんだかんだで観るのを止められない。同級生に視聴者も多かったので、小学三年生になっても安心して視聴し続けている。<br><br>「彼らにも表向きの姿と、平和を守る時の姿があります」<br>「ふむ」<br>「そして。先日お嬢様がご覧になっておられた回……人知れず平和を守る戦士たちを憎く思った怪人が、戦士のお友達を狙って襲いましたね」<br>「あっ……」<br><br>　喜楽里は気が付いた。<br>　自分の家族は……もしかしたら変身できるのかもしれない。<br>　つまり、変身できる人間の友達は危ないのだ。<br><br>「あれが、現実に起こります。そういうことなのです。誰がどこで聞いてるかわかりませぬ。ですから、ナイショのためにお嬢様も早くお家に……」<br>「んー……」<br>「お嬢様？」<br><br>　思案げに動かない喜楽里に菊星が不安気に揺らめく。<br><br>「でも、あの子はあの回でへんしんするなかまになったし……おそわれた子は味方になってもらえるかも」<br><br>　ぬうん。菊星が呻いた。<br><br>「お嬢様。毎年番組が変わり、それを全てご覧になっているお嬢様ならおわかりかと思いますが……全員は変身して戦えないのです。一つの話にしか出てこない人、ご家族、学校の先生……そういう戦士達を取り巻く人々の中には必ず。変身ができず、場合によっては何も知らない人間がいます。必ずです」<br>「……たしかに！」<br><br>　ようやく納得してくれたらしい喜楽里に菊星は安堵した様子で続けた。<br><br>「霊山家の皆様は、敵と戦う力を持っておられます」<br>「喜楽里も？」<br>「……はい。きっと、いずれは兄君と同じように戦うことになります」<br><br>　菊星が間を置いたのが気になったが、それより喜楽里には今の話が朗報だった。よくわからない、誰にも自慢できないナイショの習い事や修行もこの為だったのだ。<br>　自分、変身できるかもしれない。<br>　変身してきらきらのドレスを纏ってかわいいマスコット達と協力しながら悪い奴をやっつけることになるのかもしれない。<br><br>「エーカ兄のこと、ナイショなのって」<br>「榮花様の行方がわからなくなったのは、敵に襲われたためです。天樹様と珠緒様はそこに責任を感じておられます。私めが付いておりながら、誠に不甲斐なく……」<br>「なるほどお……」<br><br>　喜楽里の中ですべてが繋がった。<br>　エーカ兄は悪いやつにさらわれたのだ。　<br>　テン兄は悪いやつに心を取られたのだ。<br>　タマ兄は悪いやつに病気を掛けられたのだ。<br><br>「じゃあ、喜楽里がみんなを助けてあげないとだ！」<br>「お嬢様？」<br><br>　意気込んで家へと入る喜楽里を菊星が慌てて追う。<br>　これが、喜楽里が退魔師を志した日だった。<br><br>「テン兄！　これにナイショのまほうかけて！」<br><br>　喜楽里は天樹に真新しいノートを見せて、『ナイショの話』を隠すためのお願いをした。ノートの表紙には『きらきら☆だいありー』と書かれている。<br>　ダイアリーとは日記を指すことを喜楽里は漫画で学習していた。<br><br>　ナイショの魔法。それは天樹の認識阻害の呪術を指す。<br>　意味は伝わっていたようであるが、天樹は怪訝そうな顔をした。<br><br>「なんで……？」<br>「先生に見せられないナイショの話、こっちにいっぱい書くの。わすれないように！　エーカ兄がいなくなってさみしいこととか、タマ兄がねつ出したこととか、テン兄が元気ないこととか、ぜんぶ！」<br><br>　暫しの沈黙が空いた。その意味がわからなかったから、喜楽里は自分が変なことを言ったのかと不安になる。<br>　天樹も菊星も、大人はみんな急に静かになるからやめてほしい。<br>　<br>「三日坊主で終わるんじゃないのか」<br><br>　ふっと息を零して揶揄うような返事が返る。<br>　天樹は眉尻を下げて、眉間に皺を寄せて、けれども目を細めて口の端を上げていた。困らせてしまったのだろうか。<br>　でも、どうだ。テン兄がいじわるを言った。自分はいじわるなテン兄の心を少し取り戻してみせたぞ。<br>　喜楽里はこれで良いのだと確信した。<br><br>「三日よりはつづけるもん」<br><br>　得意気に言う喜楽里に天樹は頷きだけを返して、ノートを手に取り背を向けた。<br>　一応誰かに見せたりするなよ。そう言って天樹は顔を背けながら認識阻害の掛かったノートを返す。<br>　きらきら☆だいありーは輝かしい幕開けを果たした。<br><br>　時が経つにつれて、次第に認識の間違いは正しい退魔師像へ矯正されていったのだけれど、喜楽里の気持ちは変わらない。<br><br>　榮花は消えてしまった。<br>　天樹は変わってしまった。<br>　珠緒は出て行ってしまった。<br><br>　だから、もう皆が苦しまなくて済むように自分は頑張るのだ。
+                </div>
+            </section>
+        </div>
+    </main>
+</body>
+</html>

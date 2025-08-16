@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>礎 | 第8更新 | 作戦番号377 霊山珠緒</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=Shippori+Mincho+B1:wght@600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'BIZ UDPGothic', sans-serif;
+        }
+
+        html, body {
+            background: #021825;
+            height: 100%;
+            line-height: 1.4;
+            font-size: 15px;
+        }
+
+        main {
+            max-width: 1000px;
+            padding: 20px 0;
+            margin: 0 auto;
+            min-height: 100%;
+            background: #2a3146;
+            box-shadow: 0 0 15px inset rgba(36, 38, 44, 0.801), 0 0 10px rgba(0, 0, 0, 0.2);
+            color: #ebeae5;
+        }
+
+        b {
+            font-weight: bold;
+            color: rgb(247, 175, 41);
+        }
+
+        .larger {
+            font-size: min(120%, 3rem);
+        }
+
+        .smaller {
+            font-size: max(90%, 0.3rem);
+        }
+
+        .strike {
+            text-decoration: line-through;
+        }
+
+        .underline {
+            text-decoration: underline;
+        }
+
+        .italic {
+            font-style: italic;
+        }
+
+        .bold {
+            font-weight: bold;
+        }
+
+        .message-hr {
+            margin: 20px 0;
+            border: none;
+            border-top: 1px dotted rgb(188, 187, 194);
+        }
+
+        .dice {
+            font-weight: bold;
+            color: #f3a16a;
+        }
+
+        .dice.d100:before {
+            content: '';
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            position: relative;
+            top: 1px;
+            background: url('./images/d100.png');
+            background-size: cover;
+            margin: 0 1px;
+        }
+
+        .dice.d6:before {
+            content: '';
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            position: relative;
+            top: 1px;
+            background: url('./images/d6.png');
+            background-size: cover;
+            margin: 0 1px;
+        }
+
+        .cutin {
+            display: block;
+            margin: 0 auto;
+            max-height: 150px;
+            max-width: min(350px, 100%);
+        }
+
+        .cutin.cutin-left {
+            margin: 0 auto 0 0;
+        }
+
+        .cutin.cutin-right {
+            margin: 0 0 0 auto;
+        }
+
+        .full-image {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+        }
+
+        .full-image.full-image-left {
+            margin: 0 auto 0 0;
+        }
+
+        .full-image.full-image-right {
+            margin: 0 0 0 auto;
+        }
+
+        .message {
+            display: flex;
+            width: fit-content;
+            background: #0004;
+            padding: 6px 10px 6px 10px;
+            border-radius: 4px;
+            align-items: center;
+            margin: 10px 0;
+        }
+
+        .message-icon-wrapper {
+            flex: none;
+            width: 60px;
+            height: 60px;
+            margin-right: 10px;
+        }
+
+        .message-icon {
+            width: 60px;
+            height: 60px;
+        }
+
+        .message-icon-noimage {
+            width: 60px;
+            height: 60px;
+            border-radius: 4px;
+            box-shadow: 0 0 2px rgba(0, 0, 0, 0.562);
+            background: no-repeat center/80% url('./images/kikyo.svg'),
+            linear-gradient(239deg, rgb(43, 58, 71), rgb(37, 49, 57));
+        }
+
+        .message-content {
+            flex: 1;
+        }
+
+        .message-name {
+            font-weight: bold;
+        }
+
+        .message-body {
+            color: rgb(235, 230, 223);
+        }
+
+        h1 {
+            margin: 0 0 20px 0;
+            display: flex;
+            align-items: center;
+            padding: 8px 20px 8px 20px;
+
+            color: rgb(38, 38, 78);
+            background: rgb(243, 236, 236);
+            font-family: 'Shippori Mincho B1', serif;
+            font-weight: 600;
+            font-size: 22px;
+            letter-spacing: -1px;
+            box-shadow: 0 0 10px rgb(8, 11, 24);
+        }
+
+        .diary-link {
+            margin-bottom: 5px;
+            display: block;
+            padding: 10px;
+            font-size: 0.9em;
+            color: rgb(241, 240, 234);
+            background-image: linear-gradient(rgb(35, 33, 51), rgb(50, 47, 70));
+            box-shadow: 0 0 15px rgba(6, 6, 17, 0.533) inset, 0 0 5px rgba(0, 0, 0, 0.2666666667);
+            border: 1px solid rgb(75, 71, 99);
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .columns {
+            display: flex;
+            margin: 20px;
+        }
+
+        .sub-column {
+            width: min(20%, 200px);
+            margin-right: 10px;
+            flex: none;
+        }
+
+        .main-column {
+            flex: 1;
+        }
+
+        .diary {
+            padding: 20px;
+            background: rgba(76, 65, 100, 0.2470588235);
+            border: 1px solid #5e5d66;
+            box-shadow: 0 0 20px #1c1e2e inset;
+        }
+
+        @media screen and (max-width: 650px) {          
+            .diary-link {
+                margin-bottom: 0;
+            }
+
+            .columns {
+                display: block;
+                margin: 10px;
+            }
+
+            .sub-column {
+                width: 100%;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2px;
+                margin: 10px 0;
+            }
+        }
+
+        @media screen and (max-width: 400px) {
+            .sub-column {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media screen and (max-width: 300px) {
+            .sub-column {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>第8更新 礎</h1>
+        <div class="columns">
+            <section class="sub-column">
+                
+                <a href="./1.html" class="diary-link">第1更新</a>
+                
+                <a href="./3.html" class="diary-link">第3更新</a>
+                
+                <a href="./4.html" class="diary-link">第4更新</a>
+                
+                <a href="./5.html" class="diary-link">第5更新</a>
+                
+                <a href="./6.html" class="diary-link">第6更新</a>
+                
+                <a href="./7.html" class="diary-link">第7更新</a>
+                
+                <a href="./8.html" class="diary-link">第8更新</a>
+                
+                <a href="./9.html" class="diary-link">第9更新</a>
+                
+                <a href="./10.html" class="diary-link">第10更新</a>
+                
+                <a href="./11.html" class="diary-link">第11更新</a>
+                
+                <a href="./12.html" class="diary-link">第12更新</a>
+                
+                <a href="./13.html" class="diary-link">第13更新</a>
+                
+                <a href="./14.html" class="diary-link">第14更新</a>
+                
+                <a href="./15.html" class="diary-link">第15更新</a>
+                
+                <a href="./16.html" class="diary-link">第16更新</a>
+                
+                <a href="./17.html" class="diary-link">第17更新</a>
+                
+                <a href="./18.html" class="diary-link">第18更新</a>
+                
+                <a href="./19.html" class="diary-link">第19更新</a>
+                
+                <a href="./20.html" class="diary-link">第20更新</a>
+                
+                <a href="./21.html" class="diary-link">第21更新</a>
+                
+                <a href="./22.html" class="diary-link">第22更新</a>
+                
+                <a href="./23.html" class="diary-link">第23更新</a>
+                
+                <a href="./24.html" class="diary-link">第24更新</a>
+                
+                <a href="./25.html" class="diary-link">第25更新</a>
+                
+                <a href="./26.html" class="diary-link">第26更新</a>
+                
+                <a href="./27.html" class="diary-link">第27更新</a>
+                
+                <a href="./28.html" class="diary-link">第28更新</a>
+                
+                <a href="./29.html" class="diary-link">第29更新</a>
+                
+            </section>
+            <section class="main-column">
+                <div class="diary">
+                    　天樹が珠緒の作戦行動に許可を出した翌日、CANDLE RYOZENに喜楽里が来ていた。<br>　休憩室で二人座ってお茶を飲みながら兄妹の親睦を深め合う……のがいつもの流れだが。昨日の今日では互いに心持ちが違った。<br><br>「喜楽里ちゃん、なんでこっち来てるって教えてくれなかったの〜？　俺ホワイトデーのお返し実家に送っちゃったよお」<br>「ごめんね、タマ兄。心配すると思ったから。この間も怒ってたでしょ？」<br><br>　珠緒はいつものように景気よく迎えようとした。けれど喜楽里は申し訳なさそうに、顔を俯かせている。伏した長い睫毛から瞳が覗いていた。<br>　作戦への参加を隠していたことへの罪悪感を抱いているのだろう、とは珠緒にも見て取れた。そこについて責め立てる意図は無かったので、急ぎ弁解を図る。<br><br>「心配はするよ。けど、怒ったのは俺が勘違いしたのもあるし、心の準備が出来てなかったんだと、思う。俺、喜楽里ちゃんが本当に大事なんだ。……よく考えず怒ったのは、良くなかったけど」<br><br>　思えば今年のバレンタインデーに、喜楽里はチョコレートを珠緒へ直接渡しに来ていた。あの時既にこちらに来ていたのではないか。<br>　もしかしたら本当はその時に言うつもりでいたのかもしれない。<br>　喜楽里が仄かに綻ばせた口を再び開く。<br> <br>「言えなくてごめんね。ありがと。タマ兄の気持ち、嬉しい。でも、テン兄も同じなんだよ」<br>「え？」<br><br>　慈しむような表情をするものだから、いつの間にこんな顔を出来るようになったのかと離れた時間に思いを馳せる。<br>　喜楽里は16歳になった。珠緒の認識は家を出た時の9歳のまま止まっていたのかもしれない。<br><br>「テン兄も心配してるんだよ。タマ兄のこと」<br>「ええ？」<br><br>　思いがけない一言に珠緒はたじろぐ。<br><br>「どうかなあ。ありゃ恨んでんじゃないかなあ」<br><br>　少なくとも珠緒はそう思っている。当たりの強さだとか、自分の話を聞き入れてくれないところに意地を感じていた。<br>　嫌いではないのだがすっかりまともに話せなくなった。<br>　喜楽里がきょとんと眉を上げて見ていた事に気づき、珠緒は安い泣き真似を始める。<br><br>「まったく昔は可愛い顔でニコニコ笑ってたのにあんなに怖い顔になって……。子どもの時はお風呂も一緒に入ってたのにい。よよよ」<br><br>　愚痴を軽口に変えようと、めそめそと滑稽に演技した。妹には楽しいお兄ちゃんでありたい。<br><br>「タマ兄、テン兄が恨んでると思ってるの？」<br><br>　喜楽里は不思議そうに問う。珠緒の悪ふざけを歯牙にもかけなかった。完全に滑った、もとい狙いが外れた珠緒は居住まいを正す。<br>　何か、妙な事を言ってしまっただろうか。<br><br>「うーん。うん。仕方ないと思うんだよね。恨んでも」<br>「そんなことないよ。テン兄タマ兄のこと好きだよ」<br>「うそぉ」<br>「本当だよ。家を出たことは多分、そこまで気にしてなくて……家を出るくらい退魔をしたがらなかったタマ兄が、また退魔師してるから心配なんだよ」<br>「んー……」<br><br>　どうだろう。心配と言われても会う度に粗塩をぶつけるような対応をされているからピンと来ない。<br>　それに本家から自分のような恵まれた能力を持つ人間が生まれたことは望ましい出来事のはずだ。<br>　戦力としては勿論、他の退魔師に名を売れる点でも有益だろう。仕事ができればそれだけ稼げて家が育つ。分家の呪具の売れ行きだって伸びたかもしれない。<br>　それが心が折れたから前線から退くなんて話、当主からすれば面白くはないのではないか。そんな考えが珠緒からは拭えない。<br><br>「でもタマ兄、本当に大丈夫？　喜楽里も心配だよ。だって、怖いんでしょ？」<br><br>　今日の喜楽里は、どうも真面目だ。無心で可愛がらせてくれそうにはない。<br>　妹に心配をさせたくはないが、あの醜態を晒して心配するなと言う方が難しい。<br><br>「うーん。それはね、やっぱ怖いよねえ」<br>「喜楽里は無理することないと思うな」<br><br>　珠緒も正直に、真面目に話をすることにした。妹の隠しごとに不平を申し立てるなら、自分だって明らかにしなければ対等ではない。<br><br>「でも、あの中に取り込まれた人がさ」<br><br>　聖句のように唱える言葉は、珠緒の退魔師をする上での導だ。<br><br>「助けてほしいのに誰にも気づかれなかったら、悲しいじゃん？」<br><br>　その導は、珠緒の中で礎となっている。恐怖や絶望の暗闇に呑まれても輝き続ける灯火に相違ない。<br>　その火はどんなに心が萎んで冷えきっても、内から燃やし焦がし足を前に進めさせる。<br><br>「一人でも多く助けたいんだ。俺にはそれができるはずだから」<br><br>　制御の狂った呪術も、叔父に稽古を付けてもらってから少しはまともに使えるようになった。嘗ての輝かしい腕には到底届かないが。<br><br>「だからタマ兄は辞めないの？」<br>「うん。俺は一度、逃げちゃったけど。いつまでもこのままなの、嫌なんだ」<br><br>　やりたくない、辞めたくない。<br>　忘れてしまいたい、覚えていたい。<br>　帰りたい、進みたい。<br>　相反する心はいつもある。弱さはいつまでも拭い去れない。<br>　けれど、弱さと共に歩いて行けるくらいにはなった。<br><br>「きっと、ずっと待ってるから」<br><br>　もう7年になる。珠緒は22歳になった。<br>　霊山家長男・霊山<ruby>榮花<rp>(</rp><rt>えいか</rt><rp>)</rp></ruby>は、7年前から未だ見つからない。
+                </div>
+            </section>
+        </div>
+    </main>
+</body>
+</html>
