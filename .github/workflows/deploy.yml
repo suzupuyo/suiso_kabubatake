@@ -12,6 +12,9 @@ permissions:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -20,9 +23,9 @@ jobs:
         with:
           node-version: '20'
       - name: Install dependencies
-        run: npm install
+        run: npm ci 
       - name: Build Eleventy
-        run: npx @11ty/eleventy
+        run: npm run build
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifact
@@ -30,4 +33,5 @@ jobs:
         with:
           path: '_site' # 11tyの出力フォルダ名
       - name: Deploy to GitHub Pages
+        id: deployment
         uses: actions/deploy-pages@v4
