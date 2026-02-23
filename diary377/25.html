@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>ムーンライトダンシングディスコ～導火線に火を点けろ～ | 第25更新 | 作戦番号377 霊山珠緒</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=Shippori+Mincho+B1:wght@600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'BIZ UDPGothic', sans-serif;
+        }
+
+        html, body {
+            background: #021825;
+            height: 100%;
+            line-height: 1.4;
+            font-size: 15px;
+        }
+
+        main {
+            max-width: 1000px;
+            padding: 20px 0;
+            margin: 0 auto;
+            min-height: 100%;
+            background: #2a3146;
+            box-shadow: 0 0 15px inset rgba(36, 38, 44, 0.801), 0 0 10px rgba(0, 0, 0, 0.2);
+            color: #ebeae5;
+        }
+
+        b {
+            font-weight: bold;
+            color: rgb(247, 175, 41);
+        }
+
+        .larger {
+            font-size: min(120%, 3rem);
+        }
+
+        .smaller {
+            font-size: max(90%, 0.3rem);
+        }
+
+        .strike {
+            text-decoration: line-through;
+        }
+
+        .underline {
+            text-decoration: underline;
+        }
+
+        .italic {
+            font-style: italic;
+        }
+
+        .bold {
+            font-weight: bold;
+        }
+
+        .message-hr {
+            margin: 20px 0;
+            border: none;
+            border-top: 1px dotted rgb(188, 187, 194);
+        }
+
+        .dice {
+            font-weight: bold;
+            color: #f3a16a;
+        }
+
+        .dice.d100:before {
+            content: '';
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            position: relative;
+            top: 1px;
+            background: url('./images/d100.png');
+            background-size: cover;
+            margin: 0 1px;
+        }
+
+        .dice.d6:before {
+            content: '';
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            position: relative;
+            top: 1px;
+            background: url('./images/d6.png');
+            background-size: cover;
+            margin: 0 1px;
+        }
+
+        .cutin {
+            display: block;
+            margin: 0 auto;
+            max-height: 150px;
+            max-width: min(350px, 100%);
+        }
+
+        .cutin.cutin-left {
+            margin: 0 auto 0 0;
+        }
+
+        .cutin.cutin-right {
+            margin: 0 0 0 auto;
+        }
+
+        .full-image {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+        }
+
+        .full-image.full-image-left {
+            margin: 0 auto 0 0;
+        }
+
+        .full-image.full-image-right {
+            margin: 0 0 0 auto;
+        }
+
+        .message {
+            display: flex;
+            width: fit-content;
+            background: #0004;
+            padding: 6px 10px 6px 10px;
+            border-radius: 4px;
+            align-items: center;
+            margin: 10px 0;
+        }
+
+        .message-icon-wrapper {
+            flex: none;
+            width: 60px;
+            height: 60px;
+            margin-right: 10px;
+        }
+
+        .message-icon {
+            width: 60px;
+            height: 60px;
+        }
+
+        .message-icon-noimage {
+            width: 60px;
+            height: 60px;
+            border-radius: 4px;
+            box-shadow: 0 0 2px rgba(0, 0, 0, 0.562);
+            background: no-repeat center/80% url('./images/kikyo.svg'),
+            linear-gradient(239deg, rgb(43, 58, 71), rgb(37, 49, 57));
+        }
+
+        .message-content {
+            flex: 1;
+        }
+
+        .message-name {
+            font-weight: bold;
+        }
+
+        .message-body {
+            color: rgb(235, 230, 223);
+        }
+
+        h1 {
+            margin: 0 0 20px 0;
+            display: flex;
+            align-items: center;
+            padding: 8px 20px 8px 20px;
+
+            color: rgb(38, 38, 78);
+            background: rgb(243, 236, 236);
+            font-family: 'Shippori Mincho B1', serif;
+            font-weight: 600;
+            font-size: 22px;
+            letter-spacing: -1px;
+            box-shadow: 0 0 10px rgb(8, 11, 24);
+        }
+
+        .diary-link {
+            margin-bottom: 5px;
+            display: block;
+            padding: 10px;
+            font-size: 0.9em;
+            color: rgb(241, 240, 234);
+            background-image: linear-gradient(rgb(35, 33, 51), rgb(50, 47, 70));
+            box-shadow: 0 0 15px rgba(6, 6, 17, 0.533) inset, 0 0 5px rgba(0, 0, 0, 0.2666666667);
+            border: 1px solid rgb(75, 71, 99);
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .columns {
+            display: flex;
+            margin: 20px;
+        }
+
+        .sub-column {
+            width: min(20%, 200px);
+            margin-right: 10px;
+            flex: none;
+        }
+
+        .main-column {
+            flex: 1;
+        }
+
+        .diary {
+            padding: 20px;
+            background: rgba(76, 65, 100, 0.2470588235);
+            border: 1px solid #5e5d66;
+            box-shadow: 0 0 20px #1c1e2e inset;
+        }
+
+        @media screen and (max-width: 650px) {          
+            .diary-link {
+                margin-bottom: 0;
+            }
+
+            .columns {
+                display: block;
+                margin: 10px;
+            }
+
+            .sub-column {
+                width: 100%;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2px;
+                margin: 10px 0;
+            }
+        }
+
+        @media screen and (max-width: 400px) {
+            .sub-column {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media screen and (max-width: 300px) {
+            .sub-column {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>第25更新 ムーンライトダンシングディスコ～導火線に火を点けろ～</h1>
+        <div class="columns">
+            <section class="sub-column">
+                
+                <a href="./1.html" class="diary-link">第1更新</a>
+                
+                <a href="./3.html" class="diary-link">第3更新</a>
+                
+                <a href="./4.html" class="diary-link">第4更新</a>
+                
+                <a href="./5.html" class="diary-link">第5更新</a>
+                
+                <a href="./6.html" class="diary-link">第6更新</a>
+                
+                <a href="./7.html" class="diary-link">第7更新</a>
+                
+                <a href="./8.html" class="diary-link">第8更新</a>
+                
+                <a href="./9.html" class="diary-link">第9更新</a>
+                
+                <a href="./10.html" class="diary-link">第10更新</a>
+                
+                <a href="./11.html" class="diary-link">第11更新</a>
+                
+                <a href="./12.html" class="diary-link">第12更新</a>
+                
+                <a href="./13.html" class="diary-link">第13更新</a>
+                
+                <a href="./14.html" class="diary-link">第14更新</a>
+                
+                <a href="./15.html" class="diary-link">第15更新</a>
+                
+                <a href="./16.html" class="diary-link">第16更新</a>
+                
+                <a href="./17.html" class="diary-link">第17更新</a>
+                
+                <a href="./18.html" class="diary-link">第18更新</a>
+                
+                <a href="./19.html" class="diary-link">第19更新</a>
+                
+                <a href="./20.html" class="diary-link">第20更新</a>
+                
+                <a href="./21.html" class="diary-link">第21更新</a>
+                
+                <a href="./22.html" class="diary-link">第22更新</a>
+                
+                <a href="./23.html" class="diary-link">第23更新</a>
+                
+                <a href="./24.html" class="diary-link">第24更新</a>
+                
+                <a href="./25.html" class="diary-link">第25更新</a>
+                
+                <a href="./26.html" class="diary-link">第26更新</a>
+                
+                <a href="./27.html" class="diary-link">第27更新</a>
+                
+                <a href="./28.html" class="diary-link">第28更新</a>
+                
+                <a href="./29.html" class="diary-link">第29更新</a>
+                
+            </section>
+            <section class="main-column">
+                <div class="diary">
+                    　欠けた月が、再び膨らみ始めていた。<br>　朧雲が三日月を霞ませて、降り注ぐ光はほんの僅か。闇夜のなかでCANDLE RYOZENの裏口が開く。<br>　少し前までは工房で叔父が急ぎの製作作業に勤しんでいたが、今は一段落して残業はしない。閉店と共に店舗からは居なくなる。<br>　土足のまま廊下を進み、階段へ。一段一段と二階まで上がる。仕事着のスーツの布擦れが僅かに鳴った。<br>　天樹の手書きの呪符に加え、桔梗印の呪符が貼られた戸が正面に来る。内から破れないよう、外界と隔てる結界の要。<br>　その符を剥がして、七色の火で焼く。<br><br>「……珠緒？」<br><br>　戸を開けた先、就寝用のジャージに身を包んだ榮花が布団から見上げていた。<br><br>「エーカ兄。俺は、信じているから」<br><br>　指先に灯した彩焔が榮花に繋がる術式を焼く。制限の式を焼く。会話記録の式を焼く。部屋の遮蔽と防音の術だけはそのままに。<br>　荒っぽい解呪の類。正規の手順を踏まないだけあって、術式から返る抵抗は猛烈に激しい。珠緒の額を汗が伝う。<br>　彩焔で初めてこんな事をした。成功していることにまず驚く。<br>　一方の榮花は、珠緒とは違った驚愕を見せていた。珠緒の挙動を訝しんでいる。<br><br>「おい。何してんだ、珠緒。やめろ。天樹がキレるぞ」<br>「テン兄は……エーカ兄を殺す気だ」<br><br>　榮花の行動を封じる全てを焼き払った。流石に重ね掛けされた全てを焼却するには骨が折れる。天樹の術でなければ、癖がわからずもっと難儀したかもしれない。<br>　軽く息を整える。<br><br>「エーカ兄、逃げよう」<br><br>　珠緒は榮花の腕を引く。僅かな月明りに照らされた榮花は不安げな顔をしていた。すぐには応じてくれない。<br>　背後で、ぱちぱちと火花の音がした。<br><br>「珠緒様」<br><br>　部屋の入口に天樹の式神鬼火、菊星が現れ珠緒を牽制する。<br><br>「それは、なりませぬ。お考え直しを。この件はわたくしめを通じて、牡丹星、満星に伝えられております」<br><br>　菊星の他、二体の鬼火の名が上がる。彼らは通信役を担っているらしい。<br><br>「菊星、ごめん」<br><br>　珠緒の彩焔が菊星との間に熱線を引いた。一筋の線が、奥と入口側を分かつ境界となる。その端が囲うように結ばれ、菊星を封じる結界・炎陣となった。陣の中に、式神の和紙がはらりと落ちる。<br>　──大丈夫だ。燃えない。彩焔は、燃やさない。線を引いただけ。<br>　その時、力任せに戸が開いた。<br><br>「タマ！！」<br><br>　天樹が慌ただしく部屋に踏み込む。<br>　一部始終を式神から伝え聞いたとしても速すぎる到着。近くで張り込んでいたか、転移術の移動先として店に呪符を置いていたと考えるのが妥当だろう。<br><br>「タマ、何をしてる……！？」<br><br>　天樹は顔を強ばらせていた。封術を荒らす珠緒に動揺を浮かべたまま、退魔銃を構える。<br><br>「……ナイショ」<br><br>　珠緒は銃口を見詰め返す。<br>　本来は怪異の核を撃ち抜くための武器だ。今まで、自分に向けられたことの無い脅威。<br><br>「タマ、そいつから離れろ。そのまま戻って来い。……タマ」<br><br>　天樹が繰り返し珠緒の名を呼ぶ。努めて、感情を押し殺すように声を低くしていた。<br><br>「珠緒、天樹の言うこと聞け。こんなことしなくていい！」<br><br>　傍の榮花も一緒になって珠緒を窘める。<br>　珠緒はその場から動かずにいた。天樹の方へ歩み寄ることは無い。<br>　彩焔は、炎が生き物のように動く呪術だ。珠緒がその場を動かずとも。<br>　先に走らせていた熱線の痕から、七色の火柱が上がり天樹に立ち塞がる。<br><br>「珠緒！」<br><br>　──大丈夫だ、燃やさない。店と敷地の護りは崩さない。<br>　僅かな目眩しの間に上着のポケットから呪符を取り出す。<br><br>「お願い、エーカ兄。俺を信じて！　俺にはエーカ兄が必要なんだ！」<br>「なんっでだよアホ！」<br>「うっせえ聞けバカあ！」<br><br>　買い込んでおいた転移術の呪符。それを榮花と自分に貼り、起動させる。<br><br>「ヒイワシ君ごめん後でちゃんと謝るからあ〜！！」<br><br>　商店街の怪異へ向けた謝罪は、恐らく防音で届かない。<br>　足止めされた天樹を残し、二人がその場から立ち消えた。<br>　移動符で降り立った先は陽桜市内の野山だ。珠緒が昼間の間に、移動先となるアンカーの符を配置した場所。使い終えた符が枯葉のように朽ちる。<br><br>「大目玉だぞこんなの！　何考えてんだ！」<br><br>　裸足の榮花ががなり立てる。こんなに怒られたことはない。<br><br>「ごめん、でもお願い、これで最後だから」<br><br>　珠緒は『夜花』を灯し、付近の木に立て掛けておいた“それ”を榮花に押し付ける。<br>　臙脂色の柄糸に、撫子紋様の鍔があしらわれた一振の刀剣。黒い塗鞘に収まったそれは、榮花の愛刀、『火樹銀花』だった。<br><br>「は？」<br><br>　榮花の怪訝そうな声にはまだ怒気が混じっている。<br>　唐突に手渡されたそれは、榮花のかたちをしたものに身を喰われる悪夢から持ち帰られたものだ。<br><br>　悪夢の獣に引き摺り込まれた先は、眩い地獄から一転、なにひとつ見えない闇の中だった。獣の牙が首筋を穿ち、灼熱と不可視の恐怖が心を支配する新たなる地獄。<br>　これは、悪い夢だ。夢なら覚めれば続きを断てる。珠緒はその断絶を、“これは夢である”という認識一つで留めていた。<br>　片手に握り締めたものが、珠緒に正しい現を想起させた。<br>　鳳凰の紋が刻まれた照魔鏡。これは夢へ持ち込むことに成功した、幻を暴き真実を晒す呪具である。<br>　鏡を照らす光が無くとも、現との繋がりは夢から珠緒を守る。夢と思えば一時、あらゆる苦痛も離れた。<br><br>　幾度も頭で唱え、繰り返した。これは、榮花を斃せ殺せ壊せ崩せ燃やせと唆す悪夢だ。空いた手を探るように振り回した。<br>　見つけられたくないものは、人が寄りつかない所に隠すのが定石だろう。<br>　珠緒を忌避させ、退避させ、逃避させる悪夢の奥底、無我夢中で掴み取ったものがこの刀だった。ただの玩具があそこにあるはずがない。目覚めても手中に有ったこれを、珠緒は本物の『火樹銀花』と解釈した。<br><br>　榮花は刀と珠緒を見比べる。困惑気味に二度目の口を開こうとして、その声は続かなかった。<br>　榮花の顔は情動を収め、粛々と意図を読み解くものに変わって行く。退魔師の顔だ。<br>　それを見て珠緒が代わりに口を開く。<br><br>「エーカ兄」<br><br>　珠緒は天樹にも叔父にも『ナイショ』で動いている。誰にも『ナイショ』にするしかなかった。<br>　そうしなければ、この話は終えられないのだ。<br><br>「終わらせて」<br><br>　刀とその使い途を榮花に託す。<br>　説明はどこにも存在しない。だが、榮花にだけは伝わると珠緒は信じている。<br>　正中線の揺るがぬ、美しさすら覚える構えが見えた。雲の晴れた月に銀刀が閃く。<br><br>「珠緒。終わらせるぞ」<br><br>　榮花の太刀筋は、珠緒目掛けて真っ直ぐに斬り下ろされた。
+                </div>
+            </section>
+        </div>
+    </main>
+</body>
+</html>

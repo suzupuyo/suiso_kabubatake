@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>風前の灯 | 第13更新 | 作戦番号377 霊山珠緒</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=Shippori+Mincho+B1:wght@600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'BIZ UDPGothic', sans-serif;
+        }
+
+        html, body {
+            background: #021825;
+            height: 100%;
+            line-height: 1.4;
+            font-size: 15px;
+        }
+
+        main {
+            max-width: 1000px;
+            padding: 20px 0;
+            margin: 0 auto;
+            min-height: 100%;
+            background: #2a3146;
+            box-shadow: 0 0 15px inset rgba(36, 38, 44, 0.801), 0 0 10px rgba(0, 0, 0, 0.2);
+            color: #ebeae5;
+        }
+
+        b {
+            font-weight: bold;
+            color: rgb(247, 175, 41);
+        }
+
+        .larger {
+            font-size: min(120%, 3rem);
+        }
+
+        .smaller {
+            font-size: max(90%, 0.3rem);
+        }
+
+        .strike {
+            text-decoration: line-through;
+        }
+
+        .underline {
+            text-decoration: underline;
+        }
+
+        .italic {
+            font-style: italic;
+        }
+
+        .bold {
+            font-weight: bold;
+        }
+
+        .message-hr {
+            margin: 20px 0;
+            border: none;
+            border-top: 1px dotted rgb(188, 187, 194);
+        }
+
+        .dice {
+            font-weight: bold;
+            color: #f3a16a;
+        }
+
+        .dice.d100:before {
+            content: '';
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            position: relative;
+            top: 1px;
+            background: url('./images/d100.png');
+            background-size: cover;
+            margin: 0 1px;
+        }
+
+        .dice.d6:before {
+            content: '';
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            position: relative;
+            top: 1px;
+            background: url('./images/d6.png');
+            background-size: cover;
+            margin: 0 1px;
+        }
+
+        .cutin {
+            display: block;
+            margin: 0 auto;
+            max-height: 150px;
+            max-width: min(350px, 100%);
+        }
+
+        .cutin.cutin-left {
+            margin: 0 auto 0 0;
+        }
+
+        .cutin.cutin-right {
+            margin: 0 0 0 auto;
+        }
+
+        .full-image {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+        }
+
+        .full-image.full-image-left {
+            margin: 0 auto 0 0;
+        }
+
+        .full-image.full-image-right {
+            margin: 0 0 0 auto;
+        }
+
+        .message {
+            display: flex;
+            width: fit-content;
+            background: #0004;
+            padding: 6px 10px 6px 10px;
+            border-radius: 4px;
+            align-items: center;
+            margin: 10px 0;
+        }
+
+        .message-icon-wrapper {
+            flex: none;
+            width: 60px;
+            height: 60px;
+            margin-right: 10px;
+        }
+
+        .message-icon {
+            width: 60px;
+            height: 60px;
+        }
+
+        .message-icon-noimage {
+            width: 60px;
+            height: 60px;
+            border-radius: 4px;
+            box-shadow: 0 0 2px rgba(0, 0, 0, 0.562);
+            background: no-repeat center/80% url('./images/kikyo.svg'),
+            linear-gradient(239deg, rgb(43, 58, 71), rgb(37, 49, 57));
+        }
+
+        .message-content {
+            flex: 1;
+        }
+
+        .message-name {
+            font-weight: bold;
+        }
+
+        .message-body {
+            color: rgb(235, 230, 223);
+        }
+
+        h1 {
+            margin: 0 0 20px 0;
+            display: flex;
+            align-items: center;
+            padding: 8px 20px 8px 20px;
+
+            color: rgb(38, 38, 78);
+            background: rgb(243, 236, 236);
+            font-family: 'Shippori Mincho B1', serif;
+            font-weight: 600;
+            font-size: 22px;
+            letter-spacing: -1px;
+            box-shadow: 0 0 10px rgb(8, 11, 24);
+        }
+
+        .diary-link {
+            margin-bottom: 5px;
+            display: block;
+            padding: 10px;
+            font-size: 0.9em;
+            color: rgb(241, 240, 234);
+            background-image: linear-gradient(rgb(35, 33, 51), rgb(50, 47, 70));
+            box-shadow: 0 0 15px rgba(6, 6, 17, 0.533) inset, 0 0 5px rgba(0, 0, 0, 0.2666666667);
+            border: 1px solid rgb(75, 71, 99);
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .columns {
+            display: flex;
+            margin: 20px;
+        }
+
+        .sub-column {
+            width: min(20%, 200px);
+            margin-right: 10px;
+            flex: none;
+        }
+
+        .main-column {
+            flex: 1;
+        }
+
+        .diary {
+            padding: 20px;
+            background: rgba(76, 65, 100, 0.2470588235);
+            border: 1px solid #5e5d66;
+            box-shadow: 0 0 20px #1c1e2e inset;
+        }
+
+        @media screen and (max-width: 650px) {          
+            .diary-link {
+                margin-bottom: 0;
+            }
+
+            .columns {
+                display: block;
+                margin: 10px;
+            }
+
+            .sub-column {
+                width: 100%;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2px;
+                margin: 10px 0;
+            }
+        }
+
+        @media screen and (max-width: 400px) {
+            .sub-column {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media screen and (max-width: 300px) {
+            .sub-column {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>第13更新 風前の灯</h1>
+        <div class="columns">
+            <section class="sub-column">
+                
+                <a href="./1.html" class="diary-link">第1更新</a>
+                
+                <a href="./3.html" class="diary-link">第3更新</a>
+                
+                <a href="./4.html" class="diary-link">第4更新</a>
+                
+                <a href="./5.html" class="diary-link">第5更新</a>
+                
+                <a href="./6.html" class="diary-link">第6更新</a>
+                
+                <a href="./7.html" class="diary-link">第7更新</a>
+                
+                <a href="./8.html" class="diary-link">第8更新</a>
+                
+                <a href="./9.html" class="diary-link">第9更新</a>
+                
+                <a href="./10.html" class="diary-link">第10更新</a>
+                
+                <a href="./11.html" class="diary-link">第11更新</a>
+                
+                <a href="./12.html" class="diary-link">第12更新</a>
+                
+                <a href="./13.html" class="diary-link">第13更新</a>
+                
+                <a href="./14.html" class="diary-link">第14更新</a>
+                
+                <a href="./15.html" class="diary-link">第15更新</a>
+                
+                <a href="./16.html" class="diary-link">第16更新</a>
+                
+                <a href="./17.html" class="diary-link">第17更新</a>
+                
+                <a href="./18.html" class="diary-link">第18更新</a>
+                
+                <a href="./19.html" class="diary-link">第19更新</a>
+                
+                <a href="./20.html" class="diary-link">第20更新</a>
+                
+                <a href="./21.html" class="diary-link">第21更新</a>
+                
+                <a href="./22.html" class="diary-link">第22更新</a>
+                
+                <a href="./23.html" class="diary-link">第23更新</a>
+                
+                <a href="./24.html" class="diary-link">第24更新</a>
+                
+                <a href="./25.html" class="diary-link">第25更新</a>
+                
+                <a href="./26.html" class="diary-link">第26更新</a>
+                
+                <a href="./27.html" class="diary-link">第27更新</a>
+                
+                <a href="./28.html" class="diary-link">第28更新</a>
+                
+                <a href="./29.html" class="diary-link">第29更新</a>
+                
+            </section>
+            <section class="main-column">
+                <div class="diary">
+                    　榮花が消えた翌日から、珠緒は熱を出した。その熱は一週間にも渡り、その間に家は忙しなく動いていた。<br>　珠緒の横たわる自室はしんと静まり返っている。<br>　父がゆっくり休めるようにと音を遮る術を珠緒の部屋に施してくれた。きっとそれは建前で、他の皆が例の話をするから耳に入らないようにというのが本懐だろう。<br>　喜楽里にも榮花の話はされたのだろうか。遮音のせいもあるけれど、帰ってからいつも元気がいい喜楽里の声を一つも聞かなかった。<br>　悲しむだろうな。突然兄が一人、居なくなったら。これが退魔師か。全部が全部、自分のせいだ。<br>　そんなことを反芻しては胸元に重たい靄が溜まったような心地がする。<br>　　不快なそれを見て見ぬふりするように目を閉じると、部屋の襖が開く音がした。<br><br>「タマ兄っ！　お見舞い！」<br><br>　見遣ると喜楽里が、両手いっぱいに菓子袋を抱えていた。<br>　見覚えのある小袋がどちゃどちゃと零れ落ちる。喜楽里はそれを急いで拾い上げた。<br><br>「喜楽里。タマは、まだあまり食べられないと思うからそっとしてやって」<br>「……でも喜楽里、ずっとタマ兄と話してないんだもん」<br>「熱がまだあるみたいだから」<br><br>　天樹の諭すような声が聞こえた。襖が開いている間は術も解かれる。<br>　喜楽里は珠緒からは見えない廊下の向こうを見て、口を尖らせていた。<br><br>「……じゃあ、置いてくね」<br><br>　喜楽里が菓子の山を珠緒の枕元に置いて襖を閉じる。<br>　枕元に置かれたアーモンド小魚の袋を握って、珠緒は少しだけ泣いた。<br>　熱があるから寝ていられる。ずっと寝ていたかった。眠りから覚めたくなかった。悪い夢なら良かったのに。<br>　けれど熱に茹だる身体は眠ることも許してくれない。<br>　腫れ物だ。自分は。消えてしまいたかった。<br>　一度零した少しの涙を皮切りに、大粒の涙がぼろぼろと滑り落ちた。<br><br><br>　週が明ける頃にはなんとか熱も下がり、珠緒の容態は回復した。だが、榮花はやはり戻って来なかった。<br>　退魔の仕事で生還できない事例は少なくはない。珠緒は榮花の生死についてはあまり考えないようにしていた。<br>　しかし、生死のわからないものは決着がつかない。ずっと、いつまでも帰りを待ち続けてしまう。<br><br>　両親から、少しずつ今後の話をされた。もし榮花が戻らない場合は次男の天樹に家を継がせたいこと、家をできるだけ早く天樹に預けたいこと、両親は捜索を続けたいこと。<br>　それから、もし辛い時は忘れることを許してくれることも。<br>　本家の人間が失踪したこともあり、家で親戚の出入りは増えていた。<br>　彼らはどこまで聞いているのだろう。彼らは、家や自分をどう思っているのだろう。 <br>　兄より我が身を思った自分に気づく度、嫌気が差した。大事なのはそこじゃない。<br>　熱が下がってから珠緒は学校に登校した。退魔師なら平常を装うくらい、なんて事ない。その筈だ。<br>　しかし会う人間の殆どに顔色が悪いと心配をされてしまい、結局廊下で倒れたので早退を余儀無くされた。<br>　こんなところで躓いている場合ではないのに。<br>　保健室で迎えを待つ間、丁度時間の空いていた担任の教師が様子を見に来てくれた。彼は在籍期間が長く、剣道部顧問でもある。榮花も天樹も世話になっていた。<br>　そこによくない期待が顔を出す。<br><br>「先生。うちの、一番上の兄。覚えてますか」<br><br>　ぽつと尋ねる。担任は一瞬だけ不思議そうな顔をしたが、すぐ笑顔になった。<br><br>「ああ、よく覚えてるよ。大将だもんね」<br><br>　雀の涙ほどの期待が肥大化する。<br>　榮花は当時の代で大将を務めていた。実力、忍耐、信頼を兼ね備えた男。<br>　きっと先生なら覚えているんじゃないか。そう読む自分が如何に滑稽であるかわかっている筈なのに。<br>　<br>「天樹君は努力家だったからね。もうひとつ上の代の佐藤くんにも引けを──」<br><br>　その先は耳に入らず、目を逸らした。どうしたの、と聞かれて首を横に振る。<br><br>「気分が、悪くなってきて」<br><br>　退魔師たちは世界の修正力に対抗する術を持っている。異界に入った場合においても人々から忘れ去られるということはない。<br>　但し、それが機能していたならの話。<br>　榮花の話を追えば追うだけ、只々辛かった。<br><br><br>　珠緒は学校に上手く通えないならと呪術の修練を再開した。毎日訓練用の石室に籠って、練習用の火口に呪術の火を点けて練習しようとしたのだ。<br>　早く復帰しなければならないという思いがあった。天樹が若くして当主の役目を引き受けるなら、自分だって全力で支えるべきだ。<br>　早く榮花を探しに行かなければならなかった。早く天樹の役に立てるようにならなければいけなかった。<br><br>　でも、できなかった。あれだけ上手に操れた火炎術が狂ってしまったのだ。<br>　ほんの少しのつもりが爆発的な量の呪力が放出される。狙いは逸れる。集中が続かない。<br>　また、溢れ返ったら。また、怪異と向き合ったら。そんな不安が精神に影を落とす。<br><br>　───怖い。<br>　<br>　気づけば石室の火口が大きく燃え上がっている。生き物のように動く彩焔は今にも外に出てしまいそうだ。<br><br>「珠緒君！」<br><br>　叔父の雨水が呪術で鎮火する。<br>　石室自体が呪力耐性も幸いし、鎮火術と合わせて火口の火は程なく消えた。<br><br>「叔父さん、ごめん、なさい」<br><br>　珠緒は呆けたように口にしていた。<br>　何も上手くいかない。<br>　何も出来ない。自分は、怪異と生涯渡り合うことができるのか？<br><br>「大丈夫だよ。病み上がりだし、無理しなくていいんだからね」<br><br>　叔父は休息を取るように促した。<br>　違う。寝てる場合ではない。動かなければならない。無理してでもやらなくてはいけない。自分に責任があるのだから。自分は期待を受けているのだから。自分には怪異を退ける呪力があるのだから。<br>　これから技能を更に伸ばしていかなければならないし、退魔師としての活躍が求められている。<br>　でも、できない。こんな自分では。<br>　こんな調子で、榮花をどうやって探せばいい？<br><br>「……部屋に戻ろう」<br><br>　叔父が珠緒の背に手を添え、送って行こうとする。<br>　床に伏せたくないのだと、口で伝える余裕が無く、その場で足を止めた。<br><br>「俺」<br><br>　珠緒の頭はぐちゃぐちゃだ。何から話せばいいかわかったものではない。<br><br>「エーカ兄のこと、忘れたく、ない、のに」<br><br>　天樹も一人で大変なのはわかっている。<br><br>「退魔師、できない……」<br><br>　叔父にこんなことを突然言ったって仕方ない。結局自分の問題だ。けれど歯止めが利かなかった。<br>　泣いても泣いても、消えたい気持ちばかりが積もるのだ。<br><br>「珠緒君は、退魔の世界で榮花君を捜したいんだね」<br><br>　叔父は確認する。そっと寄り添うような優しい声色に、泣きじゃくりながら頷く。<br><br>「君の道は、ひとつじゃない。怪異や異界に詳しい人間の人脈を増やすことも、きっと手掛かりを見つける手段になる。その意味では前線以外だって大事な役割だよ」<br><br>　噛んで砕くように、叔父はゆっくりと背を擦りながら語ってくれた。<br><br>「そういう、直接でなくとも誰かの役に立てる面があるから、僕も職人を続けられる。……もし、珠緒君が前線に出るのがつらくて、でも一般人にはなりたくないなら。僕のところで呪具職人の勉強をしてみるかい」<br><br>　叔父は、呪具職人だ。珠緒もよく使う呪具蝋燭の『夜花』も製作している。<br>　それは、視野の狭まっていた珠緒には無い考えだった。<br>　前線に立たなくてもいい。そんな、増えた選択肢に逃げ込みたくなる。<br><br>「僕には跡継ぎも居ないしね。 お父さんには、僕から言っておくよ」<br>「でも」<br><br>　検討しなかった理由の一つ。<br>　榮花も天樹も喜楽里も放って、家を出ることになる。逃げる後ろめたさは変わらない。<br>　その意図が伝わったのか、叔父は頷いた。<br><br>「うん。……悩むことはきっと沢山あると思う。だから、僕は君が望んだ時だけ受け入れる。僕の働いてる土地のことは知っているよね」<br><br>　叔父は退魔師の寄合のような商店街で店を営んでいる。確か、元は分家の店舗だったか。そこには退魔師が店を構え、人も怪異も入り交じって商売をしていると聞いていた。<br>　怪異も普通に存在していると聞くと懸念はある。しかし珠緒は人ならざる者にも友好的な存在が居ることを知ってはいた。<br>　そういう怪異達だから、退魔師と商店街が成立してるのだろうと察するのも難しくはない。<br>　叔父は何十年かはそこで過ごしているはずだし、他の退魔師も付近に存在している。もしかすると、実家より安全かもしれない。<br><br>　だから、いよいよ心残りとなるのは、家を出ること。それだけだ。<br>　自分か、家族か。<br><br>　玄関の方で、遠い親戚の挨拶が聞こえる。珠緒は、その声に忌避感を覚えた。<br>　命のやり取りをする怪異とは異なる、憂いのような恐れを。<br><br>　知らないところに行きたかった。誰も、自分を知らないところに。<br><br>　いよいよ初夏を迎えようという頃だ。珠緒は、苦悩の末に自分を取った。<br>
+                </div>
+            </section>
+        </div>
+    </main>
+</body>
+</html>

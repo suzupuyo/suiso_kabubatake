@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>心って飴でもくっつきますかね | 第22更新 | 作戦番号377 霊山珠緒</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=Shippori+Mincho+B1:wght@600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'BIZ UDPGothic', sans-serif;
+        }
+
+        html, body {
+            background: #021825;
+            height: 100%;
+            line-height: 1.4;
+            font-size: 15px;
+        }
+
+        main {
+            max-width: 1000px;
+            padding: 20px 0;
+            margin: 0 auto;
+            min-height: 100%;
+            background: #2a3146;
+            box-shadow: 0 0 15px inset rgba(36, 38, 44, 0.801), 0 0 10px rgba(0, 0, 0, 0.2);
+            color: #ebeae5;
+        }
+
+        b {
+            font-weight: bold;
+            color: rgb(247, 175, 41);
+        }
+
+        .larger {
+            font-size: min(120%, 3rem);
+        }
+
+        .smaller {
+            font-size: max(90%, 0.3rem);
+        }
+
+        .strike {
+            text-decoration: line-through;
+        }
+
+        .underline {
+            text-decoration: underline;
+        }
+
+        .italic {
+            font-style: italic;
+        }
+
+        .bold {
+            font-weight: bold;
+        }
+
+        .message-hr {
+            margin: 20px 0;
+            border: none;
+            border-top: 1px dotted rgb(188, 187, 194);
+        }
+
+        .dice {
+            font-weight: bold;
+            color: #f3a16a;
+        }
+
+        .dice.d100:before {
+            content: '';
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            position: relative;
+            top: 1px;
+            background: url('./images/d100.png');
+            background-size: cover;
+            margin: 0 1px;
+        }
+
+        .dice.d6:before {
+            content: '';
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            position: relative;
+            top: 1px;
+            background: url('./images/d6.png');
+            background-size: cover;
+            margin: 0 1px;
+        }
+
+        .cutin {
+            display: block;
+            margin: 0 auto;
+            max-height: 150px;
+            max-width: min(350px, 100%);
+        }
+
+        .cutin.cutin-left {
+            margin: 0 auto 0 0;
+        }
+
+        .cutin.cutin-right {
+            margin: 0 0 0 auto;
+        }
+
+        .full-image {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+        }
+
+        .full-image.full-image-left {
+            margin: 0 auto 0 0;
+        }
+
+        .full-image.full-image-right {
+            margin: 0 0 0 auto;
+        }
+
+        .message {
+            display: flex;
+            width: fit-content;
+            background: #0004;
+            padding: 6px 10px 6px 10px;
+            border-radius: 4px;
+            align-items: center;
+            margin: 10px 0;
+        }
+
+        .message-icon-wrapper {
+            flex: none;
+            width: 60px;
+            height: 60px;
+            margin-right: 10px;
+        }
+
+        .message-icon {
+            width: 60px;
+            height: 60px;
+        }
+
+        .message-icon-noimage {
+            width: 60px;
+            height: 60px;
+            border-radius: 4px;
+            box-shadow: 0 0 2px rgba(0, 0, 0, 0.562);
+            background: no-repeat center/80% url('./images/kikyo.svg'),
+            linear-gradient(239deg, rgb(43, 58, 71), rgb(37, 49, 57));
+        }
+
+        .message-content {
+            flex: 1;
+        }
+
+        .message-name {
+            font-weight: bold;
+        }
+
+        .message-body {
+            color: rgb(235, 230, 223);
+        }
+
+        h1 {
+            margin: 0 0 20px 0;
+            display: flex;
+            align-items: center;
+            padding: 8px 20px 8px 20px;
+
+            color: rgb(38, 38, 78);
+            background: rgb(243, 236, 236);
+            font-family: 'Shippori Mincho B1', serif;
+            font-weight: 600;
+            font-size: 22px;
+            letter-spacing: -1px;
+            box-shadow: 0 0 10px rgb(8, 11, 24);
+        }
+
+        .diary-link {
+            margin-bottom: 5px;
+            display: block;
+            padding: 10px;
+            font-size: 0.9em;
+            color: rgb(241, 240, 234);
+            background-image: linear-gradient(rgb(35, 33, 51), rgb(50, 47, 70));
+            box-shadow: 0 0 15px rgba(6, 6, 17, 0.533) inset, 0 0 5px rgba(0, 0, 0, 0.2666666667);
+            border: 1px solid rgb(75, 71, 99);
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .columns {
+            display: flex;
+            margin: 20px;
+        }
+
+        .sub-column {
+            width: min(20%, 200px);
+            margin-right: 10px;
+            flex: none;
+        }
+
+        .main-column {
+            flex: 1;
+        }
+
+        .diary {
+            padding: 20px;
+            background: rgba(76, 65, 100, 0.2470588235);
+            border: 1px solid #5e5d66;
+            box-shadow: 0 0 20px #1c1e2e inset;
+        }
+
+        @media screen and (max-width: 650px) {          
+            .diary-link {
+                margin-bottom: 0;
+            }
+
+            .columns {
+                display: block;
+                margin: 10px;
+            }
+
+            .sub-column {
+                width: 100%;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2px;
+                margin: 10px 0;
+            }
+        }
+
+        @media screen and (max-width: 400px) {
+            .sub-column {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media screen and (max-width: 300px) {
+            .sub-column {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>第22更新 心って飴でもくっつきますかね</h1>
+        <div class="columns">
+            <section class="sub-column">
+                
+                <a href="./1.html" class="diary-link">第1更新</a>
+                
+                <a href="./3.html" class="diary-link">第3更新</a>
+                
+                <a href="./4.html" class="diary-link">第4更新</a>
+                
+                <a href="./5.html" class="diary-link">第5更新</a>
+                
+                <a href="./6.html" class="diary-link">第6更新</a>
+                
+                <a href="./7.html" class="diary-link">第7更新</a>
+                
+                <a href="./8.html" class="diary-link">第8更新</a>
+                
+                <a href="./9.html" class="diary-link">第9更新</a>
+                
+                <a href="./10.html" class="diary-link">第10更新</a>
+                
+                <a href="./11.html" class="diary-link">第11更新</a>
+                
+                <a href="./12.html" class="diary-link">第12更新</a>
+                
+                <a href="./13.html" class="diary-link">第13更新</a>
+                
+                <a href="./14.html" class="diary-link">第14更新</a>
+                
+                <a href="./15.html" class="diary-link">第15更新</a>
+                
+                <a href="./16.html" class="diary-link">第16更新</a>
+                
+                <a href="./17.html" class="diary-link">第17更新</a>
+                
+                <a href="./18.html" class="diary-link">第18更新</a>
+                
+                <a href="./19.html" class="diary-link">第19更新</a>
+                
+                <a href="./20.html" class="diary-link">第20更新</a>
+                
+                <a href="./21.html" class="diary-link">第21更新</a>
+                
+                <a href="./22.html" class="diary-link">第22更新</a>
+                
+                <a href="./23.html" class="diary-link">第23更新</a>
+                
+                <a href="./24.html" class="diary-link">第24更新</a>
+                
+                <a href="./25.html" class="diary-link">第25更新</a>
+                
+                <a href="./26.html" class="diary-link">第26更新</a>
+                
+                <a href="./27.html" class="diary-link">第27更新</a>
+                
+                <a href="./28.html" class="diary-link">第28更新</a>
+                
+                <a href="./29.html" class="diary-link">第29更新</a>
+                
+            </section>
+            <section class="main-column">
+                <div class="diary">
+                    <section class="message"><div class="message-icon-wrapper"><img class="message-icon" src="./images/377/14d4f78a-1908-490b-91d5-ffe3e6591683.png"></div><div class="message-content"><div class="message-body"><span class="smaller"><span class="smaller">心喰のミラーハウス<br>https://anya-meikyu.reifier.jp/rooms/messages?room=3737&amp;category=conversation&amp;root=1097609&amp;relates=false&amp;children=true</span></span></div></div></section><br><br><br>　類を以て集まると言う言葉がある。<br>　悪い夢、募らせた疑念、積み重なった不安が、時に望まぬ未来と対峙させるのもまた一つであるかもしれない。<br><br>　鏡一面の異常な世界が、珠緒を呑み込んでいた。<br>　鏡の中から見えないはずの視線が<ruby>睨<rp>(</rp><rt>ね</rt><rp>)</rp></ruby>め付け、聞こえないはずの罵詈雑言が背中に刺さる。<br>　心にじわりじわりと罅を作り進んだ先で、見知った少女が立ち尽くしていた。<br><br><section class="message"><div class="message-icon-wrapper"><img class="message-icon" src="./images/377/c1fd46bf-31f6-4be7-9779-f4be621e21c1.png"></div><div class="message-content"><div class="message-body">「骗人……都是你！」</div></div></section><br>　彼女の拒絶が、風穴を空けた。 <br>　言葉の意味が見えずとも、その目と声とが語る感情は解ってしまう。<br>　　穿たれた穴に、居場所を焼き尽くす彩焔の悪夢が雪崩込む。<br><br><br><section class="message"><div class="message-icon-wrapper"><img class="message-icon" src="./images/377/d0bbbc46-a663-4581-a4e8-edb5919203dc.png"></div><div class="message-content"><div class="message-body"><span class="italic">『すごいすご〜い！　さっすが喜楽里のタマ兄！』</span></div></div></section><section class="message"><div class="message-icon-wrapper"><img class="message-icon" src="./images/377/53bc2449-2e8c-448a-a07d-52c8fd2aafa8.png"></div><div class="message-content"><div class="message-body"><span class="italic">『見直したぞ、タマ。何人やったんだ？』</span></div></div></section><section class="message"><div class="message-icon-wrapper"><img class="message-icon" src="./images/377/580d1e33-0a3e-4bcd-99b1-2a1585e4f466.png"></div><div class="message-content"><div class="message-body"><span class="italic">『やるじゃん、珠緒。お前に壊させて正解だった！</span></div></div></section><br><br>　狂った歓喜の声が降り注ぐ。心をばらばらに削ぎ落しながら。<br>　自分が信じた人に認められる条件というのは、こんな惨いところにあるのかと。<br>　自分の信じてたものは所詮、泡沫の夢だったのかと。<br>　混乱と絶望が捻れた渦を巻いて撹拌される。<br><br>　それが異界の幻影であると正しく認識することも忘れ、泣き喚いて、何も出来ず、ひたすら少女の声に縋って。<br>　珠緒の内側で喘ぐ懊悩呻吟を粗方食らいつくし、まやかしの嵐は止んだ。<br><br><section class="message"><div class="message-icon-wrapper"><img class="message-icon" src="./images/377/580d1e33-0a3e-4bcd-99b1-2a1585e4f466.png"></div><div class="message-content"><div class="message-body"><span class="smaller"><span class="smaller"><span class="bold">「──ま、俺のことは殺したけどな」</span></span></span></div></div></section><br>　最後に、デザートに乗せるミントみたいに一声添えて。<br><br><br><br><br><br><br><section class="message"><div class="message-icon-wrapper"><img class="message-icon" src="./images/377/2c185f95-d9eb-4119-af51-489c461c12bc.png"></div><div class="message-content"><div class="message-body">　　　　　<span class="smaller"><span class="italic">鏡の割れる音がした。</span></span>　　　　　</div></div></section><br><br><br><br><br><br><hr class="message-hr"><section class="message"><div class="message-icon-wrapper"><img class="message-icon" src="./images/377/14d4f78a-1908-490b-91d5-ffe3e6591683.png"></div><div class="message-content"><div class="message-body"><span class="smaller"><span class="smaller">白宝古玩堂にて<br>https://anya-meikyu.reifier.jp/rooms/messages?room=2548&amp;category=conversation&amp;root=1118460&amp;relates=false&amp;children=true</span></span></div></div></section><br><br><br><section class="message"><div class="message-icon-wrapper"><img class="message-icon" src="./images/377/8afa4ad7-0262-481a-89c7-3f4471c1f3c1.png"></div><div class="message-content"><div class="message-body">「わた、わ、……<br>　私は、悪い、ことを聞いた。ごめんなさい。<br>　……ごめんなさい。珠珠は、家に、帰る。今日のこと、忘れる。<br>　それで、」<br><br>「珠珠は、デート、みたいなのも、しない。それが良い、思う。<br>　……ごめんなさい」</div></div></section><br><br>　少女の泣き顔が脳裏に焼き付いていた。<br>　あの子にしてやれることは、掛ける言葉は幾つもあった。<br><br>　珠緒は、彼女に要らない傷を増やした。<br>　手だけじゃない。気丈な彼女の流した涙がその証左だ。<br>　聞かせなくていいことを知らせてしまった。<br><br>　少女の怪我の処置をした後、その場に留まることなく逃げ帰る。<br>　責苦に耐え兼ねた自分を守ろうとしていた。<br>　酷い大人だ。<br>　不甲斐なくて、情けないまま歩む帰り道は果てしなく長い。<br>　ぐらぐらと思考と視界が揺らぐ。<br>　覚束無い足取りは夜の闇を不確かに進み、道を迷わせる。<br><br>　類を以て集まる。纏った超常の気配が、別なる超常と引かれ合うこともまた一つであるかもしれない。<br><br>　迷いの先で、季節外れの祭囃子が珠緒を迎え入れた。<br><br><br><hr class="message-hr"><section class="message"><div class="message-icon-wrapper"><img class="message-icon" src="./images/377/e7331c03-7b78-4dca-97a5-ee365fe16a5b.png"></div><div class="message-content"><div class="message-body"><span class="smaller"><span class="smaller">永遠の夏祭り<br>https://anya-meikyu.reifier.jp/rooms/messages?room=1313&amp;category=conversation&amp;root=1127467&amp;relates=false&amp;children=true</span></span></div></div></section><section class="message"><div class="message-icon-wrapper"><img class="message-icon" src="./images/377/46377322-1b6c-4b65-80f6-988bf6d690b7.png"></div><div class="message-content"><div class="message-body"><span class="larger">「あっ。居た！　こっちこっち！」</span></div></div></section><section class="message"><div class="message-icon-wrapper"><img class="message-icon" src="./images/377/f55edd6a-8691-47cc-b8d8-c87786ba2df3.png"></div><div class="message-content"><div class="message-name">霊山■緒</div><div class="message-body">「……ごめん。遅くなった」</div></div></section><br>　切り揃えられた黒髪が揺れた。<br>　蝉の声と祭囃子の中、的屋を二人で巡る。<br>　あるはずのない夏の宵。<br><br>　8年前、雨のバス停で会った少女が人であったか狐であったか、今の珠緒には知る由もない。<br>　<ruby>何<rp>(</rp><rt>いず</rt><rp>)</rp></ruby>れにせよ、彼女を助けられなかったことは確かだ。<br><br>　世界から消えた彼女を覚えていられるのは、世界の<ruby>理<rp>(</rp><rt>ことわり</rt><rp>)</rp></ruby>に抗う<ruby>術<rp>(</rp><rt>すべ</rt><rp>)</rp></ruby>を持つ者だけ。<br>　彼女の記憶を持ち帰れるのは、自分だけ。<br><br><br><section class="message"><div class="message-icon-wrapper"><img class="message-icon" src="./images/377/a596cd97-ad95-4a51-a149-db3f40c1703a.png"></div><div class="message-content"><div class="message-body">「さよなら」</div></div></section><br>　珠緒は、痛みを持ち帰る。<br><br><br><br><br><br><section class="message"><div class="message-icon-wrapper"><img class="message-icon" src="./images/377/e7331c03-7b78-4dca-97a5-ee365fe16a5b.png"></div><div class="message-content"><div class="message-body"><span class="smaller"><span class="smaller">“帰る方法は簡単。ただ、帰ろうと思うだけ。”<br></span></span></div></div></section><br><br><br><hr class="message-hr"><br><br><br>　胸の痛みを拾い集めて、珠緒は叔父・雨水の家に帰り着く。<br>　叔父にはとても心配された。恐ろしく疲れた一日だった。<br>　せめて夢見は良くしたいと思って、夢屋のクッキーを食べた。<br><br>　このクッキーが、普通の美味しい焼き菓子であってもいい。もう一度買ったのも美味しかったからだ。<br><br>　でも、形を同じくすればいつかのおまじないと同じように良好な眠りが叶うだろうかと。<br>　おまじないと言うよりは、ほんのささやかな願掛けのようなもの。<br><br>　信じたいから。<br>　また笑ってほしいから。<br>　約束を汚したくないから。<br><br>
+                </div>
+            </section>
+        </div>
+    </main>
+</body>
+</html>

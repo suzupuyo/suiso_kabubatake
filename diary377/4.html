@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>導　／　青が始まりを見下ろしている | 第4更新 | 作戦番号377 霊山珠緒</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=Shippori+Mincho+B1:wght@600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'BIZ UDPGothic', sans-serif;
+        }
+
+        html, body {
+            background: #021825;
+            height: 100%;
+            line-height: 1.4;
+            font-size: 15px;
+        }
+
+        main {
+            max-width: 1000px;
+            padding: 20px 0;
+            margin: 0 auto;
+            min-height: 100%;
+            background: #2a3146;
+            box-shadow: 0 0 15px inset rgba(36, 38, 44, 0.801), 0 0 10px rgba(0, 0, 0, 0.2);
+            color: #ebeae5;
+        }
+
+        b {
+            font-weight: bold;
+            color: rgb(247, 175, 41);
+        }
+
+        .larger {
+            font-size: min(120%, 3rem);
+        }
+
+        .smaller {
+            font-size: max(90%, 0.3rem);
+        }
+
+        .strike {
+            text-decoration: line-through;
+        }
+
+        .underline {
+            text-decoration: underline;
+        }
+
+        .italic {
+            font-style: italic;
+        }
+
+        .bold {
+            font-weight: bold;
+        }
+
+        .message-hr {
+            margin: 20px 0;
+            border: none;
+            border-top: 1px dotted rgb(188, 187, 194);
+        }
+
+        .dice {
+            font-weight: bold;
+            color: #f3a16a;
+        }
+
+        .dice.d100:before {
+            content: '';
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            position: relative;
+            top: 1px;
+            background: url('./images/d100.png');
+            background-size: cover;
+            margin: 0 1px;
+        }
+
+        .dice.d6:before {
+            content: '';
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            position: relative;
+            top: 1px;
+            background: url('./images/d6.png');
+            background-size: cover;
+            margin: 0 1px;
+        }
+
+        .cutin {
+            display: block;
+            margin: 0 auto;
+            max-height: 150px;
+            max-width: min(350px, 100%);
+        }
+
+        .cutin.cutin-left {
+            margin: 0 auto 0 0;
+        }
+
+        .cutin.cutin-right {
+            margin: 0 0 0 auto;
+        }
+
+        .full-image {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+        }
+
+        .full-image.full-image-left {
+            margin: 0 auto 0 0;
+        }
+
+        .full-image.full-image-right {
+            margin: 0 0 0 auto;
+        }
+
+        .message {
+            display: flex;
+            width: fit-content;
+            background: #0004;
+            padding: 6px 10px 6px 10px;
+            border-radius: 4px;
+            align-items: center;
+            margin: 10px 0;
+        }
+
+        .message-icon-wrapper {
+            flex: none;
+            width: 60px;
+            height: 60px;
+            margin-right: 10px;
+        }
+
+        .message-icon {
+            width: 60px;
+            height: 60px;
+        }
+
+        .message-icon-noimage {
+            width: 60px;
+            height: 60px;
+            border-radius: 4px;
+            box-shadow: 0 0 2px rgba(0, 0, 0, 0.562);
+            background: no-repeat center/80% url('./images/kikyo.svg'),
+            linear-gradient(239deg, rgb(43, 58, 71), rgb(37, 49, 57));
+        }
+
+        .message-content {
+            flex: 1;
+        }
+
+        .message-name {
+            font-weight: bold;
+        }
+
+        .message-body {
+            color: rgb(235, 230, 223);
+        }
+
+        h1 {
+            margin: 0 0 20px 0;
+            display: flex;
+            align-items: center;
+            padding: 8px 20px 8px 20px;
+
+            color: rgb(38, 38, 78);
+            background: rgb(243, 236, 236);
+            font-family: 'Shippori Mincho B1', serif;
+            font-weight: 600;
+            font-size: 22px;
+            letter-spacing: -1px;
+            box-shadow: 0 0 10px rgb(8, 11, 24);
+        }
+
+        .diary-link {
+            margin-bottom: 5px;
+            display: block;
+            padding: 10px;
+            font-size: 0.9em;
+            color: rgb(241, 240, 234);
+            background-image: linear-gradient(rgb(35, 33, 51), rgb(50, 47, 70));
+            box-shadow: 0 0 15px rgba(6, 6, 17, 0.533) inset, 0 0 5px rgba(0, 0, 0, 0.2666666667);
+            border: 1px solid rgb(75, 71, 99);
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .columns {
+            display: flex;
+            margin: 20px;
+        }
+
+        .sub-column {
+            width: min(20%, 200px);
+            margin-right: 10px;
+            flex: none;
+        }
+
+        .main-column {
+            flex: 1;
+        }
+
+        .diary {
+            padding: 20px;
+            background: rgba(76, 65, 100, 0.2470588235);
+            border: 1px solid #5e5d66;
+            box-shadow: 0 0 20px #1c1e2e inset;
+        }
+
+        @media screen and (max-width: 650px) {          
+            .diary-link {
+                margin-bottom: 0;
+            }
+
+            .columns {
+                display: block;
+                margin: 10px;
+            }
+
+            .sub-column {
+                width: 100%;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2px;
+                margin: 10px 0;
+            }
+        }
+
+        @media screen and (max-width: 400px) {
+            .sub-column {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media screen and (max-width: 300px) {
+            .sub-column {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>第4更新 導　／　青が始まりを見下ろしている</h1>
+        <div class="columns">
+            <section class="sub-column">
+                
+                <a href="./1.html" class="diary-link">第1更新</a>
+                
+                <a href="./3.html" class="diary-link">第3更新</a>
+                
+                <a href="./4.html" class="diary-link">第4更新</a>
+                
+                <a href="./5.html" class="diary-link">第5更新</a>
+                
+                <a href="./6.html" class="diary-link">第6更新</a>
+                
+                <a href="./7.html" class="diary-link">第7更新</a>
+                
+                <a href="./8.html" class="diary-link">第8更新</a>
+                
+                <a href="./9.html" class="diary-link">第9更新</a>
+                
+                <a href="./10.html" class="diary-link">第10更新</a>
+                
+                <a href="./11.html" class="diary-link">第11更新</a>
+                
+                <a href="./12.html" class="diary-link">第12更新</a>
+                
+                <a href="./13.html" class="diary-link">第13更新</a>
+                
+                <a href="./14.html" class="diary-link">第14更新</a>
+                
+                <a href="./15.html" class="diary-link">第15更新</a>
+                
+                <a href="./16.html" class="diary-link">第16更新</a>
+                
+                <a href="./17.html" class="diary-link">第17更新</a>
+                
+                <a href="./18.html" class="diary-link">第18更新</a>
+                
+                <a href="./19.html" class="diary-link">第19更新</a>
+                
+                <a href="./20.html" class="diary-link">第20更新</a>
+                
+                <a href="./21.html" class="diary-link">第21更新</a>
+                
+                <a href="./22.html" class="diary-link">第22更新</a>
+                
+                <a href="./23.html" class="diary-link">第23更新</a>
+                
+                <a href="./24.html" class="diary-link">第24更新</a>
+                
+                <a href="./25.html" class="diary-link">第25更新</a>
+                
+                <a href="./26.html" class="diary-link">第26更新</a>
+                
+                <a href="./27.html" class="diary-link">第27更新</a>
+                
+                <a href="./28.html" class="diary-link">第28更新</a>
+                
+                <a href="./29.html" class="diary-link">第29更新</a>
+                
+            </section>
+            <section class="main-column">
+                <div class="diary">
+                    　ホテルマグロ疾走事件の後、肝試し女子高生グループは警察(に扮した退魔師)に補導されたという体で自宅に送り届けられた。<br>　その翌日の土曜日。珠緒は陽桜駅前広場で、偶然マグロ女子高生を見つけた。私服姿で、肝試しをしていた友人達と喋りながら歩いて来る。<br>　彼女は珠緒をちらと見て、真横を通り過ぎた。そのまますれ違い、遠ざかって行く。<br>　もう彼女が感謝することは無い。怪異や呪術の秘匿のために、当事者から関連する記憶は消されるからだ。<br>　ついでに今回は嫌な気配を感じたホテルに少女達が入るところをたまたま見掛けただけなので、依頼を受けた時のような報酬も無いに等しい。<br>　珠緒は桔梗院のような退魔師組織に属しているわけでもないから、評価が上がってボーナスがでるなんて事もない。<br>　退魔師というのは、基本的に割に合わない仕事だと思っている。<br><br><br>　珠緒は子どもの頃、無邪気に兄にこんなことを聞いたことがある。<br><br>「退魔師の仕事ってさ、内緒じゃん。で、異界に取り込まれた人は皆からも忘れられるから悲しまれないじゃん。なら、退魔師居なくてもよくない？」<br><br>　いくらでも反論できそうな、浅はかな子どもの考えでしかなかった。頑張って働いても知られることがないなら、やる意味なんか無いんじゃないか、と言うくらいの。<br>　その疑問に呆れたり怒ったりする事なく、兄は珠緒に向き合った。<br>　<br>「退魔師が居なかったら俺達は今頃みんな怪異に喰われてるだろうな。それに、珠緒は異界に攫われたらどうする？　皆から忘れられて、助けてほしいのに誰にも気づかれなかったら悲しいだろ？」<br><br>　冷静に、諭すように兄は珠緒の間違いを正した。<br>　これには一旦珠緒も納得したが、でも、と続ける。<br><br>「危険な仕事してるのに、知ってもらえないのは悲しいじゃん」<br><br>　退魔師としての一面を持つ家族は珠緒に取って憧れだった。<br>　憧れだけでできる仕事じゃないことは子どもなりに感じていたから、尊敬もしていたし自慢だってしたかった。誰もこの偉業を知らないなんて、不憫だ。<br>　兄は、そうでもないよと言って珠緒の頭を撫でる。<br><br>「そんなに評判とか気にしてないし、珠緒は知ってくれてるだろ？　それに退魔師じゃなくても、危険な仕事をしてるのに知られてない人ってのはたくさん居るんだよ。中には俺達みたいに、機密事項があるから仕事について詳しく話しちゃ駄目って人も居る」<br>「例えば？」<br>「ボディーガードとか、近いんじゃない？」<br>「その人はなんでやってるんだろ。他の仕事もあるのに」<br>「理由は人それぞれだと思うけど、俺と似たような人も居るかもなあ」<br>「どんな？」<br><br>　問う珠緒を、迷いのないさっぱりとした笑みが見つめた。<br><br>「俺は、<ruby>退魔<rp>(</rp><rt>それ</rt><rp>)</rp></ruby>ができる人間だからこの仕事をしている」<br><br>　それは、彼の生き方と才能を示す言葉だった。<br>　<br><br>　陽桜駅の改札をくぐった少女達が電車に乗り込む。仲良く遊びにでも行くのかもしれない。<br>　それは、彼女たちの知らない珠緒が結んだ成果だ。<br>　過酷でも、報酬が足りなくても、感謝が無くても。珠緒は自分に人を助ける力があるから、退魔師をしている。<br><br><br><hr class="message-hr"><br><br><br><br>　空は今日も青い。穏やかで、清々しく和やかで、出かけるには丁度いい。<br>　蝋燭店「CANDLE RYOZEN」も営業日和だ。 外に向けて店頭ディスプレイしている窓際の蝋燭も、陽光の明るさに霞んでしまうかもしれない。入口や窓から差し込む陽気に対して、春を感じるなと言う方が無理なものだ。<br>　しかし、長閑な空気など意に介さず、大きな異界は今も人知れず市民を取り込んでいる。<br>　大規模異界発生の異常事態とあって、助力の要請は桔梗院本部や関連組織にも飛んでいた。それは霊山本家も例外ではない。<br><br>「その筋のお客さんも増えたよね。<ruby>天樹<rp>(</rp><rt>てんじゅ</rt><rp>)</rp></ruby>君達も来るのかな」<br><br>　叔父の雨水が4つ上の兄の名を口にするものだから、珠緒は露骨に眉を顰めた。彼とは最近あまり上手くいってない。<br><br>「テン兄と言えばお小言だからなあ、こっち来たら俺またなんか言われるじゃんねー」<br>「言ってほしいのか？」<br><br>　そう問うたのは雨水では無かった。<br>　声に珠緒が顔を向けた先、店の入口から仏頂面の男がこちらを見ている。<br><br>「叔父さん、お久しぶりです」<br><br>　生真面目に挨拶する男は、正しく珠緒の兄にして霊山家現当主である天樹だった。珠緒はばつが悪そうに唇を尖らせる。言ったことの取り消しは効かない。<br><br>「久しぶり、よく来たね。君達も来たんだ」<br>「ええ、連絡が遅れました。片田舎の一族ですが、お力添えします」<br>「家の方は良いのかい？」<br>「本家と言っても特に重鎮でもない小さな家ですし、父も居ますから」<br><br>　叔父と天樹が親戚同士の挨拶を交わす。珠緒はその内にどこかへ行ってしまいたかったが、立ち上がった途端に天樹の鋭い視線が珠緒を射抜いた。<br><br>「タマ。今回の作戦、お前は出るなよ」<br><br>　釘を刺す、と言う表現が相応しい語調だった。これだけは言っておかなければならないという執念すら感じられる。<br><br>「……はあい」<br><br>　珠緒は簡単に返事をする。<br>　返事を聞いた天樹は、それ以上は何も言わなかった。珠緒も追及されないならなんでも良かった。返事だって、中身の無い取り敢えずの返事だ。<br>　天樹は叔父との挨拶を済ませ、幾つかの呪具蝋燭を都合して貰うと「また来ます」と店を後にした。来た用事は挨拶と呪具の調達らしい。<br>　その少しの時間が過ぎてまた店に二人になった頃、叔父が溜息と共に腕を組みながら珠緒を見る。窘める時の癖だった。<br><br>「タマ。さっきの本気？」<br>「まさか」<br><br>　珠緒は小心者だ。退魔師の家系に生まれた癖に、未だに怪異を前に足を竦ませることがあるし、異界に入っては泣き喚く。<br>　自他ともに認める意気地無しで、その精神性のためか呪術の出力も安定しない。<br>　危なっかしいから、本当に危なっかしいから怪異との戦闘は避けろと兄に言われたこともある。<br>　そんな酷評を受けても珠緒が退魔師の仕事を辞めようとしたことはない。<br>　自分には、人を救える力がある。ただでさえ、それを知っていていつも逃げている。そこから完全に逃げ切ってしまえるだけの勇気も珠緒には無かった。<br>　仮にも退魔師の男が怪異の手も借りたいほどの緊急事態に一人座して待つなんて、据わりが悪い話だ。<br>　珠緒は半端者なりに振る舞いを決めていた。雨水もそれはわかっていて、天樹とちゃんと話をしないことを気に掛けているようだった。<br><br>「天樹君にもいずれ分かることだろうし、嘘は良くないと思うなあ」<br>「だってさあ、本当のこと話しても揉めるだけだよ。テン兄は」<br><br>　珠緒はそれだけ言って、芯切りとライターを手に窓へ向かう。<br>　ディスプレイ用の蝋燭がいつの間にか消えて、煙だけを燻らせていた。
+                </div>
+            </section>
+        </div>
+    </main>
+</body>
+</html>

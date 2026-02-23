@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>琰湖 | 第29更新 | 作戦番号377 霊山珠緒</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=Shippori+Mincho+B1:wght@600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'BIZ UDPGothic', sans-serif;
+        }
+
+        html, body {
+            background: #021825;
+            height: 100%;
+            line-height: 1.4;
+            font-size: 15px;
+        }
+
+        main {
+            max-width: 1000px;
+            padding: 20px 0;
+            margin: 0 auto;
+            min-height: 100%;
+            background: #2a3146;
+            box-shadow: 0 0 15px inset rgba(36, 38, 44, 0.801), 0 0 10px rgba(0, 0, 0, 0.2);
+            color: #ebeae5;
+        }
+
+        b {
+            font-weight: bold;
+            color: rgb(247, 175, 41);
+        }
+
+        .larger {
+            font-size: min(120%, 3rem);
+        }
+
+        .smaller {
+            font-size: max(90%, 0.3rem);
+        }
+
+        .strike {
+            text-decoration: line-through;
+        }
+
+        .underline {
+            text-decoration: underline;
+        }
+
+        .italic {
+            font-style: italic;
+        }
+
+        .bold {
+            font-weight: bold;
+        }
+
+        .message-hr {
+            margin: 20px 0;
+            border: none;
+            border-top: 1px dotted rgb(188, 187, 194);
+        }
+
+        .dice {
+            font-weight: bold;
+            color: #f3a16a;
+        }
+
+        .dice.d100:before {
+            content: '';
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            position: relative;
+            top: 1px;
+            background: url('./images/d100.png');
+            background-size: cover;
+            margin: 0 1px;
+        }
+
+        .dice.d6:before {
+            content: '';
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            position: relative;
+            top: 1px;
+            background: url('./images/d6.png');
+            background-size: cover;
+            margin: 0 1px;
+        }
+
+        .cutin {
+            display: block;
+            margin: 0 auto;
+            max-height: 150px;
+            max-width: min(350px, 100%);
+        }
+
+        .cutin.cutin-left {
+            margin: 0 auto 0 0;
+        }
+
+        .cutin.cutin-right {
+            margin: 0 0 0 auto;
+        }
+
+        .full-image {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+        }
+
+        .full-image.full-image-left {
+            margin: 0 auto 0 0;
+        }
+
+        .full-image.full-image-right {
+            margin: 0 0 0 auto;
+        }
+
+        .message {
+            display: flex;
+            width: fit-content;
+            background: #0004;
+            padding: 6px 10px 6px 10px;
+            border-radius: 4px;
+            align-items: center;
+            margin: 10px 0;
+        }
+
+        .message-icon-wrapper {
+            flex: none;
+            width: 60px;
+            height: 60px;
+            margin-right: 10px;
+        }
+
+        .message-icon {
+            width: 60px;
+            height: 60px;
+        }
+
+        .message-icon-noimage {
+            width: 60px;
+            height: 60px;
+            border-radius: 4px;
+            box-shadow: 0 0 2px rgba(0, 0, 0, 0.562);
+            background: no-repeat center/80% url('./images/kikyo.svg'),
+            linear-gradient(239deg, rgb(43, 58, 71), rgb(37, 49, 57));
+        }
+
+        .message-content {
+            flex: 1;
+        }
+
+        .message-name {
+            font-weight: bold;
+        }
+
+        .message-body {
+            color: rgb(235, 230, 223);
+        }
+
+        h1 {
+            margin: 0 0 20px 0;
+            display: flex;
+            align-items: center;
+            padding: 8px 20px 8px 20px;
+
+            color: rgb(38, 38, 78);
+            background: rgb(243, 236, 236);
+            font-family: 'Shippori Mincho B1', serif;
+            font-weight: 600;
+            font-size: 22px;
+            letter-spacing: -1px;
+            box-shadow: 0 0 10px rgb(8, 11, 24);
+        }
+
+        .diary-link {
+            margin-bottom: 5px;
+            display: block;
+            padding: 10px;
+            font-size: 0.9em;
+            color: rgb(241, 240, 234);
+            background-image: linear-gradient(rgb(35, 33, 51), rgb(50, 47, 70));
+            box-shadow: 0 0 15px rgba(6, 6, 17, 0.533) inset, 0 0 5px rgba(0, 0, 0, 0.2666666667);
+            border: 1px solid rgb(75, 71, 99);
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .columns {
+            display: flex;
+            margin: 20px;
+        }
+
+        .sub-column {
+            width: min(20%, 200px);
+            margin-right: 10px;
+            flex: none;
+        }
+
+        .main-column {
+            flex: 1;
+        }
+
+        .diary {
+            padding: 20px;
+            background: rgba(76, 65, 100, 0.2470588235);
+            border: 1px solid #5e5d66;
+            box-shadow: 0 0 20px #1c1e2e inset;
+        }
+
+        @media screen and (max-width: 650px) {          
+            .diary-link {
+                margin-bottom: 0;
+            }
+
+            .columns {
+                display: block;
+                margin: 10px;
+            }
+
+            .sub-column {
+                width: 100%;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2px;
+                margin: 10px 0;
+            }
+        }
+
+        @media screen and (max-width: 400px) {
+            .sub-column {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media screen and (max-width: 300px) {
+            .sub-column {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>第29更新 琰湖</h1>
+        <div class="columns">
+            <section class="sub-column">
+                
+                <a href="./1.html" class="diary-link">第1更新</a>
+                
+                <a href="./3.html" class="diary-link">第3更新</a>
+                
+                <a href="./4.html" class="diary-link">第4更新</a>
+                
+                <a href="./5.html" class="diary-link">第5更新</a>
+                
+                <a href="./6.html" class="diary-link">第6更新</a>
+                
+                <a href="./7.html" class="diary-link">第7更新</a>
+                
+                <a href="./8.html" class="diary-link">第8更新</a>
+                
+                <a href="./9.html" class="diary-link">第9更新</a>
+                
+                <a href="./10.html" class="diary-link">第10更新</a>
+                
+                <a href="./11.html" class="diary-link">第11更新</a>
+                
+                <a href="./12.html" class="diary-link">第12更新</a>
+                
+                <a href="./13.html" class="diary-link">第13更新</a>
+                
+                <a href="./14.html" class="diary-link">第14更新</a>
+                
+                <a href="./15.html" class="diary-link">第15更新</a>
+                
+                <a href="./16.html" class="diary-link">第16更新</a>
+                
+                <a href="./17.html" class="diary-link">第17更新</a>
+                
+                <a href="./18.html" class="diary-link">第18更新</a>
+                
+                <a href="./19.html" class="diary-link">第19更新</a>
+                
+                <a href="./20.html" class="diary-link">第20更新</a>
+                
+                <a href="./21.html" class="diary-link">第21更新</a>
+                
+                <a href="./22.html" class="diary-link">第22更新</a>
+                
+                <a href="./23.html" class="diary-link">第23更新</a>
+                
+                <a href="./24.html" class="diary-link">第24更新</a>
+                
+                <a href="./25.html" class="diary-link">第25更新</a>
+                
+                <a href="./26.html" class="diary-link">第26更新</a>
+                
+                <a href="./27.html" class="diary-link">第27更新</a>
+                
+                <a href="./28.html" class="diary-link">第28更新</a>
+                
+                <a href="./29.html" class="diary-link">第29更新</a>
+                
+            </section>
+            <section class="main-column">
+                <div class="diary">
+                    「三回目はちょっと想像していなかったなあ」<br><br>　彩焔が静かに燃える湖は、今日も優雅に水面を湛えている。強過ぎる光から逃れて目を休めてくれる暗がりだ。<br><br>「だって、覚えてたら会いたくなるし。お礼も言いたかったし。会えるとは思わなかったけどね〜！　『ゆめYUME』の安眠お寿司クッションのお陰かなあ？」<br>「お寿司？　……珠緒、随分と砕けたね？」<br>「琰と仲良くしたいからね！」<br><br>　あっけらかんと珠緒は言ってのける。巫山戯ているつもりはなかった。<br>　榮花を助けることができたのも彼女のお陰だし、彩焔を信じた強行策が取れたのも彼女の昔話のお陰だ。<br>　あれきりと言うのは、寂しい。<br><br>「それはどうも。でも、私にあまり近づこうとするのはいただけないな。もう聞きたいことも無いだろう？」<br>「いや、まだある！　琰の話、もっと聞きたい」<br>「今度こそ人の道を逸れてしまうよ」<br>「そういうとこ。琰はそう言って避けるけどさ、前にそういうことあったの？」<br><br>　珠緒は帰る様子を微塵も見せない。琰もまた、強い口調で追い返すことはしなかった。<br><br>「あったよ」<br><br>　琰は変わらぬ調子で答えた。けれど、そこに含まれる間はどこか懐かしむようで、感情に蓋をしたようでもある。<br>　水面の彩焔が、僅かに小さくなっていた。<br><br>「直接の干渉でなくとも、私の手引きで人の理が覆ったことは一度や二度ではない。君の兄君だって、在るべき姿ではなくなってしまっただろう？」<br><br>　珠緒の兄、榮花は琰に教えられた封印術に失敗し、珠緒の中で8年封じられていた。その時間の分だけ、世界とのずれが生じてしまっている。<br><br>「エーカ兄は琰の所為じゃないよ。エーカ兄が世界から消えたのは俺がエーカ兄も入居できる広さを魂に持ってたからだし、そもそも入居する羽目になったのはあの狐の所為！」<br>「入居」<br>「うん、入居」<br><br>　珠緒は8年分の家賃の回収をしてないことを思い出した。榮花と、狐と、山の異界の分。何で支払ってもらうのが良いだろう。<br>　気の抜ける表現を用いたためだろうか。琰からくすりとした笑い声が漏れる。<br><br>「琰は、自分の都合で誰かの未来を狂わせるようなことはしないって俺は思ってる」<br>「どうだろうなあ。そうなら、いいのだけれど」<br><br>　琰はすんなりとは肯定しなかった。<br>　責任からそのように言うのか、本当に自分本位に力を振り翳したことがあったのかは珠緒の知るところではない。二度会っただけで、彼女の全てを網羅できる筈もない。<br><br>「何があったのか俺は知らないけど、琰と会うのが悪いことって思いたくない。それより俺はずっと俺達を見てきた琰が居ること、皆に知ってほしいよ」<br>「ありがとう。気持ちだけで嬉しいよ。でも、大丈夫。珠緒が知ってくれているだけでも私には過ぎた幸運だ」<br><br>　珠緒は、琰のやんわりとした遠慮を聞いてもやはり帰る気は無かった。目が覚めるにはまだ早い。<br><br>「琰にこれからも手伝ってほしいこと、いっぱいあるんだよお？　消えちゃったエーカ兄の痕跡もさあ、できるとこまで復元したいんだよね〜」<br><br>　臨時のバイトでも頼むように軽い調子でものを言う。<br>　霊山榮花という人間は、今の世界には存在しないものとして修正されている。<br>　桔梗院関連の支援を受ければある程度は生活の保証は叶うが、元あった情報が全く無いのはやはり不便が多かった。<br><br>「“やたら若々しい霊山家の長男”ってくらいに情報を落ち着けたくって〜」<br>「世の理に抗う気かい。私に手伝えるようなことは無いよ。こればかりは、授けられる知恵も無い」<br><br>　容易なことではない。世界という途方もない規模の相手に介入できるとすれば、それこそ神業だ。<br>　琰は、以前「大したことは出来ない」とした宣言通りきっぱりと一蹴した。<br><br>「なーに言ってんの！」<br><br>　珠緒は口角を引き上げて、彩焔に歩み寄った。水音が立つ。<br><br>「一緒に探すんだよお〜。人手なんか幾らあっても良いんだからね、こんなの！　俺ん家、退魔師よ？　他にも忙しいんだから！」<br>「肉体労働でもさせる気かな。生憎私は、君達に直接の干渉は──」<br>「できる！　俺ができるようにする！」<br><br>　珠緒には、力がある。神様の気まぐれであるとしても、どうしたことか多大なる力がある。<br>　持つ力ができることを確かめたいと思うのは人の性だった。<br>　何でもは叶わないだろう。だから、何ができるのかを機会が訪れる度に見極める。それを繰り返すことで、いつか成すべきことも明らかになるはずだ。<br><br>「俺が琰を、皆と結ぶ。俺は一人でずっと俺達を見てきた琰のこと知ってる。俺は琰を結ぶ緒なんだから、他の御魂と結ぶくらいやってみようよ。留まる場所が必要なら、空きができた俺の魂を貸してあげる」<br><br>　名前は祈りを込められるとしても、必ずしもそれ自体に力が宿るものではない。<br>　これは儀式と呼ぶにもおまじないと呼ぶにも程遠い、霊山珠緒の単なる願掛けだ。<br>　珠緒は彩焔の纏う祈りに一色を加える。<br><br>「軽はずみなことだなあ」<br><br>　琰はまた、緩やかに笑った。<br>　名前は必ずしもそれ自体に力が宿るものではない。しかし祈りは込められる。<br>　であれば珠緒からも、名を贈ることにした。<br>　どうか此処のように、いつまでも涼やかな安らぎを。<br>　珠緒の指先が、水面の彩焔と触れ合う。<br><br>「おいで、琰湖！」<br><br><hr class="message-hr"><br><br><br>・<br><br>・<br><br>・<br><br><br><br><br><br><br><br><br><br><br><br><br><br><section class="message"><div class="message-icon-wrapper"><img class="message-icon" src="./images/377/65894ca9-eace-4655-b9ea-443f065dc83f.png"></div><div class="message-content"><div class="message-name">霊山雨水</div><div class="message-body">「<span class="italic">君には感謝しているよ……お陰で《彩焔》を僕の手に収められた……</span>」</div></div></section><section class="message"><div class="message-icon-wrapper"><img class="message-icon" src="./images/377/90894ba6-672e-49a9-b77c-e00a50509122.png"></div><div class="message-content"><div class="message-name"></div><div class="message-body">「妾を利用したと？　気に入らぬ。仕置きをせねばなるまいな」</div></div></section><section class="message"><div class="message-icon-wrapper"><img class="message-icon" src="./images/377/90894ba6-672e-49a9-b77c-e00a50509122.png"></div><div class="message-content"><div class="message-name"></div><div class="message-body">「妾が動けぬ間に<span class="smaller"><span class="smaller">取り調べなどと称し火傷の小僧や矢鱈と陽気な白衣の小僧にあんなことやこんなことを</span></span>受けた恥辱、今こそ晴らさせてもらうぞ……！」</div></div></section><section class="message"><div class="message-icon-wrapper"><img class="message-icon" src="./images/377/7a33db29-4a45-43a8-b442-1636837ab14d.png"></div><div class="message-content"><div class="message-name"></div><div class="message-body">「はい、では次は君から攻撃だ。賽子を振ってください」</div></div></section><section class="message"><div class="message-icon-wrapper"><img class="message-icon" src="./images/377/90894ba6-672e-49a9-b77c-e00a50509122.png"></div><div class="message-content"><div class="message-name"></div><div class="message-body">「ふむ」</div></div></section><section class="message"><div class="message-icon-wrapper"><img class="message-icon" src="./images/377/7a33db29-4a45-43a8-b442-1636837ab14d.png"></div><div class="message-content"><div class="message-name"></div><div class="message-body">「次に雨水が振ってね」</div></div></section><section class="message"><div class="message-icon-wrapper"><img class="message-icon" src="./images/377/32aabc43-76cd-41b1-9b8b-ca6201ab7e33.png"></div><div class="message-content"><div class="message-name">霊山雨水</div><div class="message-body">「はい」</div></div></section><br><br>　ころころころ……。テーブルに賽の転がる音が木霊する。<br><br><br><section class="message"><div class="message-icon-wrapper"><img class="message-icon" src="./images/377/90894ba6-672e-49a9-b77c-e00a50509122.png"></div><div class="message-content"><div class="message-name"></div><div class="message-body">「うくく、通ったなあ？　<ruby>陸<rp>(</rp><rt>ろく</rt><rp>)</rp></ruby>だ、<ruby>陸<rp>(</rp><rt>ろく</rt><rp>)</rp></ruby>が揃った！<br>　今に喰ろうてやろう……我が秘儀を行使する！　出でよ蓮恋砲！」</div></div></section><section class="message"><div class="message-icon-wrapper"><img class="message-icon" src="./images/377/db71e3ba-c031-4414-8613-2e867c7d9602.png"></div><div class="message-content"><div class="message-name">看板狐ぬいぐるみ：<ruby>蓮恋<rp>(</rp><rt>れんれん</rt><rp>)</rp></ruby></div><div class="message-body"><span class="italic">＼こゃーん／</span></div></div></section><section class="message"><div class="message-icon-wrapper"><img class="message-icon" src="./images/377/7a33db29-4a45-43a8-b442-1636837ab14d.png"></div><div class="message-content"><div class="message-name"></div><div class="message-body">「では、雨水から《彩焔》の札を剥奪します」</div></div></section><section class="message"><div class="message-icon-wrapper"><img class="message-icon" src="./images/377/c2532197-cfc2-433c-b417-41747d408d5c.png"></div><div class="message-content"><div class="message-name">霊山雨水</div><div class="message-body">「ああ〜」</div></div></section><br><br><section class="message"><div class="message-icon-wrapper"><img class="message-icon" src="./images/377/85940b25-36d8-439f-8bbd-538212d14745.png"></div><div class="message-content"><div class="message-name">霊山珠緒</div><div class="message-body">「叔父さん、なに恐ろしい遊びしてんの……？」</div></div></section><section class="message"><div class="message-icon-wrapper"><img class="message-icon" src="./images/377/50a9d8c5-711c-4515-8523-84493e034ae1.png"></div><div class="message-content"><div class="message-name">霊山雨水</div><div class="message-body">「新しく作った遊びだって。誘われた」</div></div></section><br><br>　これまでの業や穢れが、そのまま戒めとなる。<br>　そのような言葉の下で怪異『狐の嫁入り』は新たに『<ruby>涙呼<rp>(</rp><rt>るいこ</rt><rp>)</rp></ruby>』の名を与えられ、児戯をするのが精々の身体にその在り方を封じられた。<br>　それの傍らには珠緒が召喚した『琰湖』という七尾の狐が居て、姉のように甲斐甲斐しく面倒を見ているらしい。<br>
+                </div>
+            </section>
+        </div>
+    </main>
+</body>
+</html>

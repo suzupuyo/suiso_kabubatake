@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>突然の篝火 | 第18更新 | 作戦番号377 霊山珠緒</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=Shippori+Mincho+B1:wght@600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'BIZ UDPGothic', sans-serif;
+        }
+
+        html, body {
+            background: #021825;
+            height: 100%;
+            line-height: 1.4;
+            font-size: 15px;
+        }
+
+        main {
+            max-width: 1000px;
+            padding: 20px 0;
+            margin: 0 auto;
+            min-height: 100%;
+            background: #2a3146;
+            box-shadow: 0 0 15px inset rgba(36, 38, 44, 0.801), 0 0 10px rgba(0, 0, 0, 0.2);
+            color: #ebeae5;
+        }
+
+        b {
+            font-weight: bold;
+            color: rgb(247, 175, 41);
+        }
+
+        .larger {
+            font-size: min(120%, 3rem);
+        }
+
+        .smaller {
+            font-size: max(90%, 0.3rem);
+        }
+
+        .strike {
+            text-decoration: line-through;
+        }
+
+        .underline {
+            text-decoration: underline;
+        }
+
+        .italic {
+            font-style: italic;
+        }
+
+        .bold {
+            font-weight: bold;
+        }
+
+        .message-hr {
+            margin: 20px 0;
+            border: none;
+            border-top: 1px dotted rgb(188, 187, 194);
+        }
+
+        .dice {
+            font-weight: bold;
+            color: #f3a16a;
+        }
+
+        .dice.d100:before {
+            content: '';
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            position: relative;
+            top: 1px;
+            background: url('./images/d100.png');
+            background-size: cover;
+            margin: 0 1px;
+        }
+
+        .dice.d6:before {
+            content: '';
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            position: relative;
+            top: 1px;
+            background: url('./images/d6.png');
+            background-size: cover;
+            margin: 0 1px;
+        }
+
+        .cutin {
+            display: block;
+            margin: 0 auto;
+            max-height: 150px;
+            max-width: min(350px, 100%);
+        }
+
+        .cutin.cutin-left {
+            margin: 0 auto 0 0;
+        }
+
+        .cutin.cutin-right {
+            margin: 0 0 0 auto;
+        }
+
+        .full-image {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+        }
+
+        .full-image.full-image-left {
+            margin: 0 auto 0 0;
+        }
+
+        .full-image.full-image-right {
+            margin: 0 0 0 auto;
+        }
+
+        .message {
+            display: flex;
+            width: fit-content;
+            background: #0004;
+            padding: 6px 10px 6px 10px;
+            border-radius: 4px;
+            align-items: center;
+            margin: 10px 0;
+        }
+
+        .message-icon-wrapper {
+            flex: none;
+            width: 60px;
+            height: 60px;
+            margin-right: 10px;
+        }
+
+        .message-icon {
+            width: 60px;
+            height: 60px;
+        }
+
+        .message-icon-noimage {
+            width: 60px;
+            height: 60px;
+            border-radius: 4px;
+            box-shadow: 0 0 2px rgba(0, 0, 0, 0.562);
+            background: no-repeat center/80% url('./images/kikyo.svg'),
+            linear-gradient(239deg, rgb(43, 58, 71), rgb(37, 49, 57));
+        }
+
+        .message-content {
+            flex: 1;
+        }
+
+        .message-name {
+            font-weight: bold;
+        }
+
+        .message-body {
+            color: rgb(235, 230, 223);
+        }
+
+        h1 {
+            margin: 0 0 20px 0;
+            display: flex;
+            align-items: center;
+            padding: 8px 20px 8px 20px;
+
+            color: rgb(38, 38, 78);
+            background: rgb(243, 236, 236);
+            font-family: 'Shippori Mincho B1', serif;
+            font-weight: 600;
+            font-size: 22px;
+            letter-spacing: -1px;
+            box-shadow: 0 0 10px rgb(8, 11, 24);
+        }
+
+        .diary-link {
+            margin-bottom: 5px;
+            display: block;
+            padding: 10px;
+            font-size: 0.9em;
+            color: rgb(241, 240, 234);
+            background-image: linear-gradient(rgb(35, 33, 51), rgb(50, 47, 70));
+            box-shadow: 0 0 15px rgba(6, 6, 17, 0.533) inset, 0 0 5px rgba(0, 0, 0, 0.2666666667);
+            border: 1px solid rgb(75, 71, 99);
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .columns {
+            display: flex;
+            margin: 20px;
+        }
+
+        .sub-column {
+            width: min(20%, 200px);
+            margin-right: 10px;
+            flex: none;
+        }
+
+        .main-column {
+            flex: 1;
+        }
+
+        .diary {
+            padding: 20px;
+            background: rgba(76, 65, 100, 0.2470588235);
+            border: 1px solid #5e5d66;
+            box-shadow: 0 0 20px #1c1e2e inset;
+        }
+
+        @media screen and (max-width: 650px) {          
+            .diary-link {
+                margin-bottom: 0;
+            }
+
+            .columns {
+                display: block;
+                margin: 10px;
+            }
+
+            .sub-column {
+                width: 100%;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2px;
+                margin: 10px 0;
+            }
+        }
+
+        @media screen and (max-width: 400px) {
+            .sub-column {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media screen and (max-width: 300px) {
+            .sub-column {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>第18更新 突然の篝火</h1>
+        <div class="columns">
+            <section class="sub-column">
+                
+                <a href="./1.html" class="diary-link">第1更新</a>
+                
+                <a href="./3.html" class="diary-link">第3更新</a>
+                
+                <a href="./4.html" class="diary-link">第4更新</a>
+                
+                <a href="./5.html" class="diary-link">第5更新</a>
+                
+                <a href="./6.html" class="diary-link">第6更新</a>
+                
+                <a href="./7.html" class="diary-link">第7更新</a>
+                
+                <a href="./8.html" class="diary-link">第8更新</a>
+                
+                <a href="./9.html" class="diary-link">第9更新</a>
+                
+                <a href="./10.html" class="diary-link">第10更新</a>
+                
+                <a href="./11.html" class="diary-link">第11更新</a>
+                
+                <a href="./12.html" class="diary-link">第12更新</a>
+                
+                <a href="./13.html" class="diary-link">第13更新</a>
+                
+                <a href="./14.html" class="diary-link">第14更新</a>
+                
+                <a href="./15.html" class="diary-link">第15更新</a>
+                
+                <a href="./16.html" class="diary-link">第16更新</a>
+                
+                <a href="./17.html" class="diary-link">第17更新</a>
+                
+                <a href="./18.html" class="diary-link">第18更新</a>
+                
+                <a href="./19.html" class="diary-link">第19更新</a>
+                
+                <a href="./20.html" class="diary-link">第20更新</a>
+                
+                <a href="./21.html" class="diary-link">第21更新</a>
+                
+                <a href="./22.html" class="diary-link">第22更新</a>
+                
+                <a href="./23.html" class="diary-link">第23更新</a>
+                
+                <a href="./24.html" class="diary-link">第24更新</a>
+                
+                <a href="./25.html" class="diary-link">第25更新</a>
+                
+                <a href="./26.html" class="diary-link">第26更新</a>
+                
+                <a href="./27.html" class="diary-link">第27更新</a>
+                
+                <a href="./28.html" class="diary-link">第28更新</a>
+                
+                <a href="./29.html" class="diary-link">第29更新</a>
+                
+            </section>
+            <section class="main-column">
+                <div class="diary">
+                    　闇の中に、七色の炎が不可思議な形で宙に浮いていた。小さいが上方にも下方にも火の手が伸びている。<br>　珠緒がたじろぐと、足下で水音が立った。<br>　あの炎は浮いているのではなく、水面に反射しているのだ。それが段々と育つように大きくなる。<br>　珠緒は息を飲んだ。意図せず燃え広がり、すべてを燃やした彩焔を知っているから。<br>　しかし警戒に反して、火の手は一定の範囲でぴたりと留まった。<br><br>「やあ」<br><br>　煌々と燃える炎の向こうで声がした。落ち着いた女の声に聞こえる。誰だろう。珠緒は炎の奥に目を凝らすが、まったく見えない。<br><br>「誰、ねえ。内緒にしておこうかな。君は私を知らないし、せっかくだから対等に話をしたい」<br><br>　見透かしたように、疑問の答えを言い当てて声は笑う。怪異だろうか。<br><br>「君らの分類がそうなら、怪異でいいよ。けれど、大したものじゃあない。君らに傷をつけることも、幸運を齎すこともできはしないからね」<br><br>　声の物言いは核心を突かず、結局正体がわからない。<br>　ただ、不思議と。珠緒は炎の揺らぎと、その声に安らぎのようなものを覚えていた。<br>　未知を前にして、本来ならばその感覚自体危険なことのはずであるが。<br><br>「こうして話すのも滅多に無いのだけれど……そういえば、君とはなぜ会えたのだろうね？　なにか、面白いことをしたのかな」<br><br>　尋ねる声は愉しみを見出しているようでもある。<br>　珠緒は自分が此処に至るまでを振り返り、おまじないを思い出した。夢が見られるおまじない。<br>　とすれば、これは夢なのだろうか。<br>　これがおまじないの導いた夢なら、よく眠れたりするのだろうか。<br><br>「この炎は君の手が届く。君の思いのままだ。消そうと奮闘したり、慌てて逃げる必要も無い。のんびりしたものさ。きっと忘れてしまうけれど、この夢は君に休息を与えてくれるはずだよ」<br><br>　声の言う通り、炎は安定している。水に囲まれ、燃え移るものも無い。<br>　けれど絶えることはなく、その灯りは闇を照らし続けている。<br>　それにしても、声の彼女は随分とこの夢に詳しい。まるで夢の主だ。<br>　珠緒は、あなたは何者なのかと声に尋ねた。<br><br>「内緒にしたいと言ったのに聞くのか、君は」<br><br>　くすくすと笑われてしまった。<br>　とは言えこの状況で知りたいと思うのは人の性だと珠緒は思う。<br><br>「君、思ったよりなかなか言うな。ねえ。君の名前は？　……そう、珠緒。じゃあ、私は“<ruby>琰<rp>(</rp><rt>えん</rt><rp>)</rp></ruby>”と名乗ろう」<br><br>　琰が名乗ると、水面の炎が呼応するように揺らめいた。風は無い。<br><br>「私は、君たちをずっと見守り続けている者だ。君の生まれるよりも、ずっとずっと昔から。けれど、それだけ。先に言ったように大したことはできない。この夢も、君の記憶からいずれ消え行く。それでも。言葉を残すことを、許してほしい」<br><br>　これまで滔々と灘らかに話されていた声の調子が幾らか淀む。<br>　珠緒には拒む理由が無いから、許すも何も無いのだが。切実さを孕んだ声色が気に掛かった。<br>　もしかすると、自分が思っているより想われている。彼女の言う“君たち”は、どこからどこまでなのだろう。<br><br>「珠緒。君には目的を果たすだけの力がある。だから、とてつもなく辛く苦しいことが起きても辛抱強く挑んでみてほしい。完璧を求めることは、しなくていいから」<br><br>　なにやら声から励ましを受けていた。<br>　と言うよりは深刻そうな、どちらかと言えば心配されているように取れた。<br><br>「どうか、恐れないで。物の怪に負けないで。私は君たちの幸福を願っているよ」<br><br>　珠緒は、戸惑っていた。<br>　要領を得ない話が続く。琰が幸福を願う説明が欲しいが、この調子だと希望は叶いそうにない。<br><br>「……一方的に話すばかりですまないね。そろそろ朝が来る。せめて、よい眠りを。おやすみ」<br><br>　返事を待たずして、珠緒と琰の繋がりは途絶えた。<br><br><br><br><br>　雲の隙間に日が差すように、珠緒の意識が徐々に広がる。穏やかな覚醒だった。<br>　静寂の中に明るくなった天井が映る。叔父の家で借り受けている和室、板張りの天井。<br>　不思議な夢を見た気がする。闇の中で彩焔のような七色の炎を眺めていた記憶が、薄らと残っていた。<br>　朝が来ていた。頭や身体は重くなく、気分も悪くない。<br>　布団の中で軽く伸びをした。ごつ、と肘になにかが当たる。<br>　人肌ほどの温もりと、仄かに弾力のあるなにか。<br><br>「は？」<br><br>　誰かいる。ぎょっとして身を起こした珠緒のとなり。<br>　成人ほどの男性が────珠緒の見間違いでなければ、霊山榮花が珠緒の傍らに身を横たえていた。
+                </div>
+            </section>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>退魔師・梅影禄郎の災難2　 | 第19更新 | 作戦番号377 霊山珠緒</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=Shippori+Mincho+B1:wght@600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'BIZ UDPGothic', sans-serif;
+        }
+
+        html, body {
+            background: #021825;
+            height: 100%;
+            line-height: 1.4;
+            font-size: 15px;
+        }
+
+        main {
+            max-width: 1000px;
+            padding: 20px 0;
+            margin: 0 auto;
+            min-height: 100%;
+            background: #2a3146;
+            box-shadow: 0 0 15px inset rgba(36, 38, 44, 0.801), 0 0 10px rgba(0, 0, 0, 0.2);
+            color: #ebeae5;
+        }
+
+        b {
+            font-weight: bold;
+            color: rgb(247, 175, 41);
+        }
+
+        .larger {
+            font-size: min(120%, 3rem);
+        }
+
+        .smaller {
+            font-size: max(90%, 0.3rem);
+        }
+
+        .strike {
+            text-decoration: line-through;
+        }
+
+        .underline {
+            text-decoration: underline;
+        }
+
+        .italic {
+            font-style: italic;
+        }
+
+        .bold {
+            font-weight: bold;
+        }
+
+        .message-hr {
+            margin: 20px 0;
+            border: none;
+            border-top: 1px dotted rgb(188, 187, 194);
+        }
+
+        .dice {
+            font-weight: bold;
+            color: #f3a16a;
+        }
+
+        .dice.d100:before {
+            content: '';
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            position: relative;
+            top: 1px;
+            background: url('./images/d100.png');
+            background-size: cover;
+            margin: 0 1px;
+        }
+
+        .dice.d6:before {
+            content: '';
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            position: relative;
+            top: 1px;
+            background: url('./images/d6.png');
+            background-size: cover;
+            margin: 0 1px;
+        }
+
+        .cutin {
+            display: block;
+            margin: 0 auto;
+            max-height: 150px;
+            max-width: min(350px, 100%);
+        }
+
+        .cutin.cutin-left {
+            margin: 0 auto 0 0;
+        }
+
+        .cutin.cutin-right {
+            margin: 0 0 0 auto;
+        }
+
+        .full-image {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+        }
+
+        .full-image.full-image-left {
+            margin: 0 auto 0 0;
+        }
+
+        .full-image.full-image-right {
+            margin: 0 0 0 auto;
+        }
+
+        .message {
+            display: flex;
+            width: fit-content;
+            background: #0004;
+            padding: 6px 10px 6px 10px;
+            border-radius: 4px;
+            align-items: center;
+            margin: 10px 0;
+        }
+
+        .message-icon-wrapper {
+            flex: none;
+            width: 60px;
+            height: 60px;
+            margin-right: 10px;
+        }
+
+        .message-icon {
+            width: 60px;
+            height: 60px;
+        }
+
+        .message-icon-noimage {
+            width: 60px;
+            height: 60px;
+            border-radius: 4px;
+            box-shadow: 0 0 2px rgba(0, 0, 0, 0.562);
+            background: no-repeat center/80% url('./images/kikyo.svg'),
+            linear-gradient(239deg, rgb(43, 58, 71), rgb(37, 49, 57));
+        }
+
+        .message-content {
+            flex: 1;
+        }
+
+        .message-name {
+            font-weight: bold;
+        }
+
+        .message-body {
+            color: rgb(235, 230, 223);
+        }
+
+        h1 {
+            margin: 0 0 20px 0;
+            display: flex;
+            align-items: center;
+            padding: 8px 20px 8px 20px;
+
+            color: rgb(38, 38, 78);
+            background: rgb(243, 236, 236);
+            font-family: 'Shippori Mincho B1', serif;
+            font-weight: 600;
+            font-size: 22px;
+            letter-spacing: -1px;
+            box-shadow: 0 0 10px rgb(8, 11, 24);
+        }
+
+        .diary-link {
+            margin-bottom: 5px;
+            display: block;
+            padding: 10px;
+            font-size: 0.9em;
+            color: rgb(241, 240, 234);
+            background-image: linear-gradient(rgb(35, 33, 51), rgb(50, 47, 70));
+            box-shadow: 0 0 15px rgba(6, 6, 17, 0.533) inset, 0 0 5px rgba(0, 0, 0, 0.2666666667);
+            border: 1px solid rgb(75, 71, 99);
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .columns {
+            display: flex;
+            margin: 20px;
+        }
+
+        .sub-column {
+            width: min(20%, 200px);
+            margin-right: 10px;
+            flex: none;
+        }
+
+        .main-column {
+            flex: 1;
+        }
+
+        .diary {
+            padding: 20px;
+            background: rgba(76, 65, 100, 0.2470588235);
+            border: 1px solid #5e5d66;
+            box-shadow: 0 0 20px #1c1e2e inset;
+        }
+
+        @media screen and (max-width: 650px) {          
+            .diary-link {
+                margin-bottom: 0;
+            }
+
+            .columns {
+                display: block;
+                margin: 10px;
+            }
+
+            .sub-column {
+                width: 100%;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2px;
+                margin: 10px 0;
+            }
+        }
+
+        @media screen and (max-width: 400px) {
+            .sub-column {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media screen and (max-width: 300px) {
+            .sub-column {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>第19更新 退魔師・梅影禄郎の災難2　</h1>
+        <div class="columns">
+            <section class="sub-column">
+                
+                <a href="./1.html" class="diary-link">第1更新</a>
+                
+                <a href="./3.html" class="diary-link">第3更新</a>
+                
+                <a href="./4.html" class="diary-link">第4更新</a>
+                
+                <a href="./5.html" class="diary-link">第5更新</a>
+                
+                <a href="./6.html" class="diary-link">第6更新</a>
+                
+                <a href="./7.html" class="diary-link">第7更新</a>
+                
+                <a href="./8.html" class="diary-link">第8更新</a>
+                
+                <a href="./9.html" class="diary-link">第9更新</a>
+                
+                <a href="./10.html" class="diary-link">第10更新</a>
+                
+                <a href="./11.html" class="diary-link">第11更新</a>
+                
+                <a href="./12.html" class="diary-link">第12更新</a>
+                
+                <a href="./13.html" class="diary-link">第13更新</a>
+                
+                <a href="./14.html" class="diary-link">第14更新</a>
+                
+                <a href="./15.html" class="diary-link">第15更新</a>
+                
+                <a href="./16.html" class="diary-link">第16更新</a>
+                
+                <a href="./17.html" class="diary-link">第17更新</a>
+                
+                <a href="./18.html" class="diary-link">第18更新</a>
+                
+                <a href="./19.html" class="diary-link">第19更新</a>
+                
+                <a href="./20.html" class="diary-link">第20更新</a>
+                
+                <a href="./21.html" class="diary-link">第21更新</a>
+                
+                <a href="./22.html" class="diary-link">第22更新</a>
+                
+                <a href="./23.html" class="diary-link">第23更新</a>
+                
+                <a href="./24.html" class="diary-link">第24更新</a>
+                
+                <a href="./25.html" class="diary-link">第25更新</a>
+                
+                <a href="./26.html" class="diary-link">第26更新</a>
+                
+                <a href="./27.html" class="diary-link">第27更新</a>
+                
+                <a href="./28.html" class="diary-link">第28更新</a>
+                
+                <a href="./29.html" class="diary-link">第29更新</a>
+                
+            </section>
+            <section class="main-column">
+                <div class="diary">
+                    　梅影は陽桜市のとある民家に呼ばれていた。<br>　そう遠くない箇所に桔梗院傘下の商店街の怪異、柊鬼商店街が位置している。<br>　仕事の話、急用、話は現地で。<br>　そんな粗雑極まりない連絡であったが、残念なことに断る理由が存在せず足を運んでいる。<br>　呼んだのは霊山天樹という、自分の干支が一周する程度に年下の男だ。何度か仕事を共にしている。<br>　なんとなく懐かれている気がしなくもない。<br><br>「では、梅影さん。来て早々で申し訳ありませんが、この上に居る男にこの質問票の内容を確認してきてください」<br>「話が読めないんですが」<br>「録音もお願いします」<br>「聞いてます？」<br><br>　便利に使われてるだけかもしれない。<br>　簡単に段取りを確認し、梅影は階段を上る。今この場所に居るのは梅影と天樹と、これから会う男の三人のみらしい。<br>　指定の和室では、呪具の蝋燭で囲われた結界の中に、身体中にべたべたと呪符が貼られた若い男が正座していた。<br>　霊山天樹よりは若く、霊山珠緒と同じか少し下くらいの年頃か。<br>　少し汚れたベストとシャツ、スラックスを着用している。腹部や膝上に血痕と思しき染みが付着していた。<br>　この様相は物々しいと言うほか無い。<br>　梅影は結界の外に敷かれた座布団に座り、中を見遣る。<br><br>「これから、僕がする質問に答えてください」<br><br>　段取りの通り呼び掛けると、結界の中の男は曖昧に頷いた。天樹からは許可された時以外口を開けないと聞いている。<br><br>「名前は？」<br>「霊山榮花」<br><br>　────霊山。またか。<br>　梅影は再びお家騒動に巻き込まれている気配を察した。<br>　しかしまあ、同組織の同僚の縁。助力を乞われたからには仕方無い。<br>　深入りしない程度にさっさと手伝って帰ろう。それがいい。<br>　梅影はバインダーに挟んだ質問票、その項目に目を通す。<br><br>「漢字で書くと？」<br>「幽霊の霊に山でりょうぜん。繁栄の栄の旧字体に、花火の花でえいかです」<br><br>　彼の回答を質問票に書き付ける。録音もされているが、あらゆる媒体で記録しておきたいという天樹の希望だ。<br><br>「家族構成は」<br>「祖父母、両親と長男の俺、下に弟が二人、末に妹」<br>「今日、この場に至るまでの経緯を話してください」<br>「よく、覚えてません。弟達と一緒に異界で怪異と交戦していました。その途中で怪我をして、そこからが、よく思い出せません。布団で寝てて。気づいたら横で成人くらいの男の人がすごい顔でこっち見てて。それは、弟らしいです」<br>「らしい、と言うのは？」<br>「俺の知っている弟より、ずっと大人でした。雰囲気っていうか、見た目が……髪も染めてて。その後、叔父さんに結界張られて、天樹……もう一人の弟にコレ貼られて動くなって言われて」<br><br>　榮花の話を聞いていると、どうやらこの部屋や彼の身体中の符が示す厳戒態勢は身内が敷いたものらしい。<br>　語る言葉通りであれば、霊山榮花と霊山天樹は兄弟関係ということになる。<br>　梅影は退勤の欲求に駆られた。ものすごい厄ネタの匂いがする。<br>　天樹の方に色々と問い質したいが、次の質問に移る。<br><br>「ご兄弟の歳は幾つ？」<br>「俺は19で、年子の天樹が18。5つ下の珠緒が14。11離れた喜楽里が8歳」<br><br>　梅影は眉間に皺を作った。<br>　梅影の記憶に違いが無ければ霊山天樹は26歳である。<br><br>「……今、西暦何年？　日付は無くて構いません」<br>「俺は2015年だと思ってるんですけど。なんか、多分違いますよね。これ」<br><br>　質問の意図を察したのか、霊山榮花は困ったように笑った。<br>　聞けば聞くほど、奇妙な話が明らかになっていく。<br>　まるで過去から来た男だ。<br><br>「君の認識だと、季節はいつ頃？」<br>「5月の末、だと」<br><br>　7年は経過している。そろそろ丸8年経つ。<br>　摩訶不思議にして奇々怪々。<br>　そうした現象に遭遇した退魔師が取る行動としては、霊山榮花に施された処置も適切と言えた。<br><br>　得体が知れない過去の人間の出現。<br>　退魔師である以上、怪異の可能性を考えない訳にはいかない。<br>　姿を自在に変えて人に成りすます怪異も、人の記憶や過去の事象をそっくり再現する現象型の怪異も存在する。<br><br>　梅影が呼ばれたのは、大方この判別のためだろう。梅影は、霊山榮花という人物のことは全く知らない。<br>　少なくとも、目の前の彼が梅影の記憶や思考を読んで質問に答えているわけでないことは分かる。<br>　説明があまり無かったことにも納得は出来たが、やはり変な話に巻き込まれたなと思う。<br>　残業でもいいから誰か別所で仕事の応援に呼んではくれないか。<br>　淡い期待を抱きながら他に彼の扱う呪術や呪具、子ども時代の思い出、などを質問していく。<br>　その間、梅影と霊山榮花の尋問が阻まれることは一切無かった。<br><br>「……質問は以上です。ありがとうございました」<br><br>　梅影は立ち上がり、頭を下げる。<br>　その所作の最中、蝋燭の灯りが生んだ影の一つを呪術で操り、平面を立体に起こした。<br>　影は小刀に形を変え、霊山榮花の斬りつける。<br><br>「ッ……！」<br><br>　霊山榮花の頬に赤い血が滲んだ。<br>　霊山榮花は抵抗しなかった。声も上げなかった。<br>　否、出来なかった。呪符や結界が正しく機能していた。<br>　梅影はそれを見て、深い息を吐く。<br>　次が最後の質問だ。<br><br>「最後に、何か言いたいことはありますか」<br><br>　霊山榮花は暫し呆気に取られたように沈黙していた。それから、緊張の面持ちでおずおずと口を開いた。<br><br>「……トイレ行く時に困るので、移動だけ許可してほしいです。範囲の限定とか鈍足とかはそのままでいいので……」<br>「伝えておきます」<br><br>　梅影は部屋を後にして、天樹へ報告に向かう。<br>　どっと疲れた。急にカロリーの高い仕事を振らないでほしい。<br><br>「天樹君、趣味の悪いことさせますね……」<br>「すみません。歴の長い貴方ならやってくださると」<br><br>　最後の設問の一つ前────呪術を用いた傷害行為を行うこと。意図は梅影にも理解出来る。<br>　か弱いふりをして寝首を搔く怪異の話もまた、ありふれているからだ。<br>　霊山榮花と名乗るあの人物の出処は、誰にもわかっていないのだろう。あれだけ疑って止まないのだから。<br>　しかし刺激したところで悍ましい本性が露わになる訳でもなかった。<br><br>「僕が霊山榮花さんについて、君に尋ねることは可能ですか」<br>「……すみません。込み入った話になりますので、またの機会に」<br><br>　天樹は詫びて堅い顔で断ったが、梅影には想定内だった。<br>　機密の漏洩や誤情報拡散の防波堤はどこでもある。<br>　それに、今後も似たような機会があるかもしれない。なら自分は知らない方が、天樹達に取ってきっと都合がいい。<br>　尤も、今回はそういう類では無い気がしているが触れずに置いた。<br>　得体の知れない身内。彼を知る人々こそ危うい立場にあるが。<br><br>「わかりました。ですが、もしあれの正体が掴めないのであれば調査の依頼も検討すべきかと。桔梗院の関連組織なら手綱を握る手段も手配できるでしょう」<br>「ええ。承知しています。できるだけ早急に回ります」<br><br>　上に報告する前に自分を呼ぶ辺り、本当に承知しているのかは怪しい。天樹もまた、混乱しているのかもしれなかった。<br>　霊山榮花。そう名乗る何者かには、差し迫った危険性は無いように見受けられる。しかし、そう見えるだけかもしれない。<br>　梅影は天樹に心身健全の錦守りを渡した。<br>　どうせ何かあれば自分も共犯だ。なら責任を取るまで長生きしてくれなければ困る。<br><br>「梅影さん」<br><br>　錦守りに目を落としながら天樹が口を開く。<br><br>「あいつ、なんか言ってました？」<br>「トイレ行きたいって言ってました」<br><br>　後に聞いた話によると、霊山榮花の呪術は一部緩和されたらしい。
+                </div>
+            </section>
+        </div>
+    </main>
+</body>
+</html>
