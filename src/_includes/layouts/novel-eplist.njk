@@ -1,0 +1,26 @@
+---
+layout: layouts/base.njk
+title: 各話リスト
+pageCSS: "novel-eplist.css"
+---
+
+<main class="main-content">
+<div class="container list-page-container">
+    <header class="list-header">
+        <h1>{{ title }}</h1>
+        <p class="list-description">あらすじや作品紹介がここに入ります。</p>
+    </header>
+
+    <div class="episode-list">
+        {# Python側で作った <ul> <li>...</li> </ul> がここにガバッと入ります #}
+        {{ content | safe }}
+    </div>
+
+
+        {# 戻るボタンエリア #}
+    <nav class="list-navigation">
+        <a href="/novel-index/" class="btn-back">タイトルリストへ戻る</a>
+    </nav>
+
+</div>
+</main>

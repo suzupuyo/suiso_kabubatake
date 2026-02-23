@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character List | 水槽の蕪畑</title>
+    <link rel="stylesheet" href="/css/style.css">
+    
+    
+    <link rel="stylesheet" href="/css/chara_style.css">
+    
+</head>
+<body>
+    <header class="global-header">
+        <nav class="global-nav">
+            <ul>
+                <div class="circle"></div>
+                <li><a href="/">TOP</a></li>
+                <li><a href="/novel-index/">Story</a></li>
+                <li><a href="/Character/">Character</a></li>
+                <li><a href="/">Link</a></li>
+                <div class="circle"></div>
+            </ul>
+        </nav>
+    </header>
+
+    
+    
+
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>もい子 - キャラクター図鑑</title>
+    <link rel="stylesheet" href="chara_style.css">
+</head>
+
+<body>
+    <div class="profile-page">
+        <nav class="page-nav">
+            <a href="index.html">← キャラクター一覧に戻る</a>
+        </nav>
+
+        <header class="profile-header">
+            <div class="image-area">
+                <img src="../chara_img/006/006.png" alt="もい子" class="main-img">
+            </div>
+
+            <div class="info-card">
+                <h1 class="name">
+                    <ruby>もい子 <rt></rt></ruby>
+                </h1>
+                <div class="meta-item">
+                    <span class="label">ジャンル</span>
+                    <span class="value">定期ゲ・キャラ交流ゲ</span>
+                </div>
+                <div class="meta-item">
+                    <span class="label">登場作品</span>
+                    <ul class="work-list">
+                        
+                        <li><a href="index.html?work=精霊伝説">精霊伝説</a></li>
+                        
+                        <li><a href="index.html?work=Seven Seas">Seven Seas</a></li>
+                        
+                    </ul>
+                </div>
+                <div class="meta-item">
+                    <span class="label">備考</span>
+                    <span class="value">None</span>
+                </div>
+            </div>
+        </header>
+
+
+        <section class="main-area">
+            <section class="main-text">
+                <blockquote class="catchphrase">もい子ちゃんの運命の相手はどこかしら～ん！</blockquote>
+                <p class="description">尾の長い「ニタリ」という鮫の女の子。彼氏募集中。</p>
+
+
+                <blockquote class="catchphrase">プロフィール</blockquote>
+                <div class="details-content">
+                    <ul class="profile-list">
+                        <li><span>種族</span>ニタリ</li>
+                        <li><span>性別</span>メス</li>
+                        <li><span>年齢</span>若者</li>
+                        <li><span>身長</span>2.5mくらい（尾含む）</li>
+                        <li><span>肩書き</span>使い魔</li>
+                        <li><span>一人称/二人称</span>あたし,もい子ちゃん / 君、あんた</li>
+                        <li><span>特技</span>妄想、尾鰭ビンタ</li>
+                        <li><span>好きなもの/嫌いなもの</span>恋バナ / スケコマシ</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="details-section">
+                <details>
+                    <summary>詳細</summary>
+                    <div class="details-content">
+                        <p>魚月と契約したニタリという鮫の召喚獣。契約者というか友達。<br>元気いっぱい暴走女子。魔法少女を自称した時期もあった。<br>しかしマシンガントークをしたかと思えば、突然現実味たっぷりの冷静なコメントをするので注意が必要。<br><br>魚月を「なっちゃん」と呼び、よくじゃれついている。<br></p>
+                    </div>
+                </details>
+
+                
+                <details>
+                    <summary>関連人物</summary>
+                    <div class="details-content">
+
+                        
+                        <ul class="custom-item-list">
+                            
+                            <li>
+                                <span class="item-label">主</span>
+                                <div class="item-main">
+                                    <strong class="item-name">白浜魚月</strong>
+                                    <p class="item-desc">仲良し！</p>
+                                </div>
+                            </li>
+                            
+                        </ul>
+
+                        
+
+                    </div>
+                </details>
+                
+
+            </section>
+        </section>
+
+        <section class="reference-gallery">
+            <h2>Gallery</h2>
+            <div class="gallery-grid">
+                
+            </div>
+        </section>
+
+
+        <footer class="profile-footer">
+            <div class="activity-years">
+                <span class="label">活動年</span>
+                <div class="year-tags">
+                    
+                    <a href="index.html?year=2012" class="year-tag">2012</a>
+                    
+                    <a href="index.html?year=2013" class="year-tag">2013</a>
+                    
+                    <a href="index.html?year=2016" class="year-tag">2016</a>
+                    
+                    <a href="index.html?year=2017" class="year-tag">2017</a>
+                    
+                    <a href="index.html?year=2018" class="year-tag">2018</a>
+                    
+                </div>
+            </div>
+        </footer>
+    </div>
+
+
+    <div id="image-modal" class="modal" onclick="closeModal()">
+        <span class="modal-close">&times;</span>
+        <img class="modal-content" id="modal-img">
+    </div>
+
+    <script>
+        function openModal(src) {
+            const modal = document.getElementById("image-modal");
+            const modalImg = document.getElementById("modal-img");
+            if (!modal || !modalImg) return; // エラー防止
+
+            modal.style.display = "flex"; // blockよりflexの方が真ん中寄せに強い
+            modalImg.src = src;
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeModal() {
+            const modal = document.getElementById("image-modal");
+            modal.style.display = "none";
+            document.body.style.overflow = "auto";
+        }
+    </script>
+
+
+</body>
+
+</html>
+
+    <footer class="site-footer">
+        <p>© 2026 水槽の蕪畑</p>
+    </footer>
+</body>
+</html>

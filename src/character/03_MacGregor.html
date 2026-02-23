@@ -1,0 +1,170 @@
+---
+layout: layouts/base.njk
+title: "Character List"
+tags: Character
+pageCSS: "chara_style.css"
+---
+
+
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>マクレガー君 - キャラクター図鑑</title>
+    <link rel="stylesheet" href="chara_style.css">
+</head>
+
+<body>
+    <div class="profile-page">
+        <nav class="page-nav">
+            <a href="index.html">← キャラクター一覧に戻る</a>
+        </nav>
+
+        <header class="profile-header">
+            <div class="image-area">
+                <img src="../chara_img/003/mac.png" alt="マクレガー君" class="main-img">
+            </div>
+
+            <div class="info-card">
+                <h1 class="name">
+                    <ruby>マクレガー君 <rt></rt></ruby>
+                </h1>
+                <div class="meta-item">
+                    <span class="label">ジャンル</span>
+                    <span class="value">定期ゲ・キャラ交流ゲ</span>
+                </div>
+                <div class="meta-item">
+                    <span class="label">登場作品</span>
+                    <ul class="work-list">
+                        
+                        <li><a href="index.html?work=精霊伝説">精霊伝説</a></li>
+                        
+                        <li><a href="index.html?work=Seven Seas">Seven Seas</a></li>
+                        
+                    </ul>
+                </div>
+                <div class="meta-item">
+                    <span class="label">備考</span>
+                    <span class="value">-</span>
+                </div>
+            </div>
+        </header>
+
+
+        <section class="main-area">
+            <section class="main-text">
+                <blockquote class="catchphrase">ジブンのことはマッ君って呼んでくだせぇ！</blockquote>
+                <p class="description">魚月が契約した小柄な鮫。夢はビッグな男になること。</p>
+
+
+                <blockquote class="catchphrase">プロフィール</blockquote>
+                <div class="details-content">
+                    <ul class="profile-list">
+                        <li><span>種族</span>ミニホオジロザメ</li>
+                        <li><span>性別</span>オス</li>
+                        <li><span>年齢</span>若者</li>
+                        <li><span>身長</span>50cmくらい</li>
+                        <li><span>肩書き</span>使い魔</li>
+                        <li><span>一人称/二人称</span>ジブン / アンタ</li>
+                        <li><span>特技</span>お喋り</li>
+                        <li><span>好きなもの/嫌いなもの</span>自分磨き / 完璧な男</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="details-section">
+                <details>
+                    <summary>詳細</summary>
+                    <div class="details-content">
+                        <p>魚月と契約した鮫の召喚獣。召喚契約者の中では後輩ポジション。<br>三下めいた腰の低さを見せながらも調子のいいムードメーカー的な性格。<br><br>魚月を姉御と呼び、他の召喚獣達にも気を使っているがなんだかんだツッコミのポジションになりやすい。<br>がんばれマッ君。<br></p>
+                    </div>
+                </details>
+
+                
+                <details>
+                    <summary>関連人物</summary>
+                    <div class="details-content">
+
+                        
+                        <ul class="custom-item-list">
+                            
+                            <li>
+                                <span class="item-label">主</span>
+                                <div class="item-main">
+                                    <strong class="item-name">白浜魚月</strong>
+                                    <p class="item-desc">主。我らが姉御ですぜ！</p>
+                                </div>
+                            </li>
+                            
+                        </ul>
+
+                        
+
+                    </div>
+                </details>
+                
+
+            </section>
+        </section>
+
+        <section class="reference-gallery">
+            <h2>Gallery</h2>
+            <div class="gallery-grid">
+                
+                <div class="gallery-item">
+                    <img src="../chara_img/003/mac_2.jpg" alt="参考画像" onclick="openModal(this.src)">
+                </div>
+                
+            </div>
+        </section>
+
+
+        <footer class="profile-footer">
+            <div class="activity-years">
+                <span class="label">活動年</span>
+                <div class="year-tags">
+                    
+                    <a href="index.html?year=2012" class="year-tag">2012</a>
+                    
+                    <a href="index.html?year=2013" class="year-tag">2013</a>
+                    
+                    <a href="index.html?year=2016" class="year-tag">2016</a>
+                    
+                    <a href="index.html?year=2017" class="year-tag">2017</a>
+                    
+                    <a href="index.html?year=2018" class="year-tag">2018</a>
+                    
+                </div>
+            </div>
+        </footer>
+    </div>
+
+
+    <div id="image-modal" class="modal" onclick="closeModal()">
+        <span class="modal-close">&times;</span>
+        <img class="modal-content" id="modal-img">
+    </div>
+
+    <script>
+        function openModal(src) {
+            const modal = document.getElementById("image-modal");
+            const modalImg = document.getElementById("modal-img");
+            if (!modal || !modalImg) return; // エラー防止
+
+            modal.style.display = "flex"; // blockよりflexの方が真ん中寄せに強い
+            modalImg.src = src;
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeModal() {
+            const modal = document.getElementById("image-modal");
+            modal.style.display = "none";
+            document.body.style.overflow = "auto";
+        }
+    </script>
+
+
+</body>
+
+</html>

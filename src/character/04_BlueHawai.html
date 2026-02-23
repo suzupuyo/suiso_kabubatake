@@ -1,0 +1,166 @@
+---
+layout: layouts/base.njk
+title: "Character List"
+tags: Character
+pageCSS: "chara_style.css"
+---
+
+
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ブルーハワイちゃん - キャラクター図鑑</title>
+    <link rel="stylesheet" href="chara_style.css">
+</head>
+
+<body>
+    <div class="profile-page">
+        <nav class="page-nav">
+            <a href="index.html">← キャラクター一覧に戻る</a>
+        </nav>
+
+        <header class="profile-header">
+            <div class="image-area">
+                <img src="../chara_img/004/004.png" alt="ブルーハワイちゃん" class="main-img">
+            </div>
+
+            <div class="info-card">
+                <h1 class="name">
+                    <ruby>ブルーハワイちゃん <rt></rt></ruby>
+                </h1>
+                <div class="meta-item">
+                    <span class="label">ジャンル</span>
+                    <span class="value">定期ゲ・キャラ交流ゲ</span>
+                </div>
+                <div class="meta-item">
+                    <span class="label">登場作品</span>
+                    <ul class="work-list">
+                        
+                        <li><a href="index.html?work=精霊伝説">精霊伝説</a></li>
+                        
+                        <li><a href="index.html?work=Seven Seas">Seven Seas</a></li>
+                        
+                    </ul>
+                </div>
+                <div class="meta-item">
+                    <span class="label">備考</span>
+                    <span class="value">None</span>
+                </div>
+            </div>
+        </header>
+
+
+        <section class="main-area">
+            <section class="main-text">
+                <blockquote class="catchphrase">…………（洗濯物を畳んでいる……）</blockquote>
+                <p class="description">筋骨隆々で大柄な寡黙乙女。鮫として頑張っている。</p>
+
+
+                <blockquote class="catchphrase">プロフィール</blockquote>
+                <div class="details-content">
+                    <ul class="profile-list">
+                        <li><span>種族</span>鮫系巨人</li>
+                        <li><span>性別</span>女の子</li>
+                        <li><span>年齢</span>若者</li>
+                        <li><span>身長</span>190cm～（可変）</li>
+                        <li><span>肩書き</span>使い魔</li>
+                        <li><span>一人称/二人称</span>私 / 貴方</li>
+                        <li><span>特技</span>肉弾戦、家事</li>
+                        <li><span>好きなもの/嫌いなもの</span>料理 / 制服指導</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="details-section">
+                <details>
+                    <summary>詳細</summary>
+                    <div class="details-content">
+                        <p>魚月と契約した乙女の召喚獣。契約者にして友達のような距離感。<br>滅多に言葉を発さないが、魚月には伝わるらしい。<br>コミュニケーションを取る上での彼女は礼儀正しく、誠実。<br><br>豪快な肉弾戦を得意とするが心は繊細な乙女。<br>『ブルーハワイ』は彼女自身が名乗った名前。<br>『すまーとぽん』など変わった言葉や道具を沢山知っている。<br></p>
+                    </div>
+                </details>
+
+                
+                <details>
+                    <summary>関連人物</summary>
+                    <div class="details-content">
+
+                        
+                        <ul class="custom-item-list">
+                            
+                            <li>
+                                <span class="item-label">主</span>
+                                <div class="item-main">
+                                    <strong class="item-name">白浜魚月</strong>
+                                    <p class="item-desc">主にして友達。</p>
+                                </div>
+                            </li>
+                            
+                        </ul>
+
+                        
+
+                    </div>
+                </details>
+                
+
+            </section>
+        </section>
+
+        <section class="reference-gallery">
+            <h2>Gallery</h2>
+            <div class="gallery-grid">
+                
+            </div>
+        </section>
+
+
+        <footer class="profile-footer">
+            <div class="activity-years">
+                <span class="label">活動年</span>
+                <div class="year-tags">
+                    
+                    <a href="index.html?year=2012" class="year-tag">2012</a>
+                    
+                    <a href="index.html?year=2013" class="year-tag">2013</a>
+                    
+                    <a href="index.html?year=2016" class="year-tag">2016</a>
+                    
+                    <a href="index.html?year=2017" class="year-tag">2017</a>
+                    
+                    <a href="index.html?year=2018" class="year-tag">2018</a>
+                    
+                </div>
+            </div>
+        </footer>
+    </div>
+
+
+    <div id="image-modal" class="modal" onclick="closeModal()">
+        <span class="modal-close">&times;</span>
+        <img class="modal-content" id="modal-img">
+    </div>
+
+    <script>
+        function openModal(src) {
+            const modal = document.getElementById("image-modal");
+            const modalImg = document.getElementById("modal-img");
+            if (!modal || !modalImg) return; // エラー防止
+
+            modal.style.display = "flex"; // blockよりflexの方が真ん中寄せに強い
+            modalImg.src = src;
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeModal() {
+            const modal = document.getElementById("image-modal");
+            modal.style.display = "none";
+            document.body.style.overflow = "auto";
+        }
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+---
+layout: layouts/base.njk
+pageCSS: "novel-detail.css"
+---
+<div class="site-wrapper">
+    {# 小説専用サイドバー #}
+    <aside class="sidebar hidden" id="sidebar">
+        <div class="sidebar-inner">
+            <h3>Episode List</h3>
+            <ul>
+                {# tags[0] に入っている作品名タグを使って、その作品の記事だけをループさせる #}
+                {%- for post in collections[tags[0]] -%}
+                <li {% if post.url == page.url %}class="current"{% endif %}>
+                    <a href="{{ post.url }}">{{ post.data.title }}</a>
+                </li>
+                {%- endfor -%}
+            </ul>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <button class="sidebar-toggle" onclick="toggleSidebar()">☰ 目次</button>
+
+        <article class="novel-container">
+            <header class="novel-header">
+                <h1>{{ title }}</h1>
+            </header>
+            
+            <div class="novel-body">
+                {{ content | safe }}
+            </div>
+
+            {# 前後の話へのナビゲーション #}
+            <nav class="novel-pagination">
+                {%- set previousPost = collections.novels | getPreviousCollectionItem(page) %}
+                {%- set nextPost = collections.novels | getNextCollectionItem(page) %}
+                <div class="nav-prev">
+                    {% if previousPost %}<a href="{{ previousPost.url }}">← {{ previousPost.data.title }}</a>
+                    {% else %}<span class="disabled">最初の話</span>{% endif %}
+                </div>
+                <div class="nav-home"><a href="/">目次</a></div>
+                <div class="nav-next">
+                    {% if nextPost %}<a href="{{ nextPost.url }}">{{ nextPost.data.title }} →</a>
+                    {% else %}<span class="disabled">最新話</span>{% endif %}
+                </div>
+            </nav>
+        </article>
+    </main>
+</div>
+
+<script>
+    function toggleSidebar() {
+        const sidebar = document.getElementById('sidebar');
+        const btn = document.querySelector('.sidebar-toggle');
+        const isHidden = sidebar.classList.toggle('hidden');
+        if (isHidden) {
+            btn.style.left = "15px";
+            btn.innerText = "☰ 目次";
+        } else {
+            btn.style.left = "295px";
+            btn.innerText = "✕ 閉じる";
+        }
+    }
+</script>

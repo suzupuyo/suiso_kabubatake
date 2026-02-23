@@ -1,0 +1,10 @@
+#小説ページ生成
+python convert_all
+
+#11tyでガッチャンコ
+npx @11ty/eleventy --serve
+
+#フォルダ移動
+cd ファイルパス
+#ひとつ上の階層へ
+cd ../

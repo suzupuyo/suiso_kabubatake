@@ -1,0 +1,48 @@
+---
+layout: layouts/base.njk
+title: Story List
+pageCSS: "novel-list.css"
+---
+
+<main class="main-content">
+<div class="container">
+    <header class="list-header">
+        <h1><span class="marker">　{{ title }}　</span></h1>
+        <p>定期ゲーの日記ログなど書いたもの一覧です。</p>
+    </header>
+
+    <div class="series-list">
+        {# ここに各作品（フォルダ）へのリンクを並べる #}
+        <article class="series-card">
+            <a href="/novel/sampleAAA/">
+                <div class="series-info">
+                    <h3>作品タイトルA (sampleAAA)</h3>
+                    <p>作品の短いキャッチコピーやあらすじをここに書けます。</p>
+                </div>
+                <span class="view-episodes">Go →</span>
+            </a>
+        </article>
+
+        <article class="series-card">
+            <a href="/novel/projectB/">
+                <div class="series-info">
+                    <h3>作品タイトルB</h3>
+                    <p>異世界ファンタジー、完結済み。</p>
+                </div>
+                <span class="view-episodes">Go →</span>
+            </a>
+        </article>
+
+        <article class="series-card">
+            <a href="https://suzupuyo.github.io/suiso_kabubatake/diary377/">
+                <div class="series-info">
+                    <h3>暗夜迷宮：作戦番号三七七</h3>
+                    <p>臆病な退魔師、霊山珠緒の物語</p>
+                </div>
+                <span class="view-episodes">Go →</span>
+            </a>
+        </article>
+
+    </div>
+</div>
+</main>

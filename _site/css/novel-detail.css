@@ -1,0 +1,227 @@
+/* --- 3. サイドバー（左端固定・浮かせる） --- */
+.sidebar {
+    width: var(--sidebar-width);
+    background: var(--accent-foam);
+    border-right: 1px solid var(--accent-water);
+    padding: 20px;
+    position: fixed;
+    left: 0;
+    top: var(--header-height);
+    height: calc(100vh - var(--header-height));
+    overflow-y: auto;
+    transform: translateX(-100%);
+    /* これで画面外へ */
+    transition: transform 0.3s ease;
+    z-index: 1500;
+    /* ボタンより上 */
+}
+
+.sidebar.hidden {
+    transform: translateX(-100%);
+}
+
+.sidebar:not(.hidden) {
+    transform: translateX(0);
+    /* hiddenが外れたら現れる */
+}
+
+.sidebar h3 {
+    font-size: 1.1em;
+    border-bottom: 1px solid var(--accent-water);
+    padding-bottom: 10px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    margin: 10px 0;
+}
+
+.sidebar li a {
+    text-decoration: none;
+    color: var(--text-main);
+    font-size: 0.9em;
+}
+
+.sidebar li.current a {
+    color: var(--accent-water);
+    font-weight: bold;
+}
+
+/* サイドバーの現在のページを強調 */
+.sidebar li.current a {
+    font-weight: bold;
+    color: var(--accent-water);
+    background: var(--accent-foam);
+    border-radius: 4px;
+}
+
+
+/* 小説本文の箱（ここが常にど真ん中） */
+.novel-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: var(--white);
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.novel-body {
+    font-size: 90%;
+}
+
+/* 目次出し入れボタンの基本位置 */
+.sidebar-toggle {
+    position: fixed;
+    left: 15px;
+    top: 75px;
+    /* ヘッダー(60px) + 余白 */
+    z-index: 9999;
+    /* 何があっても一番上 */
+    background: var(--accent-water);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* サイドバーが表示されているとき、ボタンを右に逃がす設定（クラスで制御） */
+.sidebar-toggle.active {
+    left: 295px;
+    /* サイドバー幅(280px) + 余白(15px) */
+}
+
+/* サイドバーがないページでは、メインコンテンツを完全に中央へ */
+.main-content.no-sidebar {
+    padding-left: 0;
+    width: 100%;
+}
+
+/* --- 5. 小説の装飾（チャット形式など） --- */
+.chat-row {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+/* 吹き出しと名前をまとめるエリア */
+.chat-content {
+    display: flex;
+    flex-direction: column;
+    /* 名前と吹き出しを縦に並べる */
+    align-items: flex-start;
+    /* これが重要！中身を左に詰め、幅を最小限にする */
+    flex: 1;
+}
+
+.icon-container {
+    width: 60px;
+    height: 60px;
+    background: #eee;
+    flex-shrink: 0;
+    margin-right: 15px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.icon-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.bubble {
+    background: #f0f0f0;
+    padding: 12px 18px;
+    border-radius: 10px;
+
+    /* 中身の量に合わせる設定 */
+    width: fit-content;
+    /* 文字数に幅を合わせる */
+    max-width: 85%;
+    /* 長すぎるときはここで改行 */
+    word-wrap: break-word;
+    line-height: 1.6;
+}
+
+/* Markdownなどで自動挿入されるpタグが幅を広げないように */
+.bubble p {
+    margin: 0;
+    display: inline;
+}
+
+.name-label {
+    font-size: 0.75em;
+    color: #888;
+    margin-bottom: 4px;
+    display: block;
+}
+
+/* 前後ナビ */
+.novel-pagination {
+    display: flex;
+    /* 両端と中央に配置 */
+    justify-content: space-between;
+    /* 縦方向の中央揃え */
+    align-items: center;
+    width: 100%;
+    margin: 50px 0 0 0;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+/* 左・中・右の3つの塊すべてを均等な幅にする */
+.nav-prev,
+.nav-home,
+.nav-next {
+    flex: 1;
+    /* これで全部同じ幅(1/3ずつ)になる */
+    display: flex;
+    /* 中身のaタグを配置しやすくする */
+}
+
+.nav-prev {
+    justify-content: flex-start;
+    /* 左寄せ */
+}
+
+.nav-home {
+    justify-content: center;
+    /* これで数学的にド真ん中 */
+}
+
+.nav-next {
+    justify-content: flex-end;
+    /* 右寄せ */
+}
+
+
+/* ボタン自体の見た目*/
+.novel-pagination a {
+    background: var(--accent-foam);
+    padding: 8px 15px;
+    border-radius: 20px;
+    text-decoration: none;
+    color: inherit;
+    font-size: 0.9em;
+    display: inline-block;
+    /* 幅を持たせるために必要 */
+}
+
+/* モバイル対応：サイドバーを画面全体に */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+    }
+
+    .novel-container {
+        padding: 20px;
+    }
+}

@@ -1,0 +1,290 @@
+/* --- 1. 変数と基本設定 --- */
+:root {
+    --bg-sand: #e9e1d2;
+    /* ベージュ */
+    --accent-water: #77c2d3;
+    /* 水色 */
+    --accent-foam: #e0f3f2;
+    /* 薄緑 */
+    --text-main: #848484;
+    --white: #fafafa;
+    --header-height: 40px;
+    --sidebar-width: 280px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+/* サイズ計算を正確にする */
+html {
+    background: transparent;
+    font-size: 90.0%;
+}
+
+body {
+    background-color: var(--bg-sand);
+    color: var(--text-main);
+    letter-spacing: 0.15em;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.8;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+/* 全セクション共通の設定 */
+.section-container {
+    width: 100%;
+    padding: 50px 0;
+}
+
+/* 内側のコンテンツを中央に寄せる */
+.inner-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 特定のセクションだけ背景色を変える */
+.bg-colored {
+    background-color: #f9f9f9;
+}
+
+
+
+a {
+    color: var(--text-main);
+    text-decoration: none;
+}
+
+a:hover {
+    color: #bac3c7;
+    transition: color 0.2s;
+}
+
+
+
+/* --- 2. ヘッダー（フルワイド＆中央寄せ） --- */
+.global-header {
+    font-family: 'Century Gothic', 'Verdana', sans-serif;
+    width: 100%;
+    background: var(--white);
+    border-bottom: solid 1px #b3b8ba;
+    position: sticky;
+    top: 0;
+    height: var(--header-height);
+    z-index: 2000;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+}
+
+.circle {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--accent-water);
+}
+
+.global-nav ul {
+    font-size: 1.3rem;
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    gap: 30px;
+}
+
+.global-nav a {
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: bold;
+}
+
+.global-nav a:hover {
+    color: #bac3c7;
+}
+
+/*ノート*/
+.box {
+    font-size: 1.2rem;
+    font-family: "游ゴシック", "メイリオ", "Helvetica Neue", Arial, sans-serif;
+    position: relative;
+    left: 10%;
+    margin-bottom: 2rem;
+    padding: 1.5rem 1rem 2.5rem;
+    background-image: linear-gradient(rgba(183, 244, 239, 0.5) 0 100%),
+        linear-gradient(var(--white) 0 100%);
+    background-repeat: no-repeat;
+    background-size: 80px 20px, 100% calc(100% - 0.5rem);
+    background-position: center top, bottom;
+    color: #6ba6ce;
+    text-align: center;
+    width: 18em;
+}
+
+.box::before,
+.box::after {
+    content: '';
+    position: absolute;
+    bottom: 10px;
+    z-index: -1;
+    height: 50%;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, .2);
+}
+
+.box::before {
+    left: 0px;
+    width: 20%;
+    transform: rotate(-4deg);
+}
+
+.box::after {
+    right: 0px;
+    width: 30%;
+    transform: rotate(4deg);
+}
+
+
+/*　マーカー　*/
+.marker {
+    background: linear-gradient(transparent 60%, var(--accent-foam) 0%);
+}
+
+
+
+/* サイドバーがないページでは、メインコンテンツを完全に中央へ */
+.main-content.no-sidebar {
+    padding-left: 0;
+    width: 100%;
+}
+
+
+
+/* --- 4. メインコンテンツ（中央配置・フル幅） --- */
+.site-wrapper {
+    display: block;
+    width: 100%;
+}
+
+.main-content {
+    width: 100%;
+    padding: 40px 10px;
+}
+
+
+/*　ホーム　*/
+.site-map {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+    color: var(--text-main)
+}
+
+
+.map-section {
+    background: var(--white);
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px dashed #666;
+}
+
+.map-section h2 {
+    font-family: 'Century Gothic', 'Verdana', sans-serif;
+    border-bottom: 2px solid var(--accent-foam);
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.map-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.map-section li {
+    margin: 15px 0;
+    /* ドットの基準点にする */
+    position: relative;
+    /* ドットの分の余白を確保 */
+    padding-left: 29px;
+}
+
+/* リストの先頭ドット */
+.map-section li:before {
+    content: '';
+    position: absolute;
+    background-color: #8bc1ce;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    left: 5px;
+    top: 0.9em;
+}
+
+.map-section li a {
+    font-weight: bold;
+    color: var(--accent-water);
+    text-decoration: none;
+    font-size: 1.3em;
+}
+
+.map-section li a:hover {
+    text-decoration: underline;
+    color: #438fc2;
+}
+
+.map-section li p {
+    /* 上のマージン詰め*/
+    margin: 5px 0 0 0;
+}
+
+
+/* Goボタン */
+.go-btn {
+    font-size: 0.9em;
+    color: var(--white);
+    background-color: var(--accent-water);
+    font-weight: bold;
+    border: 1px solid var(--accent-water);
+    margin: auto;
+    padding: 6px 18px;
+    border-radius: 20px;
+    justify-self: center;
+}
+
+.link-container {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    /* 1列目は120px、2列目は残り全部 */
+    gap: 15px 20px;
+    /* 縦の間隔 15px、横の間隔 20px */
+    align-items: center;
+    /* 上下中央揃え */
+}
+
+/* aタグ（グリッドの直下にある要素）に対して指定 */
+.link-container>a {
+    display: flex;
+    /* flexにして中身を制御 */
+    justify-content: center;
+    /* 横方向の中央寄せ */
+    text-decoration: none;
+    /* 下線を消す（必要なら） */
+}
+
+
+/* --- 6. フッター --- */
+.site-footer {
+    font-size: 85%;
+    text-align: center;
+    padding: 40px 0;
+    background: var(--bg-sand);
+    border-top: 1px solid #c5b6a7;
+    width: 100%;
+}
