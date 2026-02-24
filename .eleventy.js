@@ -7,6 +7,20 @@ module.exports = function (eleventyConfig) {
     // 11tyに使用プラグイン指示
     eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
 
+    const Image = require("@11ty/eleventy-img");
+
+    // 画像処理の命令（ショートコード）
+    eleventyConfig.addNunjucksAsyncShortcode("image", async function (src, alt, widths = [300, 600], sizes = "100vw") {
+        let imageAttributes = {
+            alt,
+            sizes,
+            loading: "lazy", // 自動で遅延読み込み
+            decoding: "async",
+        };
+
+        return Image.generateHTML(metadata, imageAttributes);
+    });
+
     // CSSフォルダを出力先(_site)にコピーする
     eleventyConfig.addPassthroughCopy("src/css");
     eleventyConfig.addPassthroughCopy("src/chara_img");
