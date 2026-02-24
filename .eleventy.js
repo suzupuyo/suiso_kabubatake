@@ -7,9 +7,10 @@ module.exports = function (eleventyConfig) {
 
     eleventyConfig.addCollection("novels", function (collectionApi) {
         // src/novel フォルダ内のファイルをファイル名順（001, 002...）に並べる
-        return collectionApi.getFilteredByGlob("src/novel/*.html").sort((a, b) => {
+        return collectionApi.getFilteredByGlob("./src/novel/*.html").sort((a, b) => {
             return a.inputPath.localeCompare(b.inputPath);
         });
+
     });
 
     return {
