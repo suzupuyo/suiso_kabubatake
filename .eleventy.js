@@ -1,6 +1,7 @@
 module.exports = function (eleventyConfig) {
     // {{ "/css/style.css" | url }} が正しく動くように
-    eleventyConfig.addPlugin(require("@11ty/eleventy").EleventyHtmlBasePlugin);
+    // require は一番上に書く
+    const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
 
 
     // CSSフォルダをそのまま出力先(_site)にコピーする設定
