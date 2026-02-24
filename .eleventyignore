@@ -2,3 +2,7 @@ src/_includes/
 src/css/
 src/chara_img/
 src/novel/
+
+src/**/*.txt
+node_modules/
+_site/

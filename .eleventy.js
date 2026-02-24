@@ -20,7 +20,7 @@ module.exports = function (eleventyConfig) {
         dir: {
             input: "src",    // 入力ディレクトリ
             output: "_site"  // 出力ディレクトリ
-            // [追記] 念のためincludesの場所を明示
+            // 念のためincludesの場所を明示
             includes: "_includes"
         }
     };
