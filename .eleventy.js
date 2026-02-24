@@ -1,9 +1,12 @@
 module.exports = function (eleventyConfig) {
+    // {{ "/css/style.css" | url }} が正しく動くように
+    eleventyConfig.addPlugin(require("@11ty/eleventy").EleventyHtmlBasePlugin);
+
+
     // CSSフォルダをそのまま出力先(_site)にコピーする設定
     eleventyConfig.addPassthroughCopy("src/css");
     eleventyConfig.addPassthroughCopy("src/chara_img");
-    // {{ "/css/style.css" | url }} が正しく動くように
-    eleventyConfig.addPlugin(require("@11ty/eleventy").EleventyHtmlBasePlugin);
+
     // フォルダ化を無効にし、ファイル名を維持する
     eleventyConfig.addGlobalData("permalink", "{{ page.filePathStem }}.html");
 
