@@ -19,7 +19,7 @@ module.exports = function (eleventyConfig) {
     });
 
     return {
-        pathPrefix: "/kabubatake/", // 自分のリポジトリ名に合わせて変更
+        pathPrefix: "/suiso_kabubatake/", // 自分のリポジトリ名に合わせて変更
         // テンプレートとして扱う拡張子を限定する
         templateFormats: ["html", "md", "njk"],
         dir: {
