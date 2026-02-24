@@ -19,7 +19,7 @@ module.exports = function (eleventyConfig) {
         templateFormats: ["html", "md", "njk"],
         dir: {
             input: "src",    // 入力ディレクトリ
-            output: "_site"  // 出力ディレクトリ
+            output: "_site",  // 出力ディレクトリ
             // 念のためincludesの場所を明示
             includes: "_includes"
         }
