@@ -591,8 +591,12 @@ details[open] summary::after {
 
 /* サイドバー */
 .sidebar {
-    flex: 0 0 250px;
-    /* 幅を250pxに固定 */
+    width: 250px;
+    background: #fff;
+    padding: 20px;
+    /* PCでは位置を固定せず、通常のレイアウト（flexの子要素）として扱う */
+    position: static;
+    transform: none;
 }
 
 .sidebar-inner {
@@ -733,40 +737,32 @@ details[open] summary::after {
     }
 
     .sidebar {
-        /* display: none; は削除します（アニメーションが効かなくなるため） */
         position: fixed;
+        /* スマホの時だけ固定にする */
         top: 0;
         left: -320px;
-        /* 自分の幅分、左側に隠しておく */
+        /* ここで初めて画面外に隠す */
         width: 280px;
         height: 100%;
         z-index: 2000;
-        background: #fff;
-        padding: 20px;
-        overflow-y: auto;
         transition: transform 0.3s ease-in-out;
-        box-shadow: none;
-        /* 隠れている時は影も出さない */
     }
 
 
     /* ボタンクリックで表示 */
     .sidebar.active {
         transform: translateX(320px);
-        /* 隠していた分だけ右に移動 */
-        box-shadow: 2px 0 15px rgba(0, 0, 0, 0.2);
     }
+
+    .close-sidebar {
+        display: block;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+
 }
-
-.close-sidebar {
-    display: block;
-}
-
-.container {
-    flex-direction: column;
-}
-
-
 
 
 
