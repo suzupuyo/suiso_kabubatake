@@ -591,7 +591,7 @@ details[open] summary::after {
 
 /* サイドバー */
 .sidebar {
-    width: 250px;
+    width: 280px;
     background: #fff;
     padding: 20px;
     /* PCでは位置を固定せず、通常のレイアウト（flexの子要素）として扱う */
@@ -728,30 +728,72 @@ details[open] summary::after {
     align-items: center;
 }
 
-/* レスポンシブ調整：スマホでの挙動 */
-@media (max-width: 768px) {
 
-    /* スマホでは表示 */
-    .open-sidebar {
-        display: block;
+/* --- [1] デスクトップ用（1025px以上） --- */
+@media (min-width: 1025px) {
+    .sidebar {
+        width: 280px;
+        position: static;
+        /* 画面に固定せず、横に並べる */
+        background: #fff;
+        padding: 0px;
+        border-radius: 12px;
+        border: 1px solid #eee;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.02);
+        /* ほんのり影 */
+        display: block !important;
+        /* PCでは常に表示 */
+        transform: none !important;
     }
 
+    .sidebar-inner {
+        position: sticky;
+        top: 0;
+        padding: 40px 20px;
+        /* 余白はこっちで制御 */
+        background: transparent;
+        /* 背景を透明にしてsidebar本体の色を見せる */
+        border: 1px solid #eee;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    }
+
+    .open-sidebar {
+        display: none;
+        /* PCではボタンを隠す */
+    }
+}
+
+/* --- [2] タブレット・スマホ用（1024px以下） --- */
+@media (max-width: 1024px) {
     .sidebar {
         position: fixed;
-        /* スマホの時だけ固定にする */
         top: 0;
         left: -320px;
-        /* ここで初めて画面外に隠す */
-        width: 280px;
+        /* 完全に隠す */
+        width: 300px;
         height: 100%;
         z-index: 2000;
+        background: #fff;
+        padding: 20px;
         transition: transform 0.3s ease-in-out;
+        box-shadow: none;
+        /* 隠れている時は影なし */
+        display: block;
+        /* 透明にするだけでなく、存在を消す */
+        visibility: hidden;
+        transition: transform 0.3s ease-in-out, visibility 0.3s;
     }
 
-
-    /* ボタンクリックで表示 */
+    /* ボタンで表示された時 */
     .sidebar.active {
+        visibility: visible;
         transform: translateX(320px);
+    }
+
+    .open-sidebar {
+        display: block;
+        /* スマホ・タブレットではボタンを表示 */
+        margin: 10px;
     }
 
     .close-sidebar {
@@ -762,14 +804,6 @@ details[open] summary::after {
         flex-direction: column;
     }
 
-}
-
-
-
-
-/* メインコンテンツ */
-.content-area {
-    flex: 1;
 }
 
 /* レスポンシブ：画面が狭いときは縦に並べる */
@@ -795,4 +829,11 @@ details[open] summary::after {
     .filter-btn {
         width: auto;
     }
+}
+
+
+
+/* メインコンテンツ */
+.content-area {
+    flex: 1;
 }
