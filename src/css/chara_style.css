@@ -700,7 +700,7 @@ details[open] summary::after {
 .open-sidebar {
     /* デスクトップでは隠す */
     display: none;
-    background: #333;
+    background: var(--accent-water);
     color: #fff;
     border: none;
     padding: 10px 15px;
