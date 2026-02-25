@@ -292,6 +292,20 @@ pageCSS: "chara_style.css"
             document.getElementById('sidebar').classList.toggle('active');
         }
 
+        // サイドバーの外側（メインコンテンツ）をクリックしたら閉じる処理
+        document.addEventListener('click', (e) => {
+            const sidebar = document.getElementById('sidebar');
+            const openBtn = document.querySelector('.open-sidebar');
+
+            // サイドバーが表示中、かつクリックされたのが「サイドバー本体」でも「開くボタン」でもない場合
+            if (sidebar.classList.contains('active') &&
+                !sidebar.contains(e.target) &&
+                !openBtn.contains(e.target)) {
+                sidebar.classList.remove('active');
+            }
+        });
+
+
         document.addEventListener('DOMContentLoaded', () => {
             const items = document.querySelectorAll('.character-item');
 

@@ -733,37 +733,39 @@ details[open] summary::after {
     }
 
     .sidebar {
-        /* 通常は隠す */
-        display: none;
+        /* display: none; は削除します（アニメーションが効かなくなるため） */
         position: fixed;
         top: 0;
-        left: 0;
-        width: 80%;
-        /* 画面の8割くらいを覆う */
-        max-width: 300px;
+        left: -320px;
+        /* 自分の幅分、左側に隠しておく */
+        width: 280px;
         height: 100%;
         z-index: 2000;
-        /* 一番手前に */
         background: #fff;
-        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
         padding: 20px;
         overflow-y: auto;
+        transition: transform 0.3s ease-in-out;
+        box-shadow: none;
+        /* 隠れている時は影も出さない */
     }
 
 
     /* ボタンクリックで表示 */
     .sidebar.active {
-        display: block;
-    }
-
-    .close-sidebar {
-        display: block;
-    }
-
-    .container {
-        flex-direction: column;
+        transform: translateX(320px);
+        /* 隠していた分だけ右に移動 */
+        box-shadow: 2px 0 15px rgba(0, 0, 0, 0.2);
     }
 }
+
+.close-sidebar {
+    display: block;
+}
+
+.container {
+    flex-direction: column;
+}
+
 
 
 
