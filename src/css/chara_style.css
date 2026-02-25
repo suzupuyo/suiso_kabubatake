@@ -554,13 +554,6 @@ details[open] summary::after {
     /* もっと小さく */
 }
 
-.site-footer {
-    text-align: center;
-    padding: 20px;
-    margin-top: 40px;
-    border-top: 1px solid #ddd;
-    color: #888;
-}
 
 /* レスポンシブ対応 */
 @media (max-width: 600px) {
@@ -745,12 +738,18 @@ details[open] summary::after {
         position: fixed;
         top: 0;
         left: 0;
-        width: 280px;
+        width: 80%;
+        /* 画面の8割くらいを覆う */
+        max-width: 300px;
         height: 100%;
-        z-index: 1000;
+        z-index: 2000;
+        /* 一番手前に */
         background: #fff;
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+        padding: 20px;
         overflow-y: auto;
     }
+
 
     /* ボタンクリックで表示 */
     .sidebar.active {
