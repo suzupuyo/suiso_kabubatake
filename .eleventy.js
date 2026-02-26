@@ -24,6 +24,7 @@ module.exports = function (eleventyConfig) {
     // CSSフォルダを出力先(_site)にコピーする
     eleventyConfig.addPassthroughCopy("src/css");
     eleventyConfig.addPassthroughCopy("src/chara_img");
+    eleventyConfig.addPassthroughCopy("src/img");
 
     // diary377 フォルダ内の画像などもそのまま _site にコピーさせる設定
     eleventyConfig.addPassthroughCopy("src/diary377/**/*.jpg");
