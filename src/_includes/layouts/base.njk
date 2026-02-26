@@ -16,10 +16,10 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{{ title }} | 水槽の蕪畑">
 
-
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
+    {# ページ個別のCSSがあれば読み込む #}
     {% if pageCSS %}
-    <link rel="stylesheet" href="css/{{ pageCSS }}">
+    <link rel="stylesheet" href="/css/{{ pageCSS }}">
     {% endif %}
 </head>
 <body>
