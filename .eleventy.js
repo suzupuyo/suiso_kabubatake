@@ -48,6 +48,9 @@ module.exports = function (eleventyConfig) {
         pathPrefix: "/suiso_kabubatake/", // 自分のリポジトリ名に合わせて変更
         // テンプレートとして扱う拡張子を限定
         templateFormats: ["html", "md", "njk"],
+        htmlTemplateEngine: "njk",
+
+
         dir: {
             input: "src",    // 入力ディレクトリ
             output: "_site",  // 出力ディレクトリ
