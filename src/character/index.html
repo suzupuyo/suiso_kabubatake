@@ -16,6 +16,8 @@ pageCSS: "chara_style.css"
     <link rel="stylesheet" href="chara_style.css">
 </head>
 
+<div id="sidebar-overlay" onclick="toggleSidebar()"></div>
+
 <body>
     <div class="container">
         <aside class="sidebar" id="sidebar">
@@ -287,21 +289,34 @@ pageCSS: "chara_style.css"
         });
 
 
-        // サイドバー開閉用
+        // サイドバーとオーバーレイ切り替え
         function toggleSidebar() {
-            document.getElementById('sidebar').classList.toggle('active');
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebar-overlay');
+
+            // activeを切り替え
+            const isActive = sidebar.classList.toggle('active');
+
+            // オーバーレイがある場合、activeの状態に合わせて表示/非表示を切り替え
+            if (overlay) {
+                overlay.style.display = isActive ? 'block' : 'none';
+            }
         }
 
-        // サイドバーの外側（メインコンテンツ）をクリックしたら閉じる処理
+        //「外側をクリックしたら閉じる」の補助的処理
         document.addEventListener('click', (e) => {
             const sidebar = document.getElementById('sidebar');
             const openBtn = document.querySelector('.open-sidebar');
+            const overlay = document.getElementById('sidebar-overlay');
 
-            // サイドバーが表示中、かつクリックされたのが「サイドバー本体」でも「開くボタン」でもない場合
-            if (sidebar.classList.contains('active') &&
-                !sidebar.contains(e.target) &&
-                !openBtn.contains(e.target)) {
-                sidebar.classList.remove('active');
+            // サイドバーが表示されているときだけ判定
+            if (sidebar.classList.contains('active')) {
+                // クリックされた場所が「サイドバー本体」でも「開くボタン」でもない場合
+                if (!sidebar.contains(e.target) && !openBtn.contains(e.target)) {
+                    // サイドバーを閉じる
+                    sidebar.classList.remove('active');
+                    if (overlay) overlay.style.display = 'none';
+                }
             }
         });
 

@@ -739,8 +739,6 @@ details[open] summary::after {
         padding: 0px;
         border-radius: 12px;
         border: 1px solid #eee;
-        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.02);
-        /* ほんのり影 */
         display: block !important;
         /* PCでは常に表示 */
         transform: none !important;
@@ -768,26 +766,23 @@ details[open] summary::after {
     .sidebar {
         position: fixed;
         top: 0;
-        left: -320px;
-        /* 完全に隠す */
-        width: 300px;
+        left: -280px;
+        width: 250px;
         height: 100%;
         z-index: 2000;
         background: #fff;
         padding: 20px;
-        transition: transform 0.3s ease-in-out;
-        box-shadow: none;
-        /* 隠れている時は影なし */
-        display: block;
-        /* 透明にするだけでなく、存在を消す */
-        visibility: hidden;
         transition: transform 0.3s ease-in-out, visibility 0.3s;
+        visibility: hidden;
+        /* 少しだけ角を丸くすると、重なっている感が出てお洒落です */
+        border-radius: 0 15px 15px 0;
     }
 
     /* ボタンで表示された時 */
     .sidebar.active {
         visibility: visible;
-        transform: translateX(320px);
+        transform: translateX(280px);
+        box-shadow: 5px 0 25px rgba(0, 0, 0, 0.3);
     }
 
     .open-sidebar {
@@ -829,6 +824,27 @@ details[open] summary::after {
     .filter-btn {
         width: auto;
     }
+}
+
+#sidebar-overlay {
+    display: none;
+    /* 最初は隠す */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    /* 50%の暗さ */
+    z-index: 1500;
+    /* サイドバー(2000)より下 */
+    backdrop-filter: blur(2px);
+    /* 軽く背景をぼかすとさらに高級感が出ます */
+}
+
+/* サイドバーが開いている時だけオーバーレイを表示 */
+.sidebar.active~#sidebar-overlay {
+    display: block;
 }
 
 
