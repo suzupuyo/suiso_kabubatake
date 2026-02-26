@@ -17,10 +17,10 @@
     <meta name="twitter:title" content="{{ title }} | 水槽の蕪畑">
 
 
-    <link rel="stylesheet" href="{{ '/css/style.css' | url }}">
-    {# ページ個別のCSSがあれば読み込む #}
+    <link rel="stylesheet" href="/suiso_kabubatake/css/style.css">
+
     {% if pageCSS %}
-    <link rel="stylesheet" href="{{ '/css/' | url }}{{ pageCSS }}">
+    <link rel="stylesheet" href="/suiso_kabubatake/css/{{ pageCSS }}">
     {% endif %}
 </head>
 <body>
