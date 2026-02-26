@@ -1,2 +1,4 @@
 node_modules/
 _site/
+novel_raw/
+convert_all.py

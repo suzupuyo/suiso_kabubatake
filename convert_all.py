@@ -11,7 +11,7 @@ else:
 
 # フォルダのパス設定
 # 作品名入れる↓　例： PROJECT_NAME = "sampleAAA"
-PROJECT_NAME = "sampleAAA"
+PROJECT_NAME = "Stella Board V1.0 -summer-"
 
 INPUT_DIR = './novel_raw'
 OUTPUT_DIR = f"./src/novel/{PROJECT_NAME}"  # 11tyのソースフォルダ内へ
@@ -34,7 +34,6 @@ def convert_line(line):
         name, num, message = match.groups()
         img_url = face_list.get(name, {}).get(num, "")
         if img_url:
-            # 修正ポイント：<div> に class="chat-content" を追加
             return (
                 f'<div class="chat-row">'
                 f'<div class="icon-container"><img src="{img_url}" alt="{name}"></div>'
