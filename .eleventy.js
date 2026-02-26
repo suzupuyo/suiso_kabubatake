@@ -55,7 +55,7 @@ module.exports = function (eleventyConfig) {
 
         // テンプレートとして扱う拡張子を限定
         templateFormats: ["html", "md", "njk"],
-        htmlTemplateEngine: "njk",
+        // htmlTemplateEngine: "njk",
 
 
         dir: {
