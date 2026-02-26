@@ -83,6 +83,7 @@ a:hover {
 .circle {
     width: 4px;
     height: 4px;
+    margin: 2rem;
     border-radius: 50%;
     background: var(--accent-water);
 }

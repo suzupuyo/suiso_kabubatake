@@ -766,7 +766,7 @@ details[open] summary::after {
     .sidebar {
         position: fixed;
         top: 0;
-        left: -280px;
+        left: -250px;
         width: 250px;
         height: 100%;
         z-index: 2000;
@@ -774,14 +774,13 @@ details[open] summary::after {
         padding: 20px;
         transition: transform 0.3s ease-in-out, visibility 0.3s;
         visibility: hidden;
-        /* 少しだけ角を丸くすると、重なっている感が出てお洒落です */
         border-radius: 0 15px 15px 0;
     }
 
     /* ボタンで表示された時 */
     .sidebar.active {
         visibility: visible;
-        transform: translateX(280px);
+        transform: translateX(250px);
         box-shadow: 5px 0 25px rgba(0, 0, 0, 0.3);
     }
 
@@ -799,31 +798,6 @@ details[open] summary::after {
         flex-direction: column;
     }
 
-}
-
-/* レスポンシブ：画面が狭いときは縦に並べる */
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-    }
-
-    .sidebar {
-        flex: none;
-        width: 100%;
-    }
-
-    .sidebar-inner {
-        position: static;
-    }
-
-    .v-button-list {
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
-
-    .filter-btn {
-        width: auto;
-    }
 }
 
 #sidebar-overlay {
@@ -845,6 +819,36 @@ details[open] summary::after {
 /* サイドバーが開いている時だけオーバーレイを表示 */
 .sidebar.active~#sidebar-overlay {
     display: block;
+}
+
+
+/* レスポンシブ：画面が狭いときは縦に並べる */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar-inner {
+        position: static;
+        background: transparent;
+        box-shadow: none;
+        border: none;
+        padding: 0;
+    }
+
+    .v-button-list {
+        display: flex;
+        /* ボタンを横に並べるならこれ */
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+
+    .filter-btn {
+        width: auto;
+        font-size: 0.85em;
+        padding: 6px 12px;
+    }
 }
 
 
