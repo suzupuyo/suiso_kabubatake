@@ -10,7 +10,12 @@ pageCSS: "novel-eplist.css"
         <h1>{{ title }}</h1>
         {# description という変数が定義されていれば表示する #}
         <div class="list-description">
-            {{ description | safe }}
+            {# フロントマターの description を表示させる #}
+            {% if description %}
+                {{ description | safe }}
+            {% else %}
+                <p>作品紹介は準備中です。</p>
+            {% endif %}
         </div>
     </header>
 
