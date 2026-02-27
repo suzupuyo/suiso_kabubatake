@@ -7,14 +7,14 @@ pageCSS: "novel-detail.css"
     <aside class="sidebar hidden" id="sidebar">
         <div class="sidebar-inner">
             <h3>Episode List</h3>
-            <ul>
+            <ol>
                 {# tags[0] に入っている作品名タグを使って、その作品の記事だけをループさせる #}
                 {%- for post in collections[tags[0]] -%}
                 <li {% if post.url == page.url %}class="current"{% endif %}>
                     <a href="{{ post.url }}">{{ post.data.title }}</a>
                 </li>
                 {%- endfor -%}
-            </ul>
+            </ol>
         </div>
     </aside>
 
