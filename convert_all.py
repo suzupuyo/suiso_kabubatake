@@ -100,6 +100,7 @@ with open(os.path.join(OUTPUT_DIR, 'index.html'), 'w', encoding='utf-8') as f:
     f.write("layout: layouts/novel-eplist.njk\n")
     f.write(f'title: {PROJECT_NAME} 各話リスト\n')
     f.write(f"pageCSS: \"novel-list.css\"\n")
+    f.write(f'permalink: "novel-index.html"\n')
     f.write("---\n\n")
     f.write(f'<ul class="episode-list">\n{index_items}</ul>')
 

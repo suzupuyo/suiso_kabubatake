@@ -1,4 +1,4 @@
 {
     "layout": "layouts/novel-eplist.njk",
-    "permalink": "{{ page.filePathStem }}.html"
+    "permalink": "novel/{{ page.fileSlug }}/index.html"
 }
