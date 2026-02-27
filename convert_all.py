@@ -11,7 +11,7 @@ else:
 
 # フォルダのパス設定
 # 作品名入れる↓　例： PROJECT_NAME = "sampleAAA"
-PROJECT_NAME = "Stella Board V1.0 -summer-"
+PROJECT_NAME = "Stella-Board_V1_summer"
 
 INPUT_DIR = './novel_raw'
 OUTPUT_DIR = f"./src/novel/{PROJECT_NAME}"  # 11tyのソースフォルダ内へ
