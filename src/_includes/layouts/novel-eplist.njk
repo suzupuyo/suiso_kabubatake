@@ -8,7 +8,10 @@ pageCSS: "novel-eplist.css"
 <div class="container list-page-container">
     <header class="list-header">
         <h1>{{ title }}</h1>
-        <p class="list-description">あらすじや作品紹介がここに入ります。</p>
+        {# description という変数が定義されていれば表示する #}
+        <div class="list-description">
+            {{ description | safe }}
+        </div>
     </header>
 
     <div class="episode-list">

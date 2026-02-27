@@ -14,6 +14,13 @@ else:
 PROJECT_NAME = "Stella-Board_V1_summer"
 MAIN_TITLE = "Stella Board V1.0 -summer-"
 PREFIX = "steb_1s" # ★ 作品固有のプレフィックス（英数字）
+# ★ ここにあらすじを記述（HTMLタグも使えます）
+PROJECT_DESCRIPTION = """
+<p><img src="/img/draplof.png"></p>
+<p>かつて遊んでいたネットゲームの二頭身アバター姿になり、ゲームの世界へ入った青年の話。</p>
+"""
+
+
 
 INPUT_DIR = './novel_raw'
 OUTPUT_DIR = f"./src/novel/{PROJECT_NAME}"  # 11tyのソースフォルダ内へ
