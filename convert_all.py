@@ -90,11 +90,6 @@ for filename in files:
         f.write("---\n")
         f.write("layout: layouts/novel-page.njk\n")
         f.write(f'title: "{page_title}"\n')
-        f.write("description: |\n") # あらすじ
-        # 各行の先頭にスペース2つを入れて書き出す
-        for desc_line in PROJECT_DESCRIPTION.strip().split('\n'):
-            f.write(f"  {desc_line}\n")
-            
         # 作品ごとのタグ
         f.write(f"tags: {PROJECT_NAME}\n") 
         f.write(f"pageCSS: \"novel-detail.css\"\n")
@@ -130,10 +125,22 @@ for item in index_data:
 with open(os.path.join(OUTPUT_DIR, 'index.html'), 'w', encoding='utf-8') as f:
     f.write("---\n")
     f.write("layout: layouts/novel-eplist.njk\n")
-    f.write(f'title: {MAIN_TITLE}\n')
+    f.write(f'title:" {MAIN_TITLE}"\n')
+
+
+    # あらすじの書き出し
+    f.write("description: |\n")
+    if PROJECT_DESCRIPTION.strip():
+        for desc_line in PROJECT_DESCRIPTION.strip().split('\n'):
+            # 行が空でなければ、スペース2つを足して書き出す
+            f.write(f"  {desc_line}\n")
+    else:
+        f.write("  作品紹介は準備中です。\n")
+            
     f.write(f"pageCSS: \"novel-list.css\"\n")
     f.write(f"permalink: '/novel/Stella-Board_V1_summer/index.html'\n")
     f.write("---\n\n")
     f.write(f'<ul class="episode-list">\n{index_items}</ul>')
 
+print(f"\n目次ファイルを生成しました: {os.path.join(OUTPUT_DIR, 'index.html')}")
 print("\n11ty用ファイルの生成がすべて完了しました！")
