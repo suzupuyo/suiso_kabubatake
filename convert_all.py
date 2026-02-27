@@ -90,6 +90,11 @@ for filename in files:
         f.write("---\n")
         f.write("layout: layouts/novel-page.njk\n")
         f.write(f'title: "{page_title}"\n')
+        f.write("description: |\n") # あらすじ
+        # 各行の先頭にスペース2つを入れて書き出す
+        for desc_line in PROJECT_DESCRIPTION.strip().split('\n'):
+            f.write(f"  {desc_line}\n")
+            
         # 作品ごとのタグ
         f.write(f"tags: {PROJECT_NAME}\n") 
         f.write(f"pageCSS: \"novel-detail.css\"\n")
