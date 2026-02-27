@@ -78,7 +78,7 @@ for filename in files:
         f.write("---\n\n")
         f.write(full_html)
     
-    index_data.append({"title": page_title, "url": f"/novel/{PROJECT_NAME}/{output_filename.replace('.html', '/')}"})
+    index_data.append({"title": page_title, "url": f"/suiso_kabubatake/novel/{PROJECT_NAME}/{output_filename.replace('.html', '/')}"})
     print(f"変換完了: {page_title}")
 
 # --- 4. 目次ファイル（src/index.html）の生成 ---
