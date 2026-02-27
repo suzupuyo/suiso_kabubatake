@@ -73,6 +73,7 @@ for filename in files:
         # 作品ごとのタグ
         f.write(f"tags: {PROJECT_NAME}\n") 
         f.write(f"pageCSS: \"novel-detail.css\"\n")
+        f.write(f"permalink: '/novel/{PROJECT_NAME}/{output_filename.replace('.html', '/')}'\n")
         # もし「あらすじ」や「話数」をPython側で持っているなら、ここに追加できます
         # f.write(f"episode_number: {ep_num}\n") 
         f.write("---\n\n")
@@ -100,6 +101,7 @@ with open(os.path.join(OUTPUT_DIR, 'index.html'), 'w', encoding='utf-8') as f:
     f.write("layout: layouts/novel-eplist.njk\n")
     f.write(f'title: {PROJECT_NAME} 各話リスト\n')
     f.write(f"pageCSS: \"novel-list.css\"\n")
+    f.write(f"permalink: '/novel/Stella-Board_V1_summer/index.html'\n")
     f.write("---\n\n")
     f.write(f'<ul class="episode-list">\n{index_items}</ul>')
 
