@@ -4,6 +4,13 @@ const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
 
 
 module.exports = function (eleventyConfig) {
+
+    eleventyConfig.on("eleventy.after", async ({ dir, results, runMode }) => {
+        console.log("出力されたファイル一覧:");
+        results.forEach(result => console.log(result.outputPath));
+    });
+
+
     // 11tyに使用プラグイン指示
     eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
 
@@ -60,3 +67,5 @@ module.exports = function (eleventyConfig) {
     };
 
 };
+
+

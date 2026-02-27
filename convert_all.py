@@ -73,7 +73,7 @@ for filename in files:
         # 作品ごとのタグ
         f.write(f"tags: {PROJECT_NAME}\n") 
         f.write(f"pageCSS: \"novel-detail.css\"\n")
-        f.write(f"permalink: '/novel/{PROJECT_NAME}/{output_filename.replace('.html', '/')}'\n")
+        f.write(f"permalink: '/novel/{PROJECT_NAME}/{output_filename}'\n")
         # もし「あらすじ」や「話数」をPython側で持っているなら、ここに追加できます
         # f.write(f"episode_number: {ep_num}\n") 
         f.write("---\n\n")
