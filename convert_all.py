@@ -10,8 +10,9 @@ else:
     face_list = {}
 
 # フォルダのパス設定
-# 作品名入れる↓　例： PROJECT_NAME = "sampleAAA"
+# フォルダ名になるタイトル入れる↓　例： PROJECT_NAME = "sampleAAA"
 PROJECT_NAME = "Stella-Board_V1_summer"
+MAIN_TITLE = "Stella Board V1.0 -summer-"
 PREFIX = "steb_1s" # ★ 作品固有のプレフィックス（英数字）
 
 INPUT_DIR = './novel_raw'
@@ -93,7 +94,7 @@ for filename in files:
         f.write(full_html)
     
     index_data.append({
-        "id": full_page_id,
+        "id": raw_id,
         "title": page_title, 
         "url": f"/novel/{PROJECT_NAME}/{full_page_id}.html"})
     print(f"変換完了: [{full_page_id}] {page_title}")
@@ -117,7 +118,7 @@ for item in index_data:
 with open(os.path.join(OUTPUT_DIR, 'index.html'), 'w', encoding='utf-8') as f:
     f.write("---\n")
     f.write("layout: layouts/novel-eplist.njk\n")
-    f.write(f'title: {PROJECT_NAME} 各話リスト\n')
+    f.write(f'title: {MAIN_TITLE}\n')
     f.write(f"pageCSS: \"novel-list.css\"\n")
     f.write(f"permalink: '/novel/Stella-Board_V1_summer/index.html'\n")
     f.write("---\n\n")
