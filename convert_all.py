@@ -54,33 +54,42 @@ files = sorted([f for f in os.listdir(INPUT_DIR) if f.endswith('.txt')])
 
 for filename in files:
     # 変数定義：page_title (ファイル名から拡張子を取る)
-    page_title = os.path.splitext(filename)[0]
+    page_id = os.path.splitext(filename)[0]
     # 変数定義：output_filename
-    output_filename = filename.replace('.txt', '.html')
+    output_filename = f"{page_id}.html"
 
     with open(os.path.join(INPUT_DIR, filename), 'r', encoding='utf-8') as f:
-        lines = f.readlines()
+        all_lines = f.readlines()
+
+    if not all_lines:
+        continue
+
+
+    # ★ 1行目をタイトルとして取得し、本文からは取り除く
+    # 例：テキストの1行目に「第一話 渚の出会い」と書いておく
+    page_title = all_lines[0].strip()
+    content_lines = all_lines[1:] # 2行目以降が本文
 
     # 変数定義：full_html (本文を生成)
-    html_body = [convert_line(line) for line in lines]
+    html_body = [convert_line(line) for line in content_lines]
     full_html = '\n'.join(html_body)
 
     # 書き出し (11ty用のFront Matterを付与)
     with open(os.path.join(OUTPUT_DIR, output_filename), 'w', encoding='utf-8') as f:
         f.write("---\n")
         f.write("layout: layouts/novel-page.njk\n")
-        f.write(f"title: \"{page_title}\"\n")
+        f.write(f'title: "{page_title}"\n')
         # 作品ごとのタグ
         f.write(f"tags: {PROJECT_NAME}\n") 
         f.write(f"pageCSS: \"novel-detail.css\"\n")
-        f.write(f"permalink: '/novel/{PROJECT_NAME}/{output_filename}'\n")
+        f.write(f"permalink: '/novel/{PROJECT_NAME}/{page_id}.html'\n")
         # もし「あらすじ」や「話数」をPython側で持っているなら、ここに追加できます
         # f.write(f"episode_number: {ep_num}\n") 
         f.write("---\n\n")
         f.write(full_html)
     
-    index_data.append({"title": page_title, "url": f"/novel/{PROJECT_NAME}/{output_filename.replace('.html', '/')}"})
-    print(f"変換完了: {page_title}")
+    index_data.append({"title": page_title, "url": f"/novel/{PROJECT_NAME}/{page_id}.html"})
+    print(f"変換完了: {page_title} (URL: /{page_id}/)")
 
 # --- 4. 目次ファイル（src/index.html）の生成 ---
 index_items = ""
