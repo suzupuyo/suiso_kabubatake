@@ -12,6 +12,7 @@ else:
 # フォルダのパス設定
 # 作品名入れる↓　例： PROJECT_NAME = "sampleAAA"
 PROJECT_NAME = "Stella-Board_V1_summer"
+PREFIX = "steb_1s" # ★ 作品固有のプレフィックス（英数字）
 
 INPUT_DIR = './novel_raw'
 OUTPUT_DIR = f"./src/novel/{PROJECT_NAME}"  # 11tyのソースフォルダ内へ
@@ -53,10 +54,12 @@ def convert_line(line):
 files = sorted([f for f in os.listdir(INPUT_DIR) if f.endswith('.txt')])
 
 for filename in files:
-    # 変数定義：page_title (ファイル名から拡張子を取る)
-    page_id = os.path.splitext(filename)[0]
+    # URL用のベースID（001など）(ファイル名から拡張子を取る)
+    raw_id = os.path.splitext(filename)[0]
+    # ★ プレフィックスを付けた固有ID（stella-001 など）
+    full_page_id = f"{PREFIX}-{raw_id}"
     # 変数定義：output_filename
-    output_filename = f"{page_id}.html"
+    output_filename = f"{full_page_id}.html"
 
     with open(os.path.join(INPUT_DIR, filename), 'r', encoding='utf-8') as f:
         all_lines = f.readlines()
@@ -82,22 +85,28 @@ for filename in files:
         # 作品ごとのタグ
         f.write(f"tags: {PROJECT_NAME}\n") 
         f.write(f"pageCSS: \"novel-detail.css\"\n")
-        f.write(f"permalink: '/novel/{PROJECT_NAME}/{page_id}.html'\n")
+        # ★ URLもプレフィックス付きに（例: /novel/project/stella-001/）
+        f.write(f'permalink: "/novel/{PROJECT_NAME}/{full_page_id}.html"\n')
         # もし「あらすじ」や「話数」をPython側で持っているなら、ここに追加できます
         # f.write(f"episode_number: {ep_num}\n") 
         f.write("---\n\n")
         f.write(full_html)
     
-    index_data.append({"title": page_title, "url": f"/novel/{PROJECT_NAME}/{page_id}.html"})
-    print(f"変換完了: {page_title} (URL: /{page_id}/)")
+    index_data.append({
+        "id": full_page_id,
+        "title": page_title, 
+        "url": f"/novel/{PROJECT_NAME}/{full_page_id}.html"})
+    print(f"変換完了: [{full_page_id}] {page_title}")
 
 # --- 4. 目次ファイル（src/index.html）の生成 ---
 index_items = ""
 for item in index_data:
     # CSSと紐付け
+    # ★ IDを表示に含める（例: stella-001: 第一話 渚の出会い）
     index_items += (
         f'<li class="episode-item">\n'
         f'  <a href="{item["url"]}" class="episode-link">\n'
+        f'    <span class="episode-id">{item["id"]}</span>' # ID表示用
         f'    <span class="episode-title">{item["title"]}</span>\n'
         f'  </a>\n'
         f'</li>\n'
