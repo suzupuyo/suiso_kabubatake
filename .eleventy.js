@@ -25,7 +25,7 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("src/css");
     eleventyConfig.addPassthroughCopy("src/chara_img");
     eleventyConfig.addPassthroughCopy("src/img");
-    eleventyConfig.addPassthroughCopy("src/novel");
+
 
     // diary377 フォルダ内の画像などもそのまま _site にコピーさせる設定
     eleventyConfig.addPassthroughCopy("src/diary377/**/*.jpg");
@@ -46,6 +46,7 @@ module.exports = function (eleventyConfig) {
 
     return {
         pathPrefix: "/suiso_kabubatake/", // 自分のリポジトリ名に合わせて変更
+        htmlTemplateEngine: "njk",
 
         // テンプレートとして扱う拡張子を限定
         templateFormats: ["html", "md", "njk"],
