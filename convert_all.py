@@ -125,7 +125,7 @@ for item in index_data:
 with open(os.path.join(OUTPUT_DIR, 'index.html'), 'w', encoding='utf-8') as f:
     f.write("---\n")
     f.write("layout: layouts/novel-eplist.njk\n")
-    f.write(f'title:" {MAIN_TITLE}"\n')
+    f.write(f'title: "{MAIN_TITLE}"\n')
 
 
     # あらすじの書き出し
