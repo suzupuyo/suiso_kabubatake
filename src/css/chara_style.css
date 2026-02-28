@@ -503,7 +503,7 @@ details[open] summary::after {
 }
 
 /* 主人公カードの右上にリボンをつける（お好みで） */
-.character-item[data-role="mainPC"] .character-card::after {
+.character-item[data-role="mainpc"] .character-card::after {
     content: "Main";
     position: absolute;
     top: -5px;
@@ -572,10 +572,47 @@ details[open] summary::after {
 
 /* レスポンシブ対応 */
 @media (max-width: 600px) {
-    .character-item {
-        width: calc(50% - 10px);
-        /* gapを考慮した計算 */
+    .container {
+        padding: 15px 10px;
     }
+
+    .character-list {
+        gap: 8px;
+        /* カード同士の隙間 */
+        justify-content: center;
+    }
+
+
+    .character-item {
+        /* 3列にするための計算。gap(8px)2つ分を引いて3で割る */
+        width: calc((100% - 16px) / 3);
+        min-width: 100px;
+    }
+
+    .character-card {
+        padding: 5px;
+        /* カード内の余白を最小限に */
+    }
+
+    .character-name {
+        font-size: 0.8em;
+        min-height: 30px;
+        margin: 3px 0;
+    }
+
+    .character-meta {
+        display: none;
+    }
+
+    /* mainリボンのサイズ */
+    .character-item[data-role="mainpc"] .character-card::after {
+        font-size: 8px;
+        padding: 1px 4px;
+        top: -3px;
+        right: -3px;
+    }
+
+
 }
 
 .button-list {
