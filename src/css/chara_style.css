@@ -502,6 +502,21 @@ details[open] summary::after {
     display: flex;
 }
 
+/* 主人公カードの右上にリボンをつける（お好みで） */
+.character-item[data-role="mainPC"] .character-card::after {
+    content: "Main";
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: #ffd700;
+    color: #fff;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
 .character-card {
     display: flex;
     flex-direction: column;
