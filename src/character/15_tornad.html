@@ -1,0 +1,157 @@
+---
+layout: layouts/base.njk
+title: "トルナド・セレンニータ"
+tags: Character
+pageCSS: "chara_style.css"
+permalink: "/character/15_tornad.html"
+---
+
+
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>トルナド・セレンニータ - キャラクター図鑑</title>
+    <link rel="stylesheet" href="chara_style.css">
+</head>
+
+<body>
+    <div class="profile-page">
+        <nav class="page-nav">
+            <a href="index.html">← キャラクター一覧に戻る</a>
+        </nav>
+
+        <header class="profile-header">
+            <div class="image-area">
+                <img src="../chara_img/015/015_i.webp" alt="トルナド・セレンニータ" class="main-img">
+            </div>
+
+            <div class="info-card">
+                <h1 class="name">
+                    <ruby>トルナド・セレンニータ <rt></rt></ruby>
+                </h1>
+                <div class="meta-item">
+                    <span class="label">ジャンル</span>
+                    <span class="value">定期ゲ・キャラ交流ゲ</span>
+                </div>
+                <div class="meta-item">
+                    <span class="label">登場作品</span>
+                    <ul class="work-list">
+                        
+                        <li><a href="index.html?work=Ikki Fantasy">Ikki Fantasy</a></li>
+                        
+                    </ul>
+                </div>
+                <div class="meta-item">
+                    <span class="label">備考</span>
+                    <span class="value">トレノの父</span>
+                </div>
+            </div>
+        </header>
+
+
+        <section class="main-area">
+            <section class="main-text">
+                <blockquote class="catchphrase">なあに、見える大部分が平和でも必要な所はある。それに人が居れば私も休暇が取りやすいというだけの話さ</blockquote>
+                <p class="description">小さな町の衛兵をしていた犬の獣人。妻子持ち。</p>
+
+
+                <blockquote class="catchphrase">プロフィール</blockquote>
+                <div class="details-content">
+                    <ul class="profile-list">
+                        <li><span>種族</span>犬人族</li>
+                        <li><span>性別</span>男性</li>
+                        <li><span>年齢</span>-</li>
+                        <li><span>身長</span>170cm</li>
+                        <li><span>肩書き</span>衛兵</li>
+                        <li><span>一人称/二人称</span>私 / 貴方</li>
+                        <li><span>特技</span>槍術</li>
+                        <li><span>好きなもの/嫌いなもの</span>家族 / 悪行</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="details-section">
+                <details>
+                    <summary>詳細</summary>
+                    <div class="details-content">
+                        <p>トレノの父親。家族思いで正義感に溢れた衛兵。<br>不慮の事故により、若くして他界した。<br></p>
+                    </div>
+                </details>
+
+                
+                <details>
+                    <summary>関連人物</summary>
+                    <div class="details-content">
+
+                        
+                        <ul class="custom-item-list">
+                            
+                            <li>
+                                <span class="item-label">息子</span>
+                                <div class="item-main">
+                                    <strong class="item-name">トレノ</strong>
+                                    <p class="item-desc">可愛がっていた息子。</p>
+                                </div>
+                            </li>
+                            
+                        </ul>
+
+                        
+
+                    </div>
+                </details>
+                
+
+            </section>
+        </section>
+
+        <section class="reference-gallery">
+            <h2>Gallery</h2>
+            <div class="gallery-grid">
+                
+            </div>
+        </section>
+
+
+        <footer class="profile-footer">
+            <div class="activity-years">
+                <span class="label">活動年</span>
+                <div class="year-tags">
+                    
+                    <a href="index.html?year=2015" class="year-tag">2015</a>
+                    
+                </div>
+            </div>
+        </footer>
+    </div>
+
+
+    <div id="image-modal" class="modal" onclick="closeModal()">
+        <span class="modal-close">&times;</span>
+        <img class="modal-content" id="modal-img">
+    </div>
+
+    <script>
+        function openModal(src) {
+            const modal = document.getElementById("image-modal");
+            const modalImg = document.getElementById("modal-img");
+            if (!modal || !modalImg) return; // エラー防止
+
+            modal.style.display = "flex"; // blockよりflexの方が真ん中寄せに強い
+            modalImg.src = src;
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeModal() {
+            const modal = document.getElementById("image-modal");
+            modal.style.display = "none";
+            document.body.style.overflow = "auto";
+        }
+    </script>
+
+
+</body>
+
+</html>

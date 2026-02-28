@@ -502,9 +502,14 @@ details[open] summary::after {
     display: flex;
 }
 
-/* 主人公カードの右上にリボンをつける（お好みで） */
+/* カードの右上にリボンをつける（お好みで） */
+.character-item[data-role="mainpc"] .character-card {
+    position: relative;
+    overflow: visible !important;
+}
+
 .character-item[data-role="mainpc"] .character-card::after {
-    content: "Main";
+    content: "MainPC";
     position: absolute;
     top: -5px;
     right: -5px;
@@ -515,6 +520,8 @@ details[open] summary::after {
     padding: 2px 6px;
     border-radius: 4px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    pointer-events: none;
 }
 
 .character-card {
