@@ -1,7 +1,7 @@
-src/_includes/
-src/css/
 src/novel/sampleAAA/
-
 src/**/*.txt
 node_modules/
 _site/
+
+convert_all.py
+コマンド一覧.txt
