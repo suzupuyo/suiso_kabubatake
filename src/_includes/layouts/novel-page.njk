@@ -8,8 +8,8 @@ pageCSS: "novel-detail.css"
         <div class="sidebar-inner">
             <h3>Episode List</h3>
             <ol>
-                {# tags[0] に入っている作品名タグを使って、その作品の記事だけをループさせる #}
-                {%- for post in collections[tags[0]] -%}
+                {# tags 内に PROJECT_NAME と一致するタグがあるコレクションをループさせる #}
+                {%- for post in collections[tags[1]] -%} {# tags[1] が作品名タグになる想定 #}
                 <li {% if post.url == page.url %}class="current"{% endif %}>
                     <a href="{{ post.url }}">{{ post.data.title }}</a>
                 </li>
@@ -32,6 +32,7 @@ pageCSS: "novel-detail.css"
 
             {# 前後の話へのナビゲーション #}
             <nav class="novel-pagination">
+                {# 明示的に novels コレクションから前後を取得 #}
                 {%- set previousPost = collections.novels | getPreviousCollectionItem(page) %}
                 {%- set nextPost = collections.novels | getNextCollectionItem(page) %}
                 <div class="nav-prev">
