@@ -37,7 +37,7 @@
 }
 
 .sidebar ol {
-    list-style: none;
+    list-style: decimal;
     padding: 0;
 }
 
