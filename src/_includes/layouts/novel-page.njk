@@ -38,7 +38,7 @@ pageCSS: "novel-detail.css"
                     {% if previousPost %}<a href="{{ previousPost.url }}">← {{ previousPost.data.title }}</a>
                     {% else %}<span class="disabled">最初の話</span>{% endif %}
                 </div>
-                <div class="nav-home"><a href="/">目次</a></div>
+                <div class="nav-home"><a href="{{ parentUrl | default('/') }}">目次</a></div>
                 <div class="nav-next">
                     {% if nextPost %}<a href="{{ nextPost.url }}">{{ nextPost.data.title }} →</a>
                     {% else %}<span class="disabled">最新話</span>{% endif %}
