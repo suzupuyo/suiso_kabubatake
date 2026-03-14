@@ -95,6 +95,15 @@
     font-size: 90%;
 }
 
+
+/* コンテナの幅（720px）を超えないようにする */
+.novel-body img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+}
+
 /* 目次出し入れボタンの基本位置 */
 .sidebar-toggle {
     position: fixed;
