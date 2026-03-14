@@ -8,6 +8,14 @@
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
+/* コンテナの幅（720px）を超えないようにする */
+.container img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+}
+
 /* 作品リスト：カードのスタイル */
 .series-list {
     display: flex;
