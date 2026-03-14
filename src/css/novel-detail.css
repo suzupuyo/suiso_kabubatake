@@ -95,6 +95,11 @@
     font-size: 90%;
 }
 
+/* novel-body 直下の div（地の文）の 1行目だけを 1文字分下げる */
+.novel-body>div {
+    min-height: 1.5em;
+}
+
 
 /* コンテナの幅（720px）を超えないようにする */
 .novel-body img {
