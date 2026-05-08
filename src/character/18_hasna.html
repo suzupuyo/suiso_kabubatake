@@ -1,0 +1,178 @@
+---
+layout: layouts/base.njk
+title: "ハスナ・クーレ"
+tags: Character
+pageCSS: "chara_style.css"
+permalink: "/character/18_hasna.html"
+---
+
+
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ハスナ・クーレ - キャラクター図鑑</title>
+    <link rel="stylesheet" href="chara_style.css">
+</head>
+
+<body>
+    <div class="profile-page">
+        <nav class="page-nav">
+            <a href="index.html">← キャラクター一覧に戻る</a>
+        </nav>
+
+        <header class="profile-header">
+            <div class="image-area">
+                <img src="../chara_img/018/018_1.webp" alt="ハスナ・クーレ" class="main-img">
+            </div>
+
+            <div class="info-card">
+                <h1 class="name">
+                    <ruby>ハスナ・クーレ <rt></rt></ruby>
+                </h1>
+                <div class="meta-item">
+                    <span class="label">ジャンル</span>
+                    <span class="value">定期ゲ・キャラ交流ゲ</span>
+                </div>
+                <div class="meta-item">
+                    <span class="label">登場作品</span>
+                    <ul class="work-list">
+                        
+                        <li><a href="index.html?work=ネジまく世界の冒険者共">ネジまく世界の冒険者共</a></li>
+                        
+                        <li><a href="index.html?work=戯書">戯書</a></li>
+                        
+                    </ul>
+                </div>
+                <div class="meta-item">
+                    <span class="label">備考</span>
+                    <span class="value"></span>
+                </div>
+            </div>
+        </header>
+
+
+        <section class="main-area">
+            <section class="main-text">
+                <blockquote class="catchphrase">行きましょう生きましょう！</blockquote>
+                <p class="description">仕立て屋の平凡な少女。冒険譚に憧れ刺激を求め、軽い気持ちで迷宮探索任務へ挑んだ。</p>
+
+
+                <blockquote class="catchphrase">プロフィール</blockquote>
+                <div class="details-content">
+                    <ul class="profile-list">
+                        <li><span>種族</span>人間</li>
+                        <li><span>性別</span>女性</li>
+                        <li><span>年齢</span>16歳→17歳</li>
+                        <li><span>身長</span>164cm</li>
+                        <li><span>肩書き</span>仕立屋</li>
+                        <li><span>一人称/二人称</span>あたし / あなた</li>
+                        <li><span>特技</span>裁縫、お菓子作り</li>
+                        <li><span>好きなもの/嫌いなもの</span>新しい体験 / 芋虫</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="details-section">
+                <details>
+                    <summary>詳細</summary>
+                    <div class="details-content">
+                        <p>仕立て屋の娘である平凡な少女。<br>朗らかで天然気味、また好奇心旺盛でちょっぴり大胆。<br>面倒事を避けようとしたり、余裕があるとサボってしまうようなずぼらな面もある。<br><br>そこそこ栄えた街で市民として平凡に暮らしていたが、刺激を求めて自ら進んで冒険者になる。<br>しかし酔狂を酔狂と知らず迷宮探索任務へ身を投じ、無垢な好奇心が招いた過酷な運命と向き合うことになる。 <br></p>
+                    </div>
+                </details>
+
+                
+                <details>
+                    <summary>戯書では</summary>
+                    <div class="details-content">
+
+                        
+                        <p class="free-text"> なんの因果か世界の歪みにより本の世界へ迷い込み、一時的に物語の停滞を解消する“読み手”となる。 物語に干渉できる“読み手”の力がなつき（小）から不具合で移譲されたものであることは当事者の誰も知る由はない。 急に異世界トリップする羽目になったためドルチェの部屋で暮らしていた。</p>
+                        
+
+                    </div>
+                </details>
+                
+                <details>
+                    <summary>関連人物</summary>
+                    <div class="details-content">
+
+                        
+                        <ul class="custom-item-list">
+                            
+                            <li>
+                                <span class="item-label">同じ世界出身</span>
+                                <div class="item-main">
+                                    <strong class="item-name">ドルチェ</strong>
+                                    <p class="item-desc">邂逅は戯書が初。</p>
+                                </div>
+                            </li>
+                            
+                        </ul>
+
+                        
+
+                    </div>
+                </details>
+                
+
+            </section>
+        </section>
+
+        <section class="reference-gallery">
+            <h2>Gallery</h2>
+            <div class="gallery-grid">
+                
+                <div class="gallery-item">
+                    <img src="../chara_img/018/018_2.webp" alt="参考画像" onclick="openModal(this.src)">
+                </div>
+                
+            </div>
+        </section>
+
+
+        <footer class="profile-footer">
+            <div class="activity-years">
+                <span class="label">活動年</span>
+                <div class="year-tags">
+                    
+                    <a href="index.html?year=2013" class="year-tag">2013</a>
+                    
+                    <a href="index.html?year=2014" class="year-tag">2014</a>
+                    
+                    <a href="index.html?year=2015" class="year-tag">2015</a>
+                    
+                </div>
+            </div>
+        </footer>
+    </div>
+
+
+    <div id="image-modal" class="modal" onclick="closeModal()">
+        <span class="modal-close">&times;</span>
+        <img class="modal-content" id="modal-img">
+    </div>
+
+    <script>
+        function openModal(src) {
+            const modal = document.getElementById("image-modal");
+            const modalImg = document.getElementById("modal-img");
+            if (!modal || !modalImg) return; // エラー防止
+
+            modal.style.display = "flex"; // blockよりflexの方が真ん中寄せに強い
+            modalImg.src = src;
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeModal() {
+            const modal = document.getElementById("image-modal");
+            modal.style.display = "none";
+            document.body.style.overflow = "auto";
+        }
+    </script>
+
+
+</body>
+
+</html>
