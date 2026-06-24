@@ -32,7 +32,7 @@
 }
 
 
-.sidebar ol {
+.sidebar ul {
     list-style: decimal;
     padding-left: 1.5em;
     margin: 0;
@@ -43,7 +43,7 @@
     padding-left: 5px;
 }
 
-.sidebar ol li a:hover {
+.sidebar ul li a:hover {
     color: var(--accent-water);
     padding-left: 5px;
 }
@@ -152,7 +152,7 @@
     flex-direction: column;
     /* 名前と吹き出しを縦に並べる */
     align-items: flex-start;
-    /* これが重要！中身を左に詰め、幅を最小限にする */
+    /* 中身を左に詰め、幅を最小限にする */
     flex: 1;
 }
 
