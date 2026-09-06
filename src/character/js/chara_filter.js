@@ -10,16 +10,17 @@ function createCharacterItemElement(c) {
     item.className = 'character-item';
 
     // データ属性の設定（数値も文字列化して格納）
-    item.dataset.id = String(c.id ?? 0);
-    if (c.genre) item.dataset.genre = String(c.genre);
-    if (c.role) item.dataset.role = String(c.role);
+    item.setAttribute('data-id', String(c.id ?? 0));
+    if (c.genre) item.setAttribute('data-genre', String(c.genre));
+    if (c.role) item.setAttribute('data-role', String(c.role));
 
-    // works, years が配列の場合もカンマ区切りの文字列にしてセット
+    // works, years が配列の場合もカンマ区切りの文字列にしてセット（year/years 両対応）
     const worksArr = Array.isArray(c.works) ? c.works : (c.works ? [c.works] : []);
-    const yearsArr = Array.isArray(c.years) ? c.years : (c.years ? [c.years] : []);
+    const rawYears = c.years ?? c.year;
+    const yearsArr = Array.isArray(rawYears) ? rawYears : (rawYears ? [rawYears] : []);
 
-    if (worksArr.length > 0) item.dataset.works = worksArr.map(String).join(',');
-    if (yearsArr.length > 0) item.dataset.years = yearsArr.map(String).join(',');
+    if (worksArr.length > 0) item.setAttribute('data-works', worksArr.map(String).join(','));
+    if (yearsArr.length > 0) item.setAttribute('data-years', yearsArr.map(String).join(','));
 
     // 内部HTML
     item.innerHTML = `
@@ -61,7 +62,8 @@ window.updateVisibility = () => {
     items.forEach(item => item.style.display = 'none');
     visibleItems.forEach((item, index) => {
         if (index < currentPage * PER_PAGE) {
-            item.style.display = 'block';
+            // ★修正点：display = 'block' ではなく空文字 '' にして CSS 本来のレイアウト（grid/flex等）を破棄させない
+            item.style.display = '';
         }
     });
 
@@ -88,9 +90,10 @@ window.sortAndRender = () => {
     const listContainer = document.querySelector('.character-list');
 
     items.sort((a, b) => {
-        if (sortVal === 'id-desc') return Number(b.dataset.id) - Number(a.dataset.id);
-        // ★修正点: a.dataset.id - b.dataset.id に修正
-        if (sortVal === 'id-asc') return Number(a.dataset.id) - Number(b.dataset.id);
+        const idA = Number(a.getAttribute('data-id') || 0);
+        const idB = Number(b.getAttribute('data-id') || 0);
+        if (sortVal === 'id-desc') return idB - idA;
+        if (sortVal === 'id-asc') return idA - idB;
         return 0;
     });
 
@@ -104,15 +107,19 @@ window.filterCharacters = (value, type) => {
     items.forEach(item => {
         let isMatch = (targetVal === 'all');
 
-        if (type === 'genre') isMatch = (item.dataset.genre === targetVal);
-        if (type === 'role') isMatch = (item.dataset.role === targetVal);
+        const itemGenre = item.getAttribute('data-genre');
+        const itemRole = item.getAttribute('data-role');
+
+        if (type === 'genre') isMatch = (itemGenre === targetVal);
+        if (type === 'role') isMatch = (itemRole === targetVal);
 
         if (type === 'work' || type === 'year') {
             if (targetVal === 'all') {
                 isMatch = true;
             } else {
                 const attrName = type === 'work' ? 'data-works' : 'data-years';
-                const list = (item.getAttribute(attrName) || '').split(',').map(s => s.trim());
+                const rawAttr = item.getAttribute(attrName) || '';
+                const list = rawAttr.split(',').map(s => s.trim()).filter(Boolean);
                 isMatch = list.includes(targetVal);
             }
         }
@@ -132,8 +139,10 @@ window.filterCharacters = (value, type) => {
 window.toggleSidebar = () => {
     const sidebar = document.getElementById('sidebar');
     const overlay = document.getElementById('sidebar-overlay');
-    const isActive = sidebar.classList.toggle('active');
-    if (overlay) overlay.style.display = isActive ? 'block' : 'none';
+    if (sidebar) {
+        const isActive = sidebar.classList.toggle('active');
+        if (overlay) overlay.style.display = isActive ? 'block' : 'none';
+    }
 };
 
 // 初期化処理
@@ -168,9 +177,13 @@ document.addEventListener('DOMContentLoaded', async () => {
         const years = new Set();
 
         items.forEach(item => {
-            if (item.dataset.genre) genres.add(item.dataset.genre);
-            if (item.dataset.works) item.dataset.works.split(',').forEach(w => w && works.add(w.trim()));
-            if (item.dataset.years) item.dataset.years.split(',').forEach(y => y && years.add(y.trim()));
+            const g = item.getAttribute('data-genre');
+            const w = item.getAttribute('data-works');
+            const y = item.getAttribute('data-years');
+
+            if (g) genres.add(g);
+            if (w) w.split(',').forEach(val => val && works.add(val.trim()));
+            if (y) y.split(',').forEach(val => val && years.add(val.trim()));
         });
 
         const createButtons = (set, targetId, type) => {
@@ -207,7 +220,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         createButtons(works, 'work-filters', 'work');
         createSelectOptions(years, 'year-select-filter');
 
-        // ★修正点 5: 最初は全キャラクターを表示フラグ(data-filter-match="true")にする
+        // 5. 最初は全キャラクターを表示フラグにする
         filterCharacters('all', 'all');
 
         // 6. 初期ソートと描画
