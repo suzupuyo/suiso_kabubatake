@@ -1,0 +1,287 @@
+[
+  {
+    "id": "022",
+    "name": "異形ドルチェ",
+    "file_name": "022_igyo_dolce.html",
+    "icon": "",
+    "genre": "定期ゲ・キャラ交流ゲ",
+    "role": "",
+    "works": [
+      "戯書",
+      "言の葉の木の下で"
+    ],
+    "years": []
+  },
+  {
+    "id": "021",
+    "name": "ニコ",
+    "file_name": "021_nico.html",
+    "icon": "",
+    "genre": "定期ゲ・キャラ交流ゲ",
+    "role": "",
+    "works": [
+      "戯書",
+      "言の葉の木の下で"
+    ],
+    "years": []
+  },
+  {
+    "id": "020",
+    "name": "クランツ・ハールマン",
+    "file_name": "020_kranz.html",
+    "icon": "",
+    "genre": "定期ゲ・キャラ交流ゲ",
+    "role": "",
+    "works": [
+      "戯書"
+    ],
+    "years": []
+  },
+  {
+    "id": "019",
+    "name": "しらはまなつき",
+    "file_name": "019_litlle_natsuki.html",
+    "icon": "",
+    "genre": "定期ゲ・キャラ交流ゲ",
+    "role": "mainpc",
+    "works": [
+      "戯書"
+    ],
+    "years": []
+  },
+  {
+    "id": "017",
+    "name": "ドルチェ・メロディア",
+    "file_name": "017_dolce.html",
+    "icon": "",
+    "genre": "定期ゲ・キャラ交流ゲ",
+    "role": "mainpc",
+    "works": [
+      "ネジまく世界の冒険者共",
+      "戯書",
+      "言の葉の木の下で"
+    ],
+    "years": []
+  },
+  {
+    "id": "018",
+    "name": "ハスナ・クーレ",
+    "file_name": "018_hasna.html",
+    "icon": "",
+    "genre": "定期ゲ・キャラ交流ゲ",
+    "role": "mainpc",
+    "works": [
+      "ネジまく世界の冒険者共",
+      "戯書"
+    ],
+    "years": []
+  },
+  {
+    "id": "015",
+    "name": "バート",
+    "file_name": "016_bart.html",
+    "icon": "",
+    "genre": "定期ゲ・キャラ交流ゲ",
+    "role": "",
+    "works": [
+      "Ikki Fantasy"
+    ],
+    "years": []
+  },
+  {
+    "id": "013",
+    "name": "ヴェレ",
+    "file_name": "013_welle.html",
+    "icon": "",
+    "genre": "定期ゲ・キャラ交流ゲ",
+    "role": "",
+    "works": [
+      "Ikki Fantasy",
+      "Seven Seas"
+    ],
+    "years": []
+  },
+  {
+    "id": "014",
+    "name": "ムルヒ",
+    "file_name": "014_mulhi.html",
+    "icon": "",
+    "genre": "定期ゲ・キャラ交流ゲ",
+    "role": "",
+    "works": [
+      "Ikki Fantasy",
+      "Seven Seas"
+    ],
+    "years": []
+  },
+  {
+    "id": "015",
+    "name": "トルナド・セレンニータ",
+    "file_name": "015_tornad.html",
+    "icon": "",
+    "genre": "定期ゲ・キャラ交流ゲ",
+    "role": "",
+    "works": [
+      "Ikki Fantasy"
+    ],
+    "years": []
+  },
+  {
+    "id": "002",
+    "name": "次郎",
+    "file_name": "002_jiro.html",
+    "icon": "",
+    "genre": "定期ゲ・キャラ交流ゲ",
+    "role": "",
+    "works": [
+      "精霊伝説",
+      "戯書",
+      "Seven Seas",
+      "ぽれん"
+    ],
+    "years": []
+  },
+  {
+    "id": "012",
+    "name": "ぺかそEX",
+    "file_name": "012_peccasoEX.html",
+    "icon": "",
+    "genre": "定期ゲ・キャラ交流ゲ",
+    "role": "",
+    "works": [
+      "Ikki Fantasy"
+    ],
+    "years": []
+  },
+  {
+    "id": "011",
+    "name": "フレリア・シャーレ",
+    "file_name": "011_frelia.html",
+    "icon": "",
+    "genre": "定期ゲ・キャラ交流ゲ",
+    "role": "",
+    "works": [
+      "Ikki Fantasy"
+    ],
+    "years": []
+  },
+  {
+    "id": "010",
+    "name": "トレノ・セレンニータ",
+    "file_name": "010_trueno.html",
+    "icon": "",
+    "genre": "定期ゲ・キャラ交流ゲ",
+    "role": "mainpc",
+    "works": [
+      "Ikki Fantasy"
+    ],
+    "years": []
+  },
+  {
+    "id": "009",
+    "name": "蕪もどき",
+    "file_name": "009_kabumodoki.html",
+    "icon": "",
+    "genre": "定期ゲ・キャラ交流ゲ",
+    "role": "mainpc",
+    "works": [
+      "精霊伝説",
+      "Ikki Fantasy",
+      "戯書",
+      "Celetial Call"
+    ],
+    "years": []
+  },
+  {
+    "id": "001",
+    "name": "白浜 魚月",
+    "file_name": "001_natsuki.html",
+    "icon": "",
+    "genre": "定期ゲ・キャラ交流ゲ",
+    "role": "mainpc",
+    "works": [
+      "精霊伝説",
+      "戯書",
+      "Seven Seas"
+    ],
+    "years": []
+  },
+  {
+    "id": "008",
+    "name": "テオドール・エヴァレット",
+    "file_name": "008_teodore.html",
+    "icon": "",
+    "genre": "定期ゲ・キャラ交流ゲ",
+    "role": "",
+    "works": [
+      "精霊伝説",
+      "Seven Seas"
+    ],
+    "years": []
+  },
+  {
+    "id": "007",
+    "name": "権田原権蔵",
+    "file_name": "007_gonzo.html",
+    "icon": "",
+    "genre": "定期ゲ・キャラ交流ゲ",
+    "role": "",
+    "works": [
+      "精霊伝説",
+      "Seven Seas"
+    ],
+    "years": []
+  },
+  {
+    "id": "006",
+    "name": "もい子",
+    "file_name": "006_moiko.html",
+    "icon": "",
+    "genre": "定期ゲ・キャラ交流ゲ",
+    "role": "",
+    "works": [
+      "精霊伝説",
+      "Seven Seas"
+    ],
+    "years": []
+  },
+  {
+    "id": "005",
+    "name": "ジャンバルジャンさん",
+    "file_name": "005_jeanvaljean.html",
+    "icon": "",
+    "genre": "定期ゲ・キャラ交流ゲ",
+    "role": "",
+    "works": [
+      "精霊伝説",
+      "Seven Seas"
+    ],
+    "years": []
+  },
+  {
+    "id": "004",
+    "name": "ブルーハワイちゃん",
+    "file_name": "004_BlueHawai.html",
+    "icon": "",
+    "genre": "定期ゲ・キャラ交流ゲ",
+    "role": "",
+    "works": [
+      "精霊伝説",
+      "Seven Seas"
+    ],
+    "years": []
+  },
+  {
+    "id": "003",
+    "name": "マクレガー君",
+    "file_name": "003_MacGregor.html",
+    "icon": "",
+    "genre": "定期ゲ・キャラ交流ゲ",
+    "role": "",
+    "works": [
+      "精霊伝説",
+      "Seven Seas"
+    ],
+    "years": []
+  }
+]
