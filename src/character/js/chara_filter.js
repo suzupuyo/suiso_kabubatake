@@ -21,7 +21,7 @@ function createCharacterItemElement(c) {
     if (worksArr.length > 0) item.dataset.works = worksArr.map(String).join(',');
     if (yearsArr.length > 0) item.dataset.years = yearsArr.map(String).join(',');
 
-    // 内部HTML（お使いのテンプレートに合わせてクラス名等を調整してください）
+    // 内部HTML
     item.innerHTML = `
         <a href="${c.file_name}" class="character-card">
             <div class="character-icon">
@@ -89,7 +89,8 @@ window.sortAndRender = () => {
 
     items.sort((a, b) => {
         if (sortVal === 'id-desc') return Number(b.dataset.id) - Number(a.dataset.id);
-        if (sortVal === 'id-asc') return Number(a.dataset.id) - Number(a.dataset.id);
+        // ★修正点: a.dataset.id - b.dataset.id に修正
+        if (sortVal === 'id-asc') return Number(a.dataset.id) - Number(b.dataset.id);
         return 0;
     });
 
@@ -107,9 +108,13 @@ window.filterCharacters = (value, type) => {
         if (type === 'role') isMatch = (item.dataset.role === targetVal);
 
         if (type === 'work' || type === 'year') {
-            const attrName = type === 'work' ? 'data-works' : 'data-years';
-            const list = (item.getAttribute(attrName) || '').split(',').map(s => s.trim());
-            isMatch = list.includes(targetVal);
+            if (targetVal === 'all') {
+                isMatch = true;
+            } else {
+                const attrName = type === 'work' ? 'data-works' : 'data-years';
+                const list = (item.getAttribute(attrName) || '').split(',').map(s => s.trim());
+                isMatch = list.includes(targetVal);
+            }
         }
 
         item.setAttribute('data-filter-match', isMatch ? 'true' : 'false');
@@ -139,6 +144,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     try {
         // 1. JSON の取得
         const response = await fetch('./characters.json');
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
         const characterDataList = await response.json();
 
         // 既存のコンテナ要素をクリア
@@ -182,7 +190,10 @@ document.addEventListener('DOMContentLoaded', async () => {
         const createSelectOptions = (set, targetId) => {
             const select = document.getElementById(targetId);
             if (!select) return;
-            // 既存のデフォルトoptionを残してクリアしたい場合は調整
+
+            // デフォルトの 「すべての年」 以外を消去
+            select.innerHTML = '<option value="all">すべての年</option>';
+
             Array.from(set).sort((a, b) => Number(b) - Number(a)).forEach(val => {
                 const option = document.createElement('option');
                 option.value = val;
@@ -196,10 +207,13 @@ document.addEventListener('DOMContentLoaded', async () => {
         createButtons(works, 'work-filters', 'work');
         createSelectOptions(years, 'year-select-filter');
 
-        // 5. 初期表示（ソートと表示更新）
+        // ★修正点 5: 最初は全キャラクターを表示フラグ(data-filter-match="true")にする
+        filterCharacters('all', 'all');
+
+        // 6. 初期ソートと描画
         window.sortAndRender();
 
-        // 6. URLパラメータの判定
+        // 7. URLパラメータの判定
         const params = new URLSearchParams(window.location.search);
         const workParam = params.get('work');
         const yearParam = params.get('year');
