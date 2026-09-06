@@ -4,37 +4,6 @@ let items = [];
 let currentPage = 1;
 const PER_PAGE = 20;
 
-// JSONデータから1つ分の .character-item 要素を生成する関数
-function createCharacterItemElement(c) {
-    const item = document.createElement('div');
-    item.className = 'character-item';
-
-    // データ属性の設定（数値も文字列化して格納）
-    item.setAttribute('data-id', String(c.id ?? 0));
-    if (c.genre) item.setAttribute('data-genre', String(c.genre));
-    if (c.role) item.setAttribute('data-role', String(c.role));
-
-    // works, years が配列の場合もカンマ区切りの文字列にしてセット（year/years 両対応）
-    const worksArr = Array.isArray(c.works) ? c.works : (c.works ? [c.works] : []);
-    const rawYears = c.years ?? c.year;
-    const yearsArr = Array.isArray(rawYears) ? rawYears : (rawYears ? [rawYears] : []);
-
-    if (worksArr.length > 0) item.setAttribute('data-works', worksArr.map(String).join(','));
-    if (yearsArr.length > 0) item.setAttribute('data-years', yearsArr.map(String).join(','));
-
-    // 内部HTML
-    item.innerHTML = `
-        <a href="${c.file_name}" class="character-card">
-            <div class="character-icon">
-                <img src="${c.icon || 'default-icon.png'}" alt="${c.name}">
-            </div>
-            <div class="character-name">${c.name}</div>
-        </a>
-    `;
-
-    return item;
-}
-
 function adjustNameLength() {
     const names = document.querySelectorAll('.character-name');
     names.forEach(name => {
@@ -62,7 +31,6 @@ window.updateVisibility = () => {
     items.forEach(item => item.style.display = 'none');
     visibleItems.forEach((item, index) => {
         if (index < currentPage * PER_PAGE) {
-            // ★修正点：display = 'block' ではなく空文字 '' にして CSS 本来のレイアウト（grid/flex等）を破棄させない
             item.style.display = '';
         }
     });
@@ -129,7 +97,12 @@ window.filterCharacters = (value, type) => {
 
     // ボタンのactive表示切り替え
     document.querySelectorAll('.filter-btn').forEach(btn => {
-        btn.classList.toggle('active', btn.textContent === targetVal || (targetVal === 'all' && btn.textContent === 'すべて表示'));
+        const isAll = targetVal === 'all';
+        if (btn.classList.contains('special-btn')) {
+            btn.classList.toggle('active', type === 'role' && targetVal === 'mainpc');
+        } else {
+            btn.classList.toggle('active', btn.textContent === targetVal || (isAll && btn.textContent === 'すべて表示'));
+        }
     });
 
     currentPage = 1;
@@ -145,102 +118,78 @@ window.toggleSidebar = () => {
     }
 };
 
-// 初期化処理
-document.addEventListener('DOMContentLoaded', async () => {
+// 初期化処理（HTML上の要素を直接読み込む方式に変更）
+document.addEventListener('DOMContentLoaded', () => {
     const listContainer = document.querySelector('.character-list');
     if (!listContainer) return;
 
-    try {
-        // 1. JSON の取得
-        const response = await fetch('characters.json');
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const characterDataList = await response.json();
+    // 1. HTML上にすでに存在する .character-item を取得
+    items = Array.from(document.querySelectorAll('.character-item'));
+    adjustNameLength();
 
-        // 既存のコンテナ要素をクリア
-        listContainer.innerHTML = '';
+    // 2. 既存要素の data-* 属性からフィルターボタン等の動的生成
+    const genres = new Set();
+    const works = new Set();
+    const years = new Set();
 
-        // 2. カードの生成＆描画
-        characterDataList.forEach(data => {
-            const itemEl = createCharacterItemElement(data);
-            listContainer.appendChild(itemEl);
+    items.forEach(item => {
+        const g = item.getAttribute('data-genre');
+        const w = item.getAttribute('data-works');
+        const y = item.getAttribute('data-years');
+
+        if (g) genres.add(g);
+        if (w) w.split(',').forEach(val => val && works.add(val.trim()));
+        if (y) y.split(',').forEach(val => val && years.add(val.trim()));
+    });
+
+    const createButtons = (set, targetId, type) => {
+        const container = document.getElementById(targetId);
+        if (!container) return;
+        container.innerHTML = '';
+
+        Array.from(set).sort().forEach(val => {
+            const btn = document.createElement('button');
+            btn.textContent = val;
+            btn.className = 'filter-btn';
+            btn.onclick = () => filterCharacters(val, type);
+            container.appendChild(btn);
         });
+    };
 
-        // 3. 生成された全要素を取得して items 配列を更新
-        items = Array.from(document.querySelectorAll('.character-item'));
-        adjustNameLength();
+    const createSelectOptions = (set, targetId) => {
+        const select = document.getElementById(targetId);
+        if (!select) return;
 
-        // 4. フィルターボタン等の動的生成
-        const genres = new Set();
-        const works = new Set();
-        const years = new Set();
+        select.innerHTML = '<option value="all">すべての年</option>';
 
-        items.forEach(item => {
-            const g = item.getAttribute('data-genre');
-            const w = item.getAttribute('data-works');
-            const y = item.getAttribute('data-years');
-
-            if (g) genres.add(g);
-            if (w) w.split(',').forEach(val => val && works.add(val.trim()));
-            if (y) y.split(',').forEach(val => val && years.add(val.trim()));
+        Array.from(set).sort((a, b) => Number(b) - Number(a)).forEach(val => {
+            const option = document.createElement('option');
+            option.value = val;
+            option.textContent = val + "年";
+            select.appendChild(option);
         });
+        select.onchange = (e) => filterCharacters(e.target.value, 'year');
+    };
 
-        const createButtons = (set, targetId, type) => {
-            const container = document.getElementById(targetId);
-            if (!container) return;
-            container.innerHTML = ''; // クリア
+    createButtons(genres, 'genre-filters', 'genre');
+    createButtons(works, 'work-filters', 'work');
+    createSelectOptions(years, 'year-select-filter');
 
-            Array.from(set).sort().forEach(val => {
-                const btn = document.createElement('button');
-                btn.textContent = val;
-                btn.className = 'filter-btn';
-                btn.onclick = () => filterCharacters(val, type);
-                container.appendChild(btn);
-            });
-        };
+    // 3. 初期表示設定と並び替え
+    filterCharacters('all', 'all');
+    window.sortAndRender();
 
-        const createSelectOptions = (set, targetId) => {
-            const select = document.getElementById(targetId);
-            if (!select) return;
+    // 4. URLパラメータの判定
+    const params = new URLSearchParams(window.location.search);
+    const workParam = params.get('work');
+    const yearParam = params.get('year');
 
-            // デフォルトの 「すべての年」 以外を消去
-            select.innerHTML = '<option value="all">すべての年</option>';
-
-            Array.from(set).sort((a, b) => Number(b) - Number(a)).forEach(val => {
-                const option = document.createElement('option');
-                option.value = val;
-                option.textContent = val + "年";
-                select.appendChild(option);
-            });
-            select.onchange = (e) => filterCharacters(e.target.value, 'year');
-        };
-
-        createButtons(genres, 'genre-filters', 'genre');
-        createButtons(works, 'work-filters', 'work');
-        createSelectOptions(years, 'year-select-filter');
-
-        // 5. 最初は全キャラクターを表示フラグにする
-        filterCharacters('all', 'all');
-
-        // 6. 初期ソートと描画
-        window.sortAndRender();
-
-        // 7. URLパラメータの判定
-        const params = new URLSearchParams(window.location.search);
-        const workParam = params.get('work');
-        const yearParam = params.get('year');
-
-        if (workParam) {
-            filterCharacters(workParam, 'work');
-        } else if (yearParam) {
-            const yearSelect = document.getElementById('year-select-filter');
-            if (yearSelect) yearSelect.value = yearParam;
-            filterCharacters(yearParam, 'year');
-        }
-
-    } catch (error) {
-        console.error('characters.json の読み込みまたは描画に失敗しました:', error);
+    if (workParam) {
+        filterCharacters(workParam, 'work');
+    } else if (yearParam) {
+        const yearSelect = document.getElementById('year-select-filter');
+        if (yearSelect) yearSelect.value = yearParam;
+        filterCharacters(yearParam, 'year');
     }
 });
 
