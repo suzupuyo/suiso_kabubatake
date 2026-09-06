@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     try {
         // 1. JSON の取得
-        const response = await fetch('./characters.json');
+        const response = await fetch('characters.json');
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
